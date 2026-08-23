@@ -58,7 +58,7 @@
     return Number.isFinite(count) && count > 0 ? Math.round(count) : 1;
   }
 
-  function formatTimelineEvent(event, scoreText = "") {
+  function formatTimelineEvent(event, scoreText = "", scoreState = "") {
     const type = String(event.type || "Event").trim();
     const typeLower = type.toLowerCase();
     const minute = minuteText(event.minute);
@@ -66,7 +66,7 @@
     const related = displayPlayer(event, true);
     const detail = String(event.detail || "").trim();
     const count = eventCount(event);
-    const score = scoreText ? ` <span class="timeline-score">${scoreText}</span>` : "";
+    const score = scoreText ? ` <span class="timeline-score ${scoreState}">${scoreText}</span>` : "";
 
     if (typeLower === "substitution") {
       return `${minute}<strong>🔄</strong> ${player || "Player"} off for ${related || "Player"}`;
@@ -115,6 +115,7 @@
       const type = String(event.type || "").trim().toLowerCase();
       const count = eventCount(event);
       let scoreText = "";
+      let scoreState = "";
 
       if (type === "goal" || type === "own goal") {
         goalsFor += count;
@@ -124,7 +125,11 @@
         scoreText = `${goalsFor}–${goalsAgainst}`;
       }
 
-      return `<li>${formatTimelineEvent(event, scoreText)}</li>`;
+      if (scoreText) {
+        scoreState = goalsFor > goalsAgainst ? "winning" : goalsFor < goalsAgainst ? "losing" : "drawing";
+      }
+
+      return `<li>${formatTimelineEvent(event, scoreText, scoreState)}</li>`;
     });
   }
 
@@ -216,7 +221,20 @@
     .timeline-score {
       margin-left:8px;
       font-weight:900;
-      color:var(--text);
+      padding:2px 7px;
+      border-radius:999px;
+    }
+    .timeline-score.losing {
+      color:#fecaca;
+      background:rgba(220,38,38,.18);
+    }
+    .timeline-score.drawing {
+      color:#fdba74;
+      background:rgba(249,115,22,.16);
+    }
+    .timeline-score.winning {
+      color:#86efac;
+      background:rgba(34,197,94,.16);
     }
     .match-info-box h3 {
       margin:0 0 10px;

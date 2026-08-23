@@ -121,5 +121,255 @@
         "source": "Legacy Excel backfill"
       }
     ]
+  },
+  {
+    "matchId": "2026-08-23-crayford-arrows",
+    "date": "2026-08-23",
+    "opposition": "Crayford Arrows",
+    "competition": "Friendly",
+    "events": [
+      {
+        "type": "Opponent Goal",
+        "minute": 15,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 17,
+        "playerId": "brad-e",
+        "player": "Brad",
+        "relatedPlayerId": "rocco-b",
+        "relatedPlayer": "Rocco",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 28,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": "ryan-b",
+        "relatedPlayer": "Ryan",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 28,
+        "playerId": "keiran-d",
+        "player": "Keiran",
+        "relatedPlayerId": "frank-a",
+        "relatedPlayer": "Frank",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 28,
+        "playerId": "brad-e",
+        "player": "Brad",
+        "relatedPlayerId": "will-b",
+        "relatedPlayer": "Will",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 32,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "george-w",
+        "relatedPlayer": "George W",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 32,
+        "playerId": "ronnie-t",
+        "player": "Ronnie T",
+        "relatedPlayerId": "josh-m",
+        "relatedPlayer": "Josh",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 32,
+        "playerId": "liam-s",
+        "player": "Liam",
+        "relatedPlayerId": "jude-g",
+        "relatedPlayer": "Jude",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 36,
+        "playerId": "rocco-b",
+        "player": "Rocco",
+        "relatedPlayerId": "will-b",
+        "relatedPlayer": "Will",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 39,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 45,
+        "playerId": "alfie-f",
+        "player": "Alf",
+        "relatedPlayerId": "kalan-w",
+        "relatedPlayer": "Kalan",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 45,
+        "playerId": "rocco-b",
+        "player": "Rocco",
+        "relatedPlayerId": "darren-r",
+        "relatedPlayer": "Darren",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 52,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 61,
+        "playerId": "ryeley-d",
+        "player": "Ryeley",
+        "relatedPlayerId": "brad-e",
+        "relatedPlayer": "Brad",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 61,
+        "playerId": "bailey-s",
+        "player": "Bailey",
+        "relatedPlayerId": "ronnie-t",
+        "relatedPlayer": "Ronnie T",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Note",
+        "minute": 63,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty miss. 30 ft above the bar !!!",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 66,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "kalan-w",
+        "relatedPlayer": "Kalan",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 73,
+        "playerId": "frank-a",
+        "player": "Frank",
+        "relatedPlayerId": "liam-s",
+        "relatedPlayer": "Liam",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 74,
+        "playerId": "jude-g",
+        "player": "Jude",
+        "relatedPlayerId": "frank-a",
+        "relatedPlayer": "Frank",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 74,
+        "playerId": "george-w",
+        "player": "George W",
+        "relatedPlayerId": "keiran-d",
+        "relatedPlayer": "Keiran",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 80,
+        "playerId": "alfie-f",
+        "player": "Alf",
+        "relatedPlayerId": "darren-r",
+        "relatedPlayer": "Darren",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 82,
+        "playerId": "will-b",
+        "player": "Will",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      }
+    ]
   }
 ]

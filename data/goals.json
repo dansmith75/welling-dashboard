@@ -32,7 +32,13 @@
     "matchId": "2026-08-23-crayford-arrows",
     "date": "2026-08-23",
     "opposition": "Crayford Arrows",
-    "goals": {}
+    "goals": {
+      "alfie-f": 1,
+      "brad-e": 1,
+      "darren-r": 1,
+      "rocco-b": 1,
+      "will-b": 1
+    }
   },
   {
     "matchId": "2026-08-29-welling-saturday-reserves",

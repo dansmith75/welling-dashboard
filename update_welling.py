@@ -118,7 +118,7 @@ def match_summary(old, new):
 
 def sync_supabase(workbook: Path) -> dict:
     ensure_python_package("xlwings")
-    print("2/7 Pulling Attendance / Matchday submissions from Supabase into Excel...")
+    print("2/8 Pulling Attendance / Matchday submissions from Supabase into Excel...")
     result = run([sys.executable, str(ROOT / "sync_supabase_via_excel.py"), str(workbook)], capture=True)
     if result.stdout:
         for line in result.stdout.splitlines():
@@ -183,7 +183,7 @@ def main():
     print(" Welling Dashboard - Update")
     print("============================================\n")
 
-    print("1/7 Syncing latest website code from GitHub...")
+    print("1/8 Syncing latest website code from GitHub...")
     run(["git", "pull", "--ff-only"])
 
     status = tracked_non_data_changes()
@@ -213,8 +213,8 @@ def main():
     print("\nSupabase → Excel")
     print("----------------")
     print(f"  + Attendance rows imported: {sync.get('attendanceRows', 0)}")
-    print(f"  + Completed Matchdays imported: {sync.get('matchdaySessions', 0)}")
-    print(f"  + Matchday audit rows added: {sync.get('matchdayRows', 0)}")
+    print(f"  + Completed Matchdays reconciled: {sync.get('matchdaySessions', 0)}")
+    print(f"  + Matchday audit rows rebuilt: {sync.get('matchdayRows', 0)}")
     for warning in sync.get("warnings", [])[:20]:
         print(f"  ! {warning}")
     if len(sync.get("warnings", [])) > 20:
@@ -223,13 +223,21 @@ def main():
     print("\nPreparing local workbook snapshot for dashboard export...")
     export_workbook = create_export_snapshot(workbook) if sync_ok else EXPORT_SNAPSHOT
 
-    print("\n3/7 Exporting snapshot to JSON...")
+    print("\n3/8 Exporting snapshot to JSON...")
     try:
         run([sys.executable, str(ROOT / "export_welling_json.py"), "--workbook", str(export_workbook)])
     except subprocess.CalledProcessError as exc:
         raise RuntimeError("Dashboard export failed while reading the local workbook snapshot.") from exc
 
-    print("4/7 Validating JSON...")
+    print("4/8 Applying authoritative completed Matchday data...")
+    try:
+        run([sys.executable, str(ROOT / "apply_matchday_authority.py")])
+    except subprocess.CalledProcessError as exc:
+        raise RuntimeError(
+            "Could not apply authoritative completed Matchday data. Publishing has been stopped so completed match stats cannot be overwritten by stale Excel data."
+        ) from exc
+
+    print("5/8 Validating JSON...")
     after = snapshot()
     for name in EXPECTED:
         if after[name] is None:
@@ -279,14 +287,14 @@ def main():
         print("Any successful Supabase reconciliation has still been safely saved into Excel.\n")
         return
 
-    print("\n5/7 Staging changed JSON...")
+    print("\n6/8 Staging changed JSON...")
     run(["git", "add", "data"])
 
-    print("6/7 Committing...")
+    print("7/8 Committing...")
     stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
     run(["git", "commit", "-m", f"Update Welling data {stamp}"])
 
-    print("7/7 Pushing to GitHub...")
+    print("8/8 Pushing to GitHub...")
     run(["git", "push"])
 
     print("\n============================================")
@@ -296,7 +304,8 @@ def main():
         print("Central Attendance / Matchday submissions reconciled into Excel.")
     else:
         print("Published from the last successful workbook snapshot; central submissions remain safe for later reconciliation.")
-    print("Dashboard data published, including playing minutes and match timeline.")
+    print("Completed Matchday data was applied authoritatively after the Excel export.")
+    print("Dashboard data published, including result, goals, assists, playing minutes and match timeline.")
     print("Attendance / Matchday will use the same shared squad and fixture feeds.")
     print("GitHub Pages normally updates shortly afterwards.\n")
 

@@ -1,15 +1,37 @@
 #!/usr/bin/env python3
-"""Create an unlocked local snapshot of the Welling master workbook via Excel.
+"""Create a local snapshot of the Welling master workbook via Excel.
 
-The master workbook may be open on another device through OneDrive. Excel can
-normally co-author/open that file even when direct ZIP readers such as openpyxl
-cannot. This helper asks Excel itself to open the master and SaveCopyAs a local
-snapshot for the dashboard exporters.
+If the workbook is already open in Excel on this PC, reuse that live workbook
+and SaveCopyAs from it. Otherwise open it in a temporary hidden Excel instance.
+This avoids direct openpyxl access to the OneDrive master and does not close a
+workbook the user already had open.
 """
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
+
+
+def same_path(a: str | Path, b: str | Path) -> bool:
+    try:
+        return os.path.normcase(os.path.abspath(str(a))) == os.path.normcase(os.path.abspath(str(b)))
+    except Exception:
+        return False
+
+
+def find_open_book(xw, master: Path):
+    for app in list(xw.apps):
+        try:
+            for book in app.books:
+                try:
+                    if same_path(book.fullname, master):
+                        return app, book
+                except Exception:
+                    continue
+        except Exception:
+            continue
+    return None, None
 
 
 def main() -> None:
@@ -27,23 +49,35 @@ def main() -> None:
         raise RuntimeError("xlwings is not installed. Run: python -m pip install xlwings") from exc
 
     snapshot.parent.mkdir(parents=True, exist_ok=True)
-    app = None
-    book = None
-    try:
-        app = xw.App(visible=False, add_book=False)
-        app.display_alerts = False
-        app.screen_updating = False
-        book = app.books.open(str(master), update_links=False, read_only=True)
+    app, book = find_open_book(xw, master)
+    owns_app = False
+    owns_book = False
 
-        # Windows Excel exposes SaveCopyAs directly through COM. It produces a
-        # normal standalone XLSX that openpyxl can read without touching the
-        # live OneDrive workbook again.
+    try:
+        if book is not None:
+            print("Creating snapshot from workbook already open in Excel on this PC.")
+            book.save()
+        else:
+            app = xw.App(visible=False, add_book=False)
+            owns_app = True
+            app.display_alerts = False
+            app.screen_updating = False
+            book = app.books.open(str(master), update_links=False, read_only=True)
+            owns_book = True
+
+        if snapshot.exists():
+            try:
+                snapshot.unlink()
+            except Exception:
+                pass
+
         try:
             book.api.SaveCopyAs(str(snapshot))
         except Exception:
-            # Fallback for environments where SaveCopyAs is not exposed by the
-            # xlwings backend: save a temporary workbook copy under the target
-            # path. The source was opened read-only, so the master is untouched.
+            # SaveCopyAs should be available on Windows Excel. Keep a fallback
+            # for other xlwings backends when the source is not a user-open book.
+            if not owns_book:
+                raise
             book.api.SaveAs(str(snapshot))
 
         if not snapshot.exists() or snapshot.stat().st_size == 0:
@@ -51,12 +85,12 @@ def main() -> None:
 
         print(f"SNAPSHOT_CREATED={snapshot}")
     finally:
-        if book is not None:
+        if owns_book and book is not None:
             try:
                 book.close()
             except Exception:
                 pass
-        if app is not None:
+        if owns_app and app is not None:
             try:
                 app.quit()
             except Exception:

@@ -119,7 +119,7 @@ def match_summary(old, new):
 def sync_supabase(workbook: Path) -> dict:
     ensure_python_package("xlwings")
     print("2/7 Pulling Attendance / Matchday submissions from Supabase into Excel...")
-    result = run([sys.executable, str(ROOT / "sync_supabase_to_excel.py"), str(workbook)], capture=True)
+    result = run([sys.executable, str(ROOT / "sync_supabase_via_excel.py"), str(workbook)], capture=True)
     if result.stdout:
         for line in result.stdout.splitlines():
             if not line.startswith("SUPABASE_SYNC_SUMMARY="):
@@ -192,7 +192,7 @@ def main():
 
     workbook = find_workbook()
     print(f"\nMaster workbook: {workbook}")
-    print("The workbook may stay open on another device. Excel is used for reconciliation, then the dashboard exports from a local snapshot.\n")
+    print("The workbook may stay open in Excel. The updater reuses the open workbook when possible, reconciles central submissions, then exports from a local snapshot.\n")
 
     before = snapshot()
 
@@ -204,7 +204,7 @@ def main():
         sync = {"attendanceRows": 0, "matchdaySessions": 0, "matchdayRows": 0, "warnings": []}
         if EXPORT_SNAPSHOT.exists() and EXPORT_SNAPSHOT.stat().st_size > 0:
             stamp = datetime.fromtimestamp(EXPORT_SNAPSHOT.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
-            print("\n  ! Excel reconciliation could not open/update the master workbook on this run.")
+            print("\n  ! Excel reconciliation could not update the master workbook on this run.")
             print(f"  ! Dashboard publishing can continue from the last snapshot ({stamp}).")
             print("  ! Any new Supabase submissions will remain central and reconcile on a later successful run.")
         else:

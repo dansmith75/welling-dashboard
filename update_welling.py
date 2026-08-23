@@ -13,6 +13,8 @@ WORKBOOK_NAME = "Welling United Red OBDSFL 26-27.xlsx"
 EXPECTED = ["players.json", "matches.json", "goals.json", "assists.json", "events.json", "attendance.json", "minutes.json", "timeline.json"]
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
+CACHE = ROOT / ".welling-cache"
+EXPORT_SNAPSHOT = CACHE / "Welling-dashboard-export.xlsx"
 
 
 def run(args, check=True, capture=False):
@@ -129,6 +131,39 @@ def sync_supabase(workbook: Path) -> dict:
     return json.loads(summary_line[len(marker):])
 
 
+def create_export_snapshot(workbook: Path) -> Path:
+    """Create a local standalone XLSX through Excel, or use the last good copy."""
+    CACHE.mkdir(parents=True, exist_ok=True)
+    temp_snapshot = CACHE / "Welling-dashboard-export.new.xlsx"
+    try:
+        temp_snapshot.unlink(missing_ok=True)
+        result = run([
+            sys.executable,
+            str(ROOT / "create_workbook_snapshot.py"),
+            str(workbook),
+            str(temp_snapshot),
+        ], capture=True)
+        if result.stdout:
+            for line in result.stdout.splitlines():
+                if not line.startswith("SNAPSHOT_CREATED="):
+                    print(line)
+        if not temp_snapshot.exists() or temp_snapshot.stat().st_size == 0:
+            raise RuntimeError("Snapshot helper returned without creating a usable workbook")
+        temp_snapshot.replace(EXPORT_SNAPSHOT)
+        print(f"  + Local export snapshot refreshed: {EXPORT_SNAPSHOT}")
+        return EXPORT_SNAPSHOT
+    except Exception as exc:
+        temp_snapshot.unlink(missing_ok=True)
+        if EXPORT_SNAPSHOT.exists() and EXPORT_SNAPSHOT.stat().st_size > 0:
+            stamp = datetime.fromtimestamp(EXPORT_SNAPSHOT.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
+            print(f"  ! Could not refresh the local workbook snapshot: {exc}")
+            print(f"  ! Using last successful snapshot from {stamp} instead.")
+            return EXPORT_SNAPSHOT
+        raise RuntimeError(
+            "Could not create an export snapshot and there is no previous snapshot to fall back to."
+        ) from exc
+
+
 def tracked_non_data_changes() -> list[str]:
     """Return tracked local changes outside generated data/*.json output."""
     output = run(["git", "status", "--porcelain", "--untracked-files=no"], capture=True).stdout
@@ -157,11 +192,24 @@ def main():
 
     workbook = find_workbook()
     print(f"\nMaster workbook: {workbook}")
-    print("Save and close Excel before publishing. The updater will safely reopen Excel to reconcile central app submissions.\n")
+    print("The workbook may stay open on another device. Excel is used for reconciliation, then the dashboard exports from a local snapshot.\n")
 
     before = snapshot()
 
-    sync = sync_supabase(workbook)
+    sync_ok = True
+    try:
+        sync = sync_supabase(workbook)
+    except subprocess.CalledProcessError as exc:
+        sync_ok = False
+        sync = {"attendanceRows": 0, "matchdaySessions": 0, "matchdayRows": 0, "warnings": []}
+        if EXPORT_SNAPSHOT.exists() and EXPORT_SNAPSHOT.stat().st_size > 0:
+            stamp = datetime.fromtimestamp(EXPORT_SNAPSHOT.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
+            print("\n  ! Excel reconciliation could not open/update the master workbook on this run.")
+            print(f"  ! Dashboard publishing can continue from the last snapshot ({stamp}).")
+            print("  ! Any new Supabase submissions will remain central and reconcile on a later successful run.")
+        else:
+            raise RuntimeError("Excel reconciliation failed and no previous export snapshot is available.") from exc
+
     print("\nSupabase → Excel")
     print("----------------")
     print(f"  + Attendance rows imported: {sync.get('attendanceRows', 0)}")
@@ -172,11 +220,14 @@ def main():
     if len(sync.get("warnings", [])) > 20:
         print(f"  ! ...and {len(sync['warnings']) - 20} more import warnings")
 
-    print("\n3/7 Exporting Excel to JSON...")
+    print("\nPreparing local workbook snapshot for dashboard export...")
+    export_workbook = create_export_snapshot(workbook) if sync_ok else EXPORT_SNAPSHOT
+
+    print("\n3/7 Exporting snapshot to JSON...")
     try:
-        run([sys.executable, str(ROOT / "export_welling_json.py"), "--workbook", str(workbook)])
+        run([sys.executable, str(ROOT / "export_welling_json.py"), "--workbook", str(export_workbook)])
     except subprocess.CalledProcessError as exc:
-        raise RuntimeError("Excel export failed. Make sure the workbook is closed, then try again.") from exc
+        raise RuntimeError("Dashboard export failed while reading the local workbook snapshot.") from exc
 
     print("4/7 Validating JSON...")
     after = snapshot()
@@ -188,7 +239,7 @@ def main():
     untracked_data = run(["git", "ls-files", "--others", "--exclude-standard", "--", "data"], capture=True).stdout.splitlines()
     changed = list(dict.fromkeys([*changed, *untracked_data]))
     if not changed:
-        print("\nNo published football-data changes found. Excel is reconciled and there is nothing to push.\n")
+        print("\nNo published football-data changes found. Excel/snapshot is reconciled and there is nothing to push.\n")
         return
 
     print("\n============================================")
@@ -225,7 +276,7 @@ def main():
     answer = input("\nPublish these updates to GitHub? [Y/N]: ").strip().lower()
     if answer != "y":
         print("\nCancelled. Nothing was committed or pushed.")
-        print("Supabase data has still been safely reconciled into Excel.\n")
+        print("Any successful Supabase reconciliation has still been safely saved into Excel.\n")
         return
 
     print("\n5/7 Staging changed JSON...")
@@ -241,7 +292,10 @@ def main():
     print("\n============================================")
     print(" SUCCESS")
     print("============================================")
-    print("Central Attendance / Matchday submissions reconciled into Excel.")
+    if sync_ok:
+        print("Central Attendance / Matchday submissions reconciled into Excel.")
+    else:
+        print("Published from the last successful workbook snapshot; central submissions remain safe for later reconciliation.")
     print("Dashboard data published, including playing minutes and match timeline.")
     print("Attendance / Matchday will use the same shared squad and fixture feeds.")
     print("GitHub Pages normally updates shortly afterwards.\n")

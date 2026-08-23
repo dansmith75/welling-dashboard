@@ -58,7 +58,7 @@
     return Number.isFinite(count) && count > 0 ? Math.round(count) : 1;
   }
 
-  function formatTimelineEvent(event) {
+  function formatTimelineEvent(event, scoreText = "") {
     const type = String(event.type || "Event").trim();
     const typeLower = type.toLowerCase();
     const minute = minuteText(event.minute);
@@ -66,6 +66,7 @@
     const related = displayPlayer(event, true);
     const detail = String(event.detail || "").trim();
     const count = eventCount(event);
+    const score = scoreText ? ` <span class="timeline-score">${scoreText}</span>` : "";
 
     if (typeLower === "substitution") {
       return `${minute}<strong>🔄</strong> ${player || "Player"} off for ${related || "Player"}`;
@@ -77,20 +78,20 @@
       const assist = related ? ` <span class="timeline-muted">(assist: ${related})</span>` : "";
       const label = count > 1 ? "Goals" : "Goal";
       const multiplier = count > 1 ? ` ×${count}` : "";
-      return `${minute}<strong>⚽ ${label} — ${player || "Welling"}${multiplier}</strong>${assist}${goalDetail}`;
+      return `${minute}<strong>⚽ ${label} — ${player || "Welling"}${multiplier}</strong>${assist}${goalDetail}${score}`;
     }
 
     if (typeLower === "own goal") {
       const goalType = cleanGoalDetail(detail, "Own Goal");
       const extra = goalType && goalType.toLowerCase() !== "own goal" ? ` · ${goalType}` : "";
       const multiplier = count > 1 ? ` ×${count}` : "";
-      return `${minute}<strong>⚽ Own Goal — Welling${multiplier}</strong>${extra}`;
+      return `${minute}<strong>⚽ Own Goal — Welling${multiplier}</strong>${extra}${score}`;
     }
 
     if (typeLower === "opponent goal") {
       const goalType = cleanGoalDetail(detail);
       const multiplier = count > 1 ? ` ×${count}` : "";
-      return `${minute}<strong><span class="opponent-goal-icon">⚽</span> Opponent Goal${multiplier}</strong>${goalType ? ` · ${goalType}` : ""}`;
+      return `${minute}<strong><span class="opponent-goal-icon">⚽</span> Opponent Goal${multiplier}</strong>${goalType ? ` · ${goalType}` : ""}${score}`;
     }
 
     if (typeLower === "card") {
@@ -104,6 +105,27 @@
     }
 
     return `${minute}<strong>${type}</strong>${player ? ` — ${player}` : ""}${detail ? ` · ${detail}` : ""}`;
+  }
+
+  function detailedTimelineLines(events) {
+    let goalsFor = 0;
+    let goalsAgainst = 0;
+
+    return (events || []).map(event => {
+      const type = String(event.type || "").trim().toLowerCase();
+      const count = eventCount(event);
+      let scoreText = "";
+
+      if (type === "goal" || type === "own goal") {
+        goalsFor += count;
+        scoreText = `${goalsFor}–${goalsAgainst}`;
+      } else if (type === "opponent goal") {
+        goalsAgainst += count;
+        scoreText = `${goalsFor}–${goalsAgainst}`;
+      }
+
+      return `<li>${formatTimelineEvent(event, scoreText)}</li>`;
+    });
   }
 
   function legacyInfoForMatch(match) {
@@ -138,7 +160,7 @@
 
     document.getElementById("resultsTable").innerHTML = rows.map((match, index) => {
       const timeline = timelineForMatch(match);
-      const detailedEvents = (timeline?.events || []).map(event => `<li>${formatTimelineEvent(event)}</li>`);
+      const detailedEvents = detailedTimelineLines(timeline?.events || []);
       const fallback = detailedEvents.length ? [] : legacyInfoForMatch(match);
       const information = detailedEvents.length ? detailedEvents : fallback;
 
@@ -190,6 +212,11 @@
     }
     .opponent-goal-icon {
       filter:hue-rotate(145deg) saturate(4.5) brightness(.9);
+    }
+    .timeline-score {
+      margin-left:8px;
+      font-weight:900;
+      color:var(--text);
     }
     .match-info-box h3 {
       margin:0 0 10px;

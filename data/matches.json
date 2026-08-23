@@ -47,9 +47,9 @@
     "homeAway": "Home",
     "venue": "Home",
     "postponed": false,
-    "goalsFor": null,
-    "goalsAgainst": null,
-    "result": null
+    "goalsFor": 5,
+    "goalsAgainst": 3,
+    "result": "W"
   },
   {
     "id": "2026-08-29-welling-saturday-reserves",

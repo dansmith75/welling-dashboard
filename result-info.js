@@ -68,7 +68,7 @@
     const count = eventCount(event);
 
     if (typeLower === "substitution") {
-      return `${minute}<strong>🔄 Substitution</strong> — ${related || "Player"} on for ${player || "Player"}`;
+      return `${minute}<strong>🔄</strong> ${player || "Player"} off for ${related || "Player"}`;
     }
 
     if (typeLower === "goal") {
@@ -90,7 +90,7 @@
     if (typeLower === "opponent goal") {
       const goalType = cleanGoalDetail(detail);
       const multiplier = count > 1 ? ` ×${count}` : "";
-      return `${minute}<strong>⚽ Opponent Goal${multiplier}</strong>${goalType ? ` · ${goalType}` : ""}`;
+      return `${minute}<strong><span class="opponent-goal-icon">⚽</span> Opponent Goal${multiplier}</strong>${goalType ? ` · ${goalType}` : ""}`;
     }
 
     if (typeLower === "card") {
@@ -187,6 +187,9 @@
     .match-info-heading span,
     .timeline-muted {
       color:var(--muted);
+    }
+    .opponent-goal-icon {
+      filter:hue-rotate(145deg) saturate(4.5) brightness(.9);
     }
     .match-info-box h3 {
       margin:0 0 10px;

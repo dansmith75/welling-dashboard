@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Run the existing Supabase→Excel reconciliation against the live workbook.
+"""Run the Supabase→Excel reconciliation against the live workbook.
 
 If the workbook is already open in Excel on this PC, attach to that exact book
 instead of trying to open a second copy. Otherwise open it in a temporary hidden
 Excel instance. User-open workbooks are never closed by this helper.
+
+Completed Matchday sessions are reconciled authoritatively: corrections in the
+central Matchday record overwrite the corresponding Excel match stats and audit
+rows instead of being skipped or incremented twice.
 """
 from __future__ import annotations
 
@@ -13,6 +17,7 @@ import sys
 from pathlib import Path
 
 import sync_supabase_to_excel as core
+from matchday_authoritative_excel import import_matchday_authoritative
 
 
 def same_path(a: str | Path, b: str | Path) -> bool:
@@ -66,7 +71,7 @@ def main() -> None:
 
         attendance_rows = core.import_attendance(book)
         attendance_views = core.refresh_wide_attendance_sheets(book)
-        matchday_sessions, matchday_rows_added, warnings = core.import_matchday(book)
+        matchday_sessions, matchday_rows_added, warnings = import_matchday_authoritative(book)
 
         # Save through Excel whether the book was already open or opened here.
         book.save()

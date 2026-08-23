@@ -3,7 +3,7 @@
     "id": "alfie-f",
     "displayName": "Alf",
     "position": "ST",
-    "strapLine": "Big Alf - the only one scarier is his old man after a shandy",
+    "strapLine": "Big Alf - the only one scarier is his old man with a shandy",
     "bio": "Versatile squad player. Capable of filling several positions and therefore at constant risk of becoming far too useful for their own good."
   },
   {
@@ -24,7 +24,7 @@
     "id": "darren-r",
     "displayName": "Darren",
     "position": "ST",
-    "strapLine": "The Amber assasin ??",
+    "strapLine": "The Amber assasin ?? *never predictable*",
     "bio": "Versatile squad player. Capable of filling several positions and therefore at constant risk of becoming far too useful for their own good."
   },
   {
@@ -92,7 +92,7 @@
   },
   {
     "id": "keiran-d",
-    "displayName": "Keiran D",
+    "displayName": "Keiran",
     "position": "CDM",
     "strapLine": "All chat, no teeth",
     "bio": "Midfielder. Expected to win it, keep it, move it and somehow still have enough legs left to do the same thing again two minutes later."
@@ -157,7 +157,7 @@
     "id": "will-b",
     "displayName": "Will",
     "position": "LB",
-    "strapLine": "Will \"Don't forget you are last man\" Beecham  - Oh God, not again !!",
+    "strapLine": "Will \"Don't forget you are last man\" Beecham",
     "bio": "Defender. Happy in a duel, happier after a clean sheet, and happiest when somebody else has to chase the ball into the car park."
   }
 ]

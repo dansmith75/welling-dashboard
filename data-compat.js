@@ -3,9 +3,20 @@
 
 let wellingDataNormalised = false;
 
+const WELLING_PLAYER_ID_ALIASES = {
+  "keiran-d": "kieran-d"
+};
+
+function wellingCanonicalPlayerId(playerId) {
+  const id = String(playerId || "").trim();
+  return WELLING_PLAYER_ID_ALIASES[id] || id;
+}
+
 function wellingDisplayNameForId(playerId) {
-  const player = (store.players || []).find(item => item && item.id === playerId);
-  return player?.displayName || playerId;
+  const canonicalId = wellingCanonicalPlayerId(playerId);
+  const player = (store.players || []).find(item => item && wellingCanonicalPlayerId(item.id) === canonicalId);
+  if (canonicalId === "kieran-d") return "Kieran";
+  return player?.displayName || canonicalId;
 }
 
 function wellingMapPlayerKeys(values) {
@@ -34,6 +45,50 @@ function wellingNormaliseResult(value) {
 function normaliseWellingDashboardData() {
   if (wellingDataNormalised) return;
   if (!store.players || !store.matches) return;
+
+  store.players = (store.players || []).map(player => {
+    if (!player) return player;
+    const id = wellingCanonicalPlayerId(player.id);
+    return {
+      ...player,
+      id,
+      displayName: id === "kieran-d" ? "Kieran" : player.displayName
+    };
+  });
+
+  if (store.attendance?.sessions) {
+    store.attendance.sessions = store.attendance.sessions.map(session => ({
+      ...session,
+      records: (session.records || []).map(record => {
+        const playerId = wellingCanonicalPlayerId(record.playerId);
+        return {
+          ...record,
+          playerId,
+          displayName: playerId === "kieran-d" ? "Kieran" : record.displayName
+        };
+      })
+    }));
+  }
+
+  store.minutes = (store.minutes || []).map(record => {
+    const playerId = wellingCanonicalPlayerId(record.playerId);
+    return {
+      ...record,
+      playerId,
+      displayName: playerId === "kieran-d" ? "Kieran" : record.displayName
+    };
+  });
+
+  store.timeline = (store.timeline || []).map(match => ({
+    ...match,
+    events: (match.events || []).map(event => ({
+      ...event,
+      playerId: wellingCanonicalPlayerId(event.playerId),
+      relatedPlayerId: wellingCanonicalPlayerId(event.relatedPlayerId),
+      player: wellingCanonicalPlayerId(event.playerId) === "kieran-d" ? "Kieran" : event.player,
+      relatedPlayer: wellingCanonicalPlayerId(event.relatedPlayerId) === "kieran-d" ? "Kieran" : event.relatedPlayer
+    }))
+  }));
 
   // homeAway is now the canonical fixture field. `venue` is retained only as a
   // temporary compatibility alias for older consumers of the shared match feed.

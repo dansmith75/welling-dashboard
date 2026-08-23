@@ -47,10 +47,11 @@
   function displayPlayer(event, related = false) {
     const display = related ? event.relatedPlayer : event.player;
     const id = related ? event.relatedPlayerId : event.playerId;
-    if (display) return display;
+    if (display) return display === "Keiran" ? "Kieran" : display;
     if (!id) return "";
-    const squadPlayer = (store.players || []).find(player => player && player.id === id);
-    return squadPlayer?.displayName || id;
+    const canonicalId = id === "keiran-d" ? "kieran-d" : id;
+    const squadPlayer = (store.players || []).find(player => player && player.id === canonicalId);
+    return squadPlayer?.displayName || (canonicalId === "kieran-d" ? "Kieran" : canonicalId);
   }
 
   function eventCount(event) {
@@ -130,6 +131,69 @@
       }
 
       return `<li>${formatTimelineEvent(event, scoreText, scoreState)}</li>`;
+    });
+  }
+
+  // Matchday timeline is the authoritative completed-match record. If a later Excel
+  // export has blank fixture/goals/assists cells, rebuild those stats from the
+  // detailed Matchday events instead of allowing a completed match to disappear.
+  function reconcileMatchdayTimelineData() {
+    (store.timeline || []).forEach(timeline => {
+      const events = timeline?.events || [];
+      if (!events.some(event => String(event.source || "").toLowerCase() === "matchday app")) return;
+
+      let goalsFor = 0;
+      let goalsAgainst = 0;
+      const goals = {};
+      const assists = {};
+
+      events.forEach(event => {
+        const type = String(event.type || "").trim().toLowerCase();
+        const count = eventCount(event);
+        if (type === "goal") {
+          goalsFor += count;
+          const scorer = displayPlayer(event);
+          if (scorer) goals[scorer] = (goals[scorer] || 0) + count;
+          const assist = displayPlayer(event, true);
+          if (assist) assists[assist] = (assists[assist] || 0) + count;
+        } else if (type === "own goal") {
+          goalsFor += count;
+        } else if (type === "opponent goal") {
+          goalsAgainst += count;
+        }
+      });
+
+      const match = (store.matches || []).find(item =>
+        (timeline.matchId && item.id === timeline.matchId) ||
+        (item.date === timeline.date && item.opposition === timeline.opposition)
+      );
+      if (match) {
+        match.goalsFor = goalsFor;
+        match.goalsAgainst = goalsAgainst;
+        match.result = goalsFor > goalsAgainst ? "Win" : goalsFor < goalsAgainst ? "Loss" : "Draw";
+      }
+
+      let goalRow = (store.goals || []).find(row =>
+        (timeline.matchId && row.matchId === timeline.matchId) ||
+        (row.date === timeline.date && row.opposition === timeline.opposition)
+      );
+      if (!goalRow) {
+        goalRow = { matchId: timeline.matchId, date: timeline.date, opposition: timeline.opposition, goals: {} };
+        store.goals = store.goals || [];
+        store.goals.push(goalRow);
+      }
+      goalRow.goals = goals;
+
+      let assistRow = (store.assists || []).find(row =>
+        (timeline.matchId && row.matchId === timeline.matchId) ||
+        (row.date === timeline.date && row.opposition === timeline.opposition)
+      );
+      if (!assistRow) {
+        assistRow = { matchId: timeline.matchId, date: timeline.date, opposition: timeline.opposition, assists: {} };
+        store.assists = store.assists || [];
+        store.assists.push(assistRow);
+      }
+      assistRow.assists = assists;
     });
   }
 
@@ -258,6 +322,12 @@
     .then(response => response.ok ? response.json() : [])
     .then(rows => {
       store.timeline = Array.isArray(rows) ? rows : [];
+      reconcileMatchdayTimelineData();
+
+      // Refresh any already-rendered views now that authoritative Matchday stats
+      // have been rebuilt from the timeline.
+      if (typeof renderOverview === "function") renderOverview();
+      if (typeof renderGoals === "function" && document.getElementById("goals")?.classList.contains("active")) renderGoals();
       if (document.getElementById("results")?.classList.contains("active")) renderResults();
     })
     .catch(() => {

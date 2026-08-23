@@ -142,6 +142,12 @@
           "displayName": "Will",
           "status": "Absent",
           "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
         }
       ]
     },
@@ -285,6 +291,12 @@
           "displayName": "Will",
           "status": "Present",
           "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
         }
       ]
     },
@@ -426,6 +438,12 @@
         {
           "playerId": "will-b",
           "displayName": "Will",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
           "status": "Present",
           "source": "App"
         }
@@ -577,6 +595,12 @@
           "displayName": "Will",
           "status": "Present",
           "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
         }
       ]
     },
@@ -724,6 +748,12 @@
         {
           "playerId": "will-b",
           "displayName": "Will",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
           "status": "Present",
           "source": "App"
         }

@@ -178,15 +178,10 @@
       let information = [];
       let message = "";
 
-      if (detailedEvents.length) {
-        information = detailedEvents;
-      } else if (matchday && !timelineLoaded) {
-        message = "Loading verified Matchday timeline…";
-      } else if (matchday) {
-        message = "Verified Matchday timeline is unavailable. Refresh the page; if this remains, do not rely on this match until the data check is rerun.";
-      } else {
-        information = legacyInfoForMatch(match);
-      }
+      if (detailedEvents.length) information = detailedEvents;
+      else if (matchday && !timelineLoaded) message = "Loading verified Matchday timeline…";
+      else if (matchday) message = "Verified Matchday timeline is temporarily unavailable. The result and player minutes remain protected; refresh once and the timeline will retry automatically.";
+      else information = legacyInfoForMatch(match);
 
       return `
         <tr>
@@ -204,24 +199,42 @@
   };
 
   const style = document.createElement("style");
-  style.textContent = `
-    #visitCounter,#overview .card.executive{display:none!important}.match-info-heading{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px;margin-bottom:16px}.match-info-heading span,.timeline-muted{color:var(--muted)}.opponent-goal-icon{filter:hue-rotate(145deg) saturate(4.5) brightness(.9)}.timeline-score{margin-left:8px;font-weight:900;padding:2px 7px;border-radius:999px}.timeline-score.losing{color:#fecaca;background:rgba(220,38,38,.18)}.timeline-score.drawing{color:#fdba74;background:rgba(249,115,22,.16)}.timeline-score.winning{color:#86efac;background:rgba(34,197,94,.16)}.match-info-box h3{margin:0 0 10px}.match-timeline{margin:0;padding-left:24px}.match-timeline li{padding:7px 0;line-height:1.45;border-bottom:1px solid var(--line)}.match-timeline li:last-child{border-bottom:0}
-  `;
+  style.textContent = `#visitCounter,#overview .card.executive{display:none!important}.match-info-heading{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px;margin-bottom:16px}.match-info-heading span,.timeline-muted{color:var(--muted)}.opponent-goal-icon{filter:hue-rotate(145deg) saturate(4.5) brightness(.9)}.timeline-score{margin-left:8px;font-weight:900;padding:2px 7px;border-radius:999px}.timeline-score.losing{color:#fecaca;background:rgba(220,38,38,.18)}.timeline-score.drawing{color:#fdba74;background:rgba(249,115,22,.16)}.timeline-score.winning{color:#86efac;background:rgba(34,197,94,.16)}.match-info-box h3{margin:0 0 10px}.match-timeline{margin:0;padding-left:24px}.match-timeline li{padding:7px 0;line-height:1.45;border-bottom:1px solid var(--line)}.match-timeline li:last-child{border-bottom:0}`;
   document.head.appendChild(style);
 
-  fetch("data/timeline.json", { cache: "no-store" })
-    .then(response => response.ok ? response.json() : Promise.reject(new Error("timeline fetch failed")))
+  async function loadVerifiedTimeline() {
+    const urls = [
+      "data/timeline.json",
+      `data/timeline.json?retry=${Date.now()}`,
+      `https://raw.githubusercontent.com/dansmith75/welling-dashboard/main/data/timeline.json?retry=${Date.now()}`
+    ];
+    let lastError = null;
+    for (const url of urls) {
+      try {
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) throw new Error(`timeline HTTP ${response.status}`);
+        const rows = await response.json();
+        if (!Array.isArray(rows)) throw new Error("timeline payload is not an array");
+        return rows;
+      } catch (error) {
+        lastError = error;
+      }
+    }
+    throw lastError || new Error("timeline fetch failed");
+  }
+
+  loadVerifiedTimeline()
     .then(rows => {
-      store.timeline = Array.isArray(rows) ? rows : [];
+      store.timeline = rows;
       timelineLoaded = true;
       reconcileMatchdayTimelineData();
       if (typeof renderOverview === "function") renderOverview();
       if (typeof renderGoals === "function" && document.getElementById("goals")?.classList.contains("active")) renderGoals();
       if (document.getElementById("results")?.classList.contains("active")) renderResults();
     })
-    .catch(() => {
+    .catch(error => {
+      console.error("Verified Matchday timeline failed to load after retries", error);
       timelineLoaded = true;
-      store.timeline = [];
       if (document.getElementById("results")?.classList.contains("active")) renderResults();
     });
 })();

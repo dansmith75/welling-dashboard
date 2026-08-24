@@ -34,126 +34,39 @@
     </nav>
 
     <section id="overview" class="page active">
-      <div class="overview-block">
-        <h2>Form Guide</h2>
-        <div class="card">
-          <p class="executive">Last 5 fixtures · friendlies included</p>
-          <div class="form-guide" id="formGuide"></div>
-        </div>
-      </div>
-
-      <div class="overview-block">
-        <h2>Competitive Summary</h2>
-        <div class="summary" id="competitiveSummary"></div>
-      </div>
-
-      <div class="overview-block">
-        <h2>Friendly Summary</h2>
-        <div class="summary" id="friendlySummary"></div>
-      </div>
-
-      <div class="overview-block">
-        <h2>Training Summary</h2>
-        <div class="summary" id="trainingSummary"></div>
-      </div>
-
-      <div style="display:flex;justify-content:flex-end;margin-top:24px;">
-        <button class="theme-toggle" id="themeToggle">Light Mode</button>
-      </div>
-
+      <div class="overview-block"><h2>Form Guide</h2><div class="card"><p class="executive">Last 5 fixtures · friendlies included</p><div class="form-guide" id="formGuide"></div></div></div>
+      <div class="overview-block"><h2>Competitive Summary</h2><div class="summary" id="competitiveSummary"></div></div>
+      <div class="overview-block"><h2>Friendly Summary</h2><div class="summary" id="friendlySummary"></div></div>
+      <div class="overview-block"><h2>Training Summary</h2><div class="summary" id="trainingSummary"></div></div>
+      <div style="display:flex;justify-content:flex-end;margin-top:24px;"><button class="theme-toggle" id="themeToggle">Light Mode</button></div>
       <p id="executiveSummary" hidden></p>
     </section>
 
     <section id="results" class="page">
       <div class="drill-label" id="resultsDrillLabel"></div>
-      <div class="card">
-        <h2 id="resultsTitle">Fixtures</h2>
-        <div class="results-table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Date</th><th>Opposition</th><th>Home/Away</th><th>Competition</th><th>GF</th><th>GA</th><th>Result</th><th>Info</th>
-              </tr>
-            </thead>
-            <tbody id="resultsTable"></tbody>
-          </table>
-        </div>
-      </div>
+      <div class="card"><h2 id="resultsTitle">Fixtures</h2><div class="results-table-wrap"><table><thead><tr><th>Date</th><th>Opposition</th><th>Home/Away</th><th>Competition</th><th>GF</th><th>GA</th><th>Result</th><th>Info</th></tr></thead><tbody id="resultsTable"></tbody></table></div></div>
     </section>
 
-    <section id="league" class="page">
-      <div class="card">
-        <h2>Table</h2>
-        <div class="results-table-wrap league-table-wrap">
-          <table>
-            <thead>
-              <tr><th>Pos</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
-            </thead>
-            <tbody id="leagueTableBody"></tbody>
-          </table>
-        </div>
-        <p class="executive" id="leagueTableEmpty">League table data is not available yet.</p>
-      </div>
-    </section>
+    <section id="league" class="page"><div class="card"><h2>Table</h2><div class="results-table-wrap league-table-wrap"><table><thead><tr><th>Pos</th><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr></thead><tbody id="leagueTableBody"></tbody></table></div><p class="executive" id="leagueTableEmpty">League table data is not available yet.</p></div></section>
 
     <section id="goals" class="page">
       <div class="drill-label" id="goalsDrillLabel"></div>
-      <div class="card goals-toggle-card">
-        <div class="goals-toggle" id="goalsToggle">
-          <button type="button" class="goals-mode active" data-goals-mode="goals">Goals</button>
-          <button type="button" class="goals-mode" data-goals-mode="assists">Assists</button>
-        </div>
-      </div>
-      <div class="card filters">
-        <h3>Competition</h3>
-        <label><input type="radio" name="goalComp" value="All" checked> All</label>
-        <label><input type="radio" name="goalComp" value="League"> League</label>
-        <label><input type="radio" name="goalComp" value="Cup"> Cup</label>
-        <label><input type="radio" name="goalComp" value="Friendly"> Friendly</label>
-        <h3>Home / Away</h3>
-        <label><input type="radio" name="goalHA" value="Both" checked> Both</label>
-        <label><input type="radio" name="goalHA" value="Home"> Home</label>
-        <label><input type="radio" name="goalHA" value="Away"> Away</label>
-      </div>
+      <div class="card goals-toggle-card"><div class="goals-toggle" id="goalsToggle"><button type="button" class="goals-mode active" data-goals-mode="goals">Goals</button><button type="button" class="goals-mode" data-goals-mode="assists">Assists</button></div></div>
+      <div class="card filters"><h3>Competition</h3><label><input type="radio" name="goalComp" value="All" checked> All</label><label><input type="radio" name="goalComp" value="League"> League</label><label><input type="radio" name="goalComp" value="Cup"> Cup</label><label><input type="radio" name="goalComp" value="Friendly"> Friendly</label><h3>Home / Away</h3><label><input type="radio" name="goalHA" value="Both" checked> Both</label><label><input type="radio" name="goalHA" value="Home"> Home</label><label><input type="radio" name="goalHA" value="Away"> Away</label></div>
       <div class="chart-container" id="goalsChartContainer"><h2 class="chart-title">Goals by Player</h2><div class="chart-scroll"><div class="chart-box"><canvas id="goalsByPlayerChart"></canvas></div></div></div>
       <div class="chart-container" id="assistsChartContainer"><h2 class="chart-title">Assists by Player</h2><div class="chart-scroll"><div class="chart-box"><canvas id="assistsByPlayerChart"></canvas></div></div></div>
     </section>
 
     <section id="attendance" class="page">
       <div class="drill-label" id="attendanceDrillLabel"></div>
-      <div class="card attendance-toggle-card">
-        <div class="attendance-toggle" id="attendanceToggle">
-          <button type="button" class="attendance-mode active" data-attendance-mode="match">Match</button>
-          <button type="button" class="attendance-mode" data-attendance-mode="training">Training</button>
-        </div>
-      </div>
+      <div class="card attendance-toggle-card"><div class="attendance-toggle" id="attendanceToggle"><button type="button" class="attendance-mode active" data-attendance-mode="match">Match</button><button type="button" class="attendance-mode" data-attendance-mode="training">Training</button></div></div>
       <div class="chart-container" id="matchAttendanceContainer"><h2 class="chart-title">Match Attendance</h2><div class="chart-scroll"><div class="chart-box"><canvas id="matchAttendanceChart"></canvas></div></div></div>
       <div class="chart-container" id="trainingAttendanceContainer"><h2 class="chart-title">Training Attendance</h2><div class="chart-scroll"><div class="chart-box"><canvas id="trainingAttendanceChart"></canvas></div></div></div>
     </section>
 
-    <section id="players" class="page">
-      <div class="card"><h2>Select a Player</h2><div class="player-grid" id="playerGrid"></div></div>
-      <div id="playerProfile"></div>
-    </section>
-
-    <section id="links" class="page">
-      <div class="card">
-        <h2>Useful Links</h2>
-        <div id="usefulLinks"></div>
-        <p class="executive" id="linksEmpty">Add links to the Web Links sheet in Excel, then run the updater.</p>
-      </div>
-    </section>
-
-    <section id="gallery" class="page">
-      <div class="gallery-stage">
-        <div class="gallery-main">
-          <button class="gallery-nav" id="galleryPrev">‹</button>
-          <div class="gallery-image-wrap" id="galleryImageWrap"><img id="galleryMainImage" src="" alt="Gallery image"></div>
-          <button class="gallery-nav" id="galleryNext">›</button>
-        </div>
-        <div class="thumbnail-strip" id="thumbnailStrip"></div>
-      </div>
-    </section>
+    <section id="players" class="page"><div class="card"><h2>Select a Player</h2><div class="player-grid" id="playerGrid"></div></div><div id="playerProfile"></div></section>
+    <section id="links" class="page"><div class="card"><h2>Useful Links</h2><div id="usefulLinks"></div><p class="executive" id="linksEmpty">Add links to the Web Links sheet in Excel, then run the updater.</p></div></section>
+    <section id="gallery" class="page"><div class="gallery-stage"><div class="gallery-main"><button class="gallery-nav" id="galleryPrev">‹</button><div class="gallery-image-wrap" id="galleryImageWrap"><img id="galleryMainImage" src="" alt="Gallery image"></div><button class="gallery-nav" id="galleryNext">›</button></div><div class="thumbnail-strip" id="thumbnailStrip"></div></div></section>
   </main>
 
   <div class="fullscreen" id="fullscreen"><button class="fullscreen-close" id="fullscreenClose">Close</button><img id="fullscreenImage" src="" alt="Fullscreen gallery image"></div>
@@ -170,5 +83,6 @@
   <script src="dashboard-season-ui.js"></script>
   <script src="goals-toggle.js"></script>
   <script src="next-match-card.js"></script>
+  <script src="matchday-attendance-runtime.js"></script>
 </body>
 </html>

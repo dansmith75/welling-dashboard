@@ -2,9 +2,12 @@
 """Authoritative completed-Matchday reconciliation into the Excel workbook.
 
 For completed fixtures, Supabase Matchday is the source of truth. MatchdayRecords
-is rebuilt from the latest completed sessions and the Goals/Assists/Events/
-Fixtures summary rows for those fixtures are overwritten from the Matchday
-payload rather than incremented. This makes later corrections idempotent.
+is rebuilt from the latest completed sessions and the Fixtures / Goals / Assists /
+Events summary rows for those fixtures are overwritten from the Matchday payload
+rather than incremented. This makes later corrections idempotent.
+
+Goals/Assists Total columns are retained as Excel audit totals, but are derived
+from the player columns and are never treated as a source of truth.
 """
 from __future__ import annotations
 
@@ -15,6 +18,17 @@ import sync_supabase_to_excel as core
 
 def normal(value: Any) -> str:
     return "".join(ch for ch in str(value or "").strip().lower() if ch.isalnum())
+
+
+def canonical_id(value: Any) -> str:
+    pid = str(value or "").strip()
+    return "kieran-d" if pid == "keiran-d" else pid
+
+
+def canonical_name(pid: Any, value: Any) -> str:
+    if canonical_id(pid) == "kieran-d":
+        return "Kieran"
+    return str(value or canonical_id(pid) or "").strip()
 
 
 def latest_completed_sessions() -> list[dict[str, Any]]:
@@ -72,16 +86,61 @@ def find_header_column(sheet, *names: str) -> int | None:
     return None
 
 
+def squad_display_names(book) -> set[str]:
+    names: set[str] = set()
+    if "Squad" not in [s.name for s in book.sheets]:
+        return names
+    try:
+        table = book.sheets["Squad"].tables["Squad"]
+    except Exception:
+        return names
+    for row in core.table_dict_rows(table):
+        pid = canonical_id(row.get("ID"))
+        name = canonical_name(pid, row.get("Display Name") or row.get("Name"))
+        if name:
+            names.add(name)
+    return names
+
+
+def set_total_formula(book, sheet, row: int) -> None:
+    """Refresh a Total column, if present, from player columns only."""
+    total_col = find_header_column(sheet, "Total")
+    if not total_col:
+        return
+
+    player_names = squad_display_names(book)
+    headers = sheet.range((1, 1), (1, sheet.used_range.last_cell.column)).value
+    if not isinstance(headers, list):
+        headers = [headers]
+
+    player_cols = [idx for idx, header in enumerate(headers, start=1) if str(header or "").strip() in player_names]
+    if not player_cols:
+        sheet.range((row, total_col)).value = 0
+        return
+
+    refs = [sheet.range((row, col)).address for col in player_cols]
+    sheet.range((row, total_col)).formula = f"=SUM({','.join(refs)})"
+
+
+def names_for_payload(payload: dict[str, Any]) -> dict[str, str]:
+    names: dict[str, str] = {}
+    for player in payload.get("squad") or []:
+        pid = canonical_id(player.get("playerId"))
+        if pid:
+            names[pid] = canonical_name(pid, player.get("displayName"))
+    for stat in payload.get("playerStats") or []:
+        pid = canonical_id(stat.get("playerId"))
+        if pid:
+            names[pid] = canonical_name(pid, stat.get("displayName"))
+    return names
+
+
 def overwrite_wide_stats(book, session: dict[str, Any]) -> list[str]:
     payload = session.get("payload") or {}
     fixture = payload.get("fixture") or {}
     match_date = fixture.get("date") or session.get("match_date") or ""
     opposition = fixture.get("opposition") or session.get("opposition") or ""
-    names = core.player_lookup(payload)
-    for stat in payload.get("playerStats") or []:
-        pid = str(stat.get("playerId") or "")
-        if pid and stat.get("displayName"):
-            names[pid] = str(stat.get("displayName"))
+    names = names_for_payload(payload)
 
     goal_counts: dict[str, int] = {}
     assist_counts: dict[str, int] = {}
@@ -91,21 +150,21 @@ def overwrite_wide_stats(book, session: dict[str, Any]) -> list[str]:
 
     for event in payload.get("events") or []:
         etype = str(event.get("type") or "")
-        pid = str(event.get("playerId") or "")
+        pid = canonical_id(event.get("playerId"))
         if etype in ("Goal", "Own Goal"):
             goals_for += 1
         elif etype == "Opponent Goal":
             goals_against += 1
 
         if etype == "Goal" and pid:
-            display = names.get(pid, pid)
+            display = names.get(pid, canonical_name(pid, pid))
             goal_counts[display] = goal_counts.get(display, 0) + 1
-            assist_id = str(event.get("assistPlayerId") or "")
+            assist_id = canonical_id(event.get("assistPlayerId"))
             if assist_id:
-                assist_name = names.get(assist_id, assist_id)
+                assist_name = names.get(assist_id, canonical_name(assist_id, assist_id))
                 assist_counts[assist_name] = assist_counts.get(assist_name, 0) + 1
         elif etype in ("Card", "Note") and pid:
-            display = names.get(pid, pid)
+            display = names.get(pid, canonical_name(pid, pid))
             minute = event.get("minute")
             prefix = f"{minute}' " if minute not in (None, "") else ""
             detail = event.get("cardType") if etype == "Card" else event.get("text")
@@ -128,7 +187,8 @@ def overwrite_wide_stats(book, session: dict[str, Any]) -> list[str]:
         if not isinstance(headers, list):
             headers = [headers]
         for col, header in enumerate(headers, start=1):
-            if normal(header) in {"date", "opposition", "count"}:
+            # Metadata and audit totals are preserved/recalculated rather than blanked.
+            if normal(header) in {"date", "opposition", "count", "total"}:
                 continue
             if str(header or "").strip():
                 sheet.range((row, col)).clear_contents()
@@ -140,6 +200,9 @@ def overwrite_wide_stats(book, session: dict[str, Any]) -> list[str]:
             else:
                 warnings.append(f"Could not place {sheet_name[:-1].lower()}: {display} v {opposition}")
 
+        if sheet_name in ("Goals", "Assists"):
+            set_total_formula(book, sheet, row)
+
     if "Fixtures" in [s.name for s in book.sheets]:
         sheet = book.sheets["Fixtures"]
         row = core.excel_row_for_match(sheet, match_date, opposition)
@@ -149,12 +212,18 @@ def overwrite_wide_stats(book, session: dict[str, Any]) -> list[str]:
             result_col = find_header_column(sheet, "Result")
             if gf_col:
                 sheet.range((row, gf_col)).value = goals_for
+            else:
+                warnings.append("Fixtures sheet has no Goals For / GF column")
             if ga_col:
                 sheet.range((row, ga_col)).value = goals_against
+            else:
+                warnings.append("Fixtures sheet has no Goals Against / GA column")
             if result_col:
                 sheet.range((row, result_col)).value = "W" if goals_for > goals_against else "L" if goals_for < goals_against else "D"
         else:
             warnings.append(f"No Fixtures row for {match_date} v {opposition}")
+    else:
+        warnings.append("Missing sheet: Fixtures")
 
     return warnings
 

@@ -1,3 +1,4 @@
-
 Welling United Red OBDSFL 26-27.xlsx
 .welling-cache/
+__pycache__/
+*.pyc

@@ -18,6 +18,7 @@ from pathlib import Path
 
 import sync_supabase_to_excel as core
 import attendance_excel_reconcile
+import refresh_squad_selection
 from matchday_authoritative_excel import import_matchday_authoritative
 
 # Use the resilient wide-attendance rebuild. This keeps scheduled training rows,
@@ -83,6 +84,10 @@ def main() -> None:
         # Rebuild Match Attendance again after authoritative Matchday reconciliation
         # so a completed match appears in Excel on the same updater run.
         attendance_views["matchRows"] = core.refresh_match_attendance_sheet(book)
+
+        # Squad Selection depends on the latest fixtures, training attendance and
+        # Matchday minutes, so refresh it last after all authoritative data is in place.
+        refresh_squad_selection.build(book)
 
         # Save through Excel whether the book was already open or opened here.
         book.save()

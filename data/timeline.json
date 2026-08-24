@@ -164,8 +164,8 @@
       {
         "type": "Substitution",
         "minute": 28,
-        "playerId": "keiran-d",
-        "player": "Keiran",
+        "playerId": "kieran-d",
+        "player": "Kieran",
         "relatedPlayerId": "frank-a",
         "relatedPlayer": "Frank",
         "detail": "OFF → ON",
@@ -342,8 +342,8 @@
         "minute": 74,
         "playerId": "george-w",
         "player": "George W",
-        "relatedPlayerId": "keiran-d",
-        "relatedPlayer": "Keiran",
+        "relatedPlayerId": "kieran-d",
+        "relatedPlayer": "Kieran",
         "detail": "OFF → ON",
         "value": null,
         "source": "Matchday App"

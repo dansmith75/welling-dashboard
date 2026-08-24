@@ -1,6 +1,5 @@
 // Player minutes reporting and player-summary layout for the Welling dashboard.
-// Minutes are exported from Excel MatchdayRecords, which is populated from
-// completed Matchday submissions in Supabase.
+// Completed Matchday data is authoritative for appearances and match attendance.
 (() => {
   const MINUTES_URL = "data/minutes.json";
 
@@ -9,19 +8,129 @@
     return Number.isFinite(parsed) ? parsed : 0;
   }
 
-  function recordsForPlayer(player) {
-    return (store.minutes || []).filter(record =>
-      String(record.displayName || "").trim() === String(player || "").trim()
+  function canonicalId(value) {
+    const id = String(value || "").trim();
+    if (id === "keiran-d") return "kieran-d";
+    return id;
+  }
+
+  function playerIdentity(player) {
+    const name = String(player || "").trim();
+    const squadPlayer = (store.players || []).find(item =>
+      String(item?.displayName || "").trim() === name || canonicalId(item?.id) === canonicalId(name)
     );
+    return {
+      name,
+      id: canonicalId(squadPlayer?.id || name)
+    };
+  }
+
+  function recordMatchesPlayer(record, player) {
+    const identity = playerIdentity(player);
+    return canonicalId(record?.playerId) === identity.id ||
+      String(record?.displayName || "").trim() === identity.name;
+  }
+
+  function recordsForPlayer(player) {
+    return (store.minutes || []).filter(record => recordMatchesPlayer(record, player));
+  }
+
+  function mergeMatchdayAttendance(rows) {
+    store.attendance = store.attendance || { sessions: [] };
+    store.attendance.sessions = Array.isArray(store.attendance.sessions) ? store.attendance.sessions : [];
+
+    const groups = new Map();
+    (rows || [])
+      .filter(record => number(record.minutes) > 0 && record.date)
+      .forEach(record => {
+        const key = String(record.matchId || record.date);
+        if (!groups.has(key)) {
+          groups.set(key, {
+            matchId: record.matchId || key,
+            date: record.date,
+            opposition: record.opposition || "",
+            competition: record.competition || "",
+            players: []
+          });
+        }
+        groups.get(key).players.push(record);
+      });
+
+    groups.forEach(group => {
+      let session = store.attendance.sessions.find(item =>
+        String(item?.type || "").toLowerCase() === "match" &&
+        String(item?.date || "") === String(group.date)
+      );
+
+      if (!session) {
+        session = {
+          sessionKey: `matchday-${group.matchId}`,
+          sessionId: `matchday-${group.matchId}`,
+          date: group.date,
+          type: "Match",
+          venue: (store.matches || []).find(match => match.id === group.matchId)?.homeAway || null,
+          submittedBy: "Matchday App",
+          submittedAt: null,
+          records: []
+        };
+        store.attendance.sessions.push(session);
+      }
+
+      session.records = Array.isArray(session.records) ? session.records : [];
+
+      group.players.forEach(record => {
+        const pid = canonicalId(record.playerId);
+        const displayName = pid === "kieran-d" ? "Kieran" : (record.displayName || pid);
+        let attendanceRecord = session.records.find(item => canonicalId(item?.playerId) === pid);
+
+        if (!attendanceRecord) {
+          attendanceRecord = {
+            playerId: pid,
+            displayName,
+            status: "Present",
+            source: "Matchday App"
+          };
+          session.records.push(attendanceRecord);
+        } else {
+          // A completed Matchday appearance overrides an older absent/blank attendance value.
+          attendanceRecord.playerId = pid;
+          attendanceRecord.displayName = displayName;
+          attendanceRecord.status = "Present";
+          attendanceRecord.source = attendanceRecord.source || "Matchday App";
+        }
+      });
+    });
+
+    // Rebuild the legacy rows consumed by the Attendance charts/profile counters.
+    if (typeof legacyAttendanceRows === "function") {
+      store.matchAttendance = legacyAttendanceRows("Match");
+    }
+  }
+
+  function appearanceRecords(player) {
+    const seen = new Set();
+    const appearances = [];
+
+    if (typeof attendanceRecordsForPlayer === "function") {
+      attendanceRecordsForPlayer(player, "Match")
+        .filter(record => typeof isAttendancePresent === "function" ? isAttendancePresent(record.status) : /^(present|late)$/i.test(String(record.status || "")))
+        .forEach(record => {
+          const key = `${record.date || ""}|${record.sessionId || record.sessionKey || ""}`;
+          if (seen.has(key)) return;
+          seen.add(key);
+          appearances.push(record);
+        });
+    }
+
+    return appearances.sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
   }
 
   function minutesSummary(player) {
-    const records = recordsForPlayer(player);
-    const appearances = records.filter(record => number(record.minutes) > 0);
-    const totalMinutes = appearances.reduce((sum, record) => sum + number(record.minutes), 0);
+    const records = recordsForPlayer(player).filter(record => number(record.minutes) > 0);
+    const totalMinutes = records.reduce((sum, record) => sum + number(record.minutes), 0);
     return {
       totalMinutes: Math.round(totalMinutes),
-      appearances: appearances.length,
+      appearances: appearanceRecords(player).length,
     };
   }
 
@@ -46,8 +155,6 @@
     return parts.length ? ` — ${parts.join(" · ")}` : "";
   }
 
-  // Keep the player summary as a tidy 4 x 2 grid on desktop. All cards use
-  // identical dimensions, regardless of label length.
   const style = document.createElement("style");
   style.textContent = `
     #playerProfile .summary.player-summary-grid {
@@ -133,22 +240,32 @@
     const box = document.getElementById("playerDetailBox");
     if (!box) return;
 
-    const records = recordsForPlayer(player)
-      .filter(record => number(record.minutes) > 0)
-      .sort((a, b) => String(a.date || "").localeCompare(String(b.date || "")));
-
+    const minuteRows = recordsForPlayer(player)
+      .filter(record => number(record.minutes) > 0);
+    const minuteByDate = new Map(minuteRows.map(record => [String(record.date || ""), record]));
+    const appearances = appearanceRecords(player);
     const stats = minutesSummary(player);
-    const items = records.map(record => {
-      const role = record.starter ? "Started" : "Sub appearance";
-      const competition = record.competition ? ` · ${record.competition}` : "";
-      return `<li><strong>${formatDateUK(record.date)}</strong> vs ${record.opposition || ""}${competition} — <strong>${Math.round(number(record.minutes))} min</strong> · ${role}</li>`;
+
+    const items = appearances.map(appearance => {
+      const record = minuteByDate.get(String(appearance.date || ""));
+      const match = (store.matches || []).find(item => String(item.date || "") === String(appearance.date || ""));
+      const opposition = record?.opposition || match?.opposition || "";
+      const competition = record?.competition || match?.competition || "";
+      const context = competition ? ` · ${competition}` : "";
+
+      if (record) {
+        const role = record.starter ? "Started" : "Sub appearance";
+        return `<li><strong>${formatDateUK(appearance.date)}</strong> vs ${opposition}${context} — <strong>${Math.round(number(record.minutes))} min</strong> · ${role}</li>`;
+      }
+
+      return `<li><strong>${formatDateUK(appearance.date)}</strong> vs ${opposition}${context} — Appearance recorded · minutes not recorded</li>`;
     });
 
     box.innerHTML = `
       <div class="player-detail-box">
-        <h2>${player} — Recorded Minutes</h2>
-        <p><strong>${stats.totalMinutes}</strong> recorded minutes across <strong>${stats.appearances}</strong> recorded appearances.</p>
-        ${items.length ? `<ul>${items.join("")}</ul>` : `<p>No playing minutes recorded for ${player} yet.</p>`}
+        <h2>${player} — Recorded Appearances & Minutes</h2>
+        <p><strong>${stats.appearances}</strong> recorded appearances · <strong>${stats.totalMinutes}</strong> recorded minutes.</p>
+        ${items.length ? `<ul>${items.join("")}</ul>` : `<p>No appearances recorded for ${player} yet.</p>`}
       </div>
     `;
   };
@@ -157,6 +274,15 @@
     .then(response => response.ok ? response.json() : [])
     .then(rows => {
       store.minutes = Array.isArray(rows) ? rows : [];
+      mergeMatchdayAttendance(store.minutes);
+
+      // Refresh whichever attendance/player view is currently visible now that
+      // Matchday appearances have been merged into the attendance model.
+      const attendancePage = document.getElementById("attendance");
+      if (attendancePage?.classList.contains("active") && typeof renderAttendance === "function") {
+        renderAttendance();
+      }
+
       const playersPage = document.getElementById("players");
       if (playersPage?.classList.contains("active") && selectedPlayer) {
         renderPlayerProfile(selectedPlayer);

@@ -17,7 +17,14 @@ import sys
 from pathlib import Path
 
 import sync_supabase_to_excel as core
+import attendance_excel_reconcile
 from matchday_authoritative_excel import import_matchday_authoritative
+
+# Use the resilient wide-attendance rebuild. This keeps scheduled training rows,
+# uses the Squad Active flag consistently, canonicalises Kieran's ID, merges
+# completed Matchday appearances into Match Attendance, and prevents COUNT/Count
+# from being replaced by stale #REF! calculated-column formulas.
+attendance_excel_reconcile.install(core)
 
 
 def same_path(a: str | Path, b: str | Path) -> bool:
@@ -72,6 +79,10 @@ def main() -> None:
         attendance_rows = core.import_attendance(book)
         attendance_views = core.refresh_wide_attendance_sheets(book)
         matchday_sessions, matchday_rows_added, warnings = import_matchday_authoritative(book)
+
+        # Rebuild Match Attendance again after authoritative Matchday reconciliation
+        # so a completed match appears in Excel on the same updater run.
+        attendance_views["matchRows"] = core.refresh_match_attendance_sheet(book)
 
         # Save through Excel whether the book was already open or opened here.
         book.save()

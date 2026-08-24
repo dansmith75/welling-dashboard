@@ -34,26 +34,21 @@ def find_workbook() -> Path:
     env_path = os.environ.get("WELLING_WORKBOOK_PATH")
     if env_path:
         candidates.append(Path(env_path).expanduser())
-
     one_drive = os.environ.get("OneDrive") or os.environ.get("OneDriveConsumer")
     if one_drive:
         candidates.append(Path(one_drive) / "Documents" / "Dan" / "Football" / WORKBOOK_NAME)
-
     candidates.extend([
         Path.home() / "OneDrive" / "Documents" / "Dan" / "Football" / WORKBOOK_NAME,
         Path.home() / "OneDrive - Personal" / "Documents" / "Dan" / "Football" / WORKBOOK_NAME,
         Path.home() / "Library" / "CloudStorage" / "OneDrive-Personal" / "Documents" / "Dan" / "Football" / WORKBOOK_NAME,
         Path.home() / "Documents" / "Dan" / "Football" / WORKBOOK_NAME,
     ])
-
     cloud_storage = Path.home() / "Library" / "CloudStorage"
     if cloud_storage.exists():
         candidates.extend(cloud_storage.glob(f"OneDrive*/Documents/Dan/Football/{WORKBOOK_NAME}"))
-
     for path in candidates:
         if path.exists():
             return path
-
     print("\nI couldn't find the master workbook automatically.")
     entered = input("Paste the full path to the .xlsx workbook: ").strip().strip('"')
     path = Path(entered).expanduser()
@@ -67,11 +62,7 @@ def read_json(path: Path):
 
 
 def snapshot():
-    result = {}
-    for name in EXPECTED:
-        path = DATA / name
-        result[name] = read_json(path) if path.exists() else None
-    return result
+    return {name: read_json(DATA / name) if (DATA / name).exists() else None for name in EXPECTED}
 
 
 def player_summary(old, new):
@@ -118,7 +109,7 @@ def match_summary(old, new):
 
 def sync_supabase(workbook: Path) -> dict:
     ensure_python_package("xlwings")
-    print("2/8 Pulling Attendance / Matchday submissions from Supabase into Excel...")
+    print("2/10 Pulling Attendance / Matchday submissions from Supabase into Excel...")
     result = run([sys.executable, str(ROOT / "sync_supabase_via_excel.py"), str(workbook)], capture=True)
     if result.stdout:
         for line in result.stdout.splitlines():
@@ -132,17 +123,11 @@ def sync_supabase(workbook: Path) -> dict:
 
 
 def create_export_snapshot(workbook: Path) -> Path:
-    """Create a local standalone XLSX through Excel, or use the last good copy."""
     CACHE.mkdir(parents=True, exist_ok=True)
     temp_snapshot = CACHE / "Welling-dashboard-export.new.xlsx"
     try:
         temp_snapshot.unlink(missing_ok=True)
-        result = run([
-            sys.executable,
-            str(ROOT / "create_workbook_snapshot.py"),
-            str(workbook),
-            str(temp_snapshot),
-        ], capture=True)
+        result = run([sys.executable, str(ROOT / "create_workbook_snapshot.py"), str(workbook), str(temp_snapshot)], capture=True)
         if result.stdout:
             for line in result.stdout.splitlines():
                 if not line.startswith("SNAPSHOT_CREATED="):
@@ -159,13 +144,10 @@ def create_export_snapshot(workbook: Path) -> Path:
             print(f"  ! Could not refresh the local workbook snapshot: {exc}")
             print(f"  ! Using last successful snapshot from {stamp} instead.")
             return EXPORT_SNAPSHOT
-        raise RuntimeError(
-            "Could not create an export snapshot and there is no previous snapshot to fall back to."
-        ) from exc
+        raise RuntimeError("Could not create an export snapshot and there is no previous snapshot to fall back to.") from exc
 
 
 def tracked_non_data_changes() -> list[str]:
-    """Return tracked local changes outside generated data/*.json output."""
     output = run(["git", "status", "--porcelain", "--untracked-files=no"], capture=True).stdout
     changes = []
     for line in output.splitlines():
@@ -182,18 +164,15 @@ def main():
     print("\n============================================")
     print(" Welling Dashboard - Update")
     print("============================================\n")
-
-    print("1/8 Syncing latest website code from GitHub...")
+    print("1/10 Syncing latest website code from GitHub...")
     run(["git", "pull", "--ff-only"])
-
     status = tracked_non_data_changes()
     if status:
         raise RuntimeError("Tracked local repo changes exist outside generated data files. Commit/revert them before publishing football data.")
 
     workbook = find_workbook()
     print(f"\nMaster workbook: {workbook}")
-    print("The workbook may stay open in Excel. The updater reuses the open workbook when possible, reconciles central submissions, then exports from a local snapshot.\n")
-
+    print("The workbook may stay open in Excel. The updater reconciles central submissions, exports a snapshot, reapplies completed Matchday authority, then validates before publish.\n")
     before = snapshot()
 
     sync_ok = True
@@ -206,7 +185,6 @@ def main():
             stamp = datetime.fromtimestamp(EXPORT_SNAPSHOT.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
             print("\n  ! Excel reconciliation could not update the master workbook on this run.")
             print(f"  ! Dashboard publishing can continue from the last snapshot ({stamp}).")
-            print("  ! Any new Supabase submissions will remain central and reconcile on a later successful run.")
         else:
             raise RuntimeError("Excel reconciliation failed and no previous export snapshot is available.") from exc
 
@@ -217,27 +195,26 @@ def main():
     print(f"  + Matchday audit rows rebuilt: {sync.get('matchdayRows', 0)}")
     for warning in sync.get("warnings", [])[:20]:
         print(f"  ! {warning}")
-    if len(sync.get("warnings", [])) > 20:
-        print(f"  ! ...and {len(sync['warnings']) - 20} more import warnings")
 
     print("\nPreparing local workbook snapshot for dashboard export...")
     export_workbook = create_export_snapshot(workbook) if sync_ok else EXPORT_SNAPSHOT
 
-    print("\n3/8 Exporting snapshot to JSON...")
-    try:
-        run([sys.executable, str(ROOT / "export_welling_json.py"), "--workbook", str(export_workbook)])
-    except subprocess.CalledProcessError as exc:
-        raise RuntimeError("Dashboard export failed while reading the local workbook snapshot.") from exc
+    print("\n3/10 Exporting snapshot to JSON...")
+    run([sys.executable, str(ROOT / "export_welling_json.py"), "--workbook", str(export_workbook)])
 
-    print("4/8 Applying authoritative completed Matchday data...")
-    try:
-        run([sys.executable, str(ROOT / "apply_matchday_authority.py")])
-    except subprocess.CalledProcessError as exc:
-        raise RuntimeError(
-            "Could not apply authoritative completed Matchday data. Publishing has been stopped so completed match stats cannot be overwritten by stale Excel data."
-        ) from exc
+    print("4/10 Applying authoritative completed Matchday data...")
+    run([sys.executable, str(ROOT / "apply_matchday_authority.py")])
 
-    print("5/8 Validating JSON...")
+    print("5/10 Merging completed Matchday appearances into attendance...")
+    run([sys.executable, str(ROOT / "merge_matchday_attendance.py")])
+
+    print("6/10 Validating published data against completed Matchday sessions...")
+    try:
+        run([sys.executable, str(ROOT / "validate_dashboard_data.py")])
+    except subprocess.CalledProcessError as exc:
+        raise RuntimeError("Dashboard validation failed. Publishing has been stopped; existing live data was not replaced.") from exc
+
+    print("7/10 Validating required JSON files...")
     after = snapshot()
     for name in EXPECTED:
         if after[name] is None:
@@ -247,66 +224,42 @@ def main():
     untracked_data = run(["git", "ls-files", "--others", "--exclude-standard", "--", "data"], capture=True).stdout.splitlines()
     changed = list(dict.fromkeys([*changed, *untracked_data]))
     if not changed:
-        print("\nNo published football-data changes found. Excel/snapshot is reconciled and there is nothing to push.\n")
+        print("\nNo published football-data changes found. Data passed validation and there is nothing to push.\n")
         return
 
     print("\n============================================")
     print(" UPDATE SUMMARY")
     print("============================================")
-
     lines = player_summary(before["players.json"], after["players.json"])
-    print("\nPlayers")
-    print("-------")
+    print("\nPlayers\n-------")
     print("\n".join(lines) if lines else "  No squad changes")
-
     lines = match_summary(before["matches.json"], after["matches.json"])
-    print("\nFixtures / Results")
-    print("------------------")
+    print("\nFixtures / Results\n------------------")
     print("\n".join(lines) if lines else "  No fixture/result changes")
-
-    print("\nOther data")
-    print("----------")
-    labels = {
-        "data/goals.json": "Goals",
-        "data/assists.json": "Assists",
-        "data/events.json": "Events",
-        "data/attendance.json": "Attendance",
-        "data/minutes.json": "Playing minutes",
-        "data/timeline.json": "Match timeline",
-    }
+    print("\nOther data\n----------")
+    labels = {"data/goals.json":"Goals","data/assists.json":"Assists","data/events.json":"Events","data/attendance.json":"Attendance","data/minutes.json":"Playing minutes","data/timeline.json":"Match timeline"}
     other = [f"  * {labels[p]} updated" for p in changed if p in labels]
     print("\n".join(other) if other else "  No other data changes")
-
     print("\nFiles to publish:")
     for path in changed:
         print(f"  - {path}")
 
-    answer = input("\nPublish these updates to GitHub? [Y/N]: ").strip().lower()
+    answer = input("\nPublish these VALIDATED updates to GitHub? [Y/N]: ").strip().lower()
     if answer != "y":
-        print("\nCancelled. Nothing was committed or pushed.")
-        print("Any successful Supabase reconciliation has still been safely saved into Excel.\n")
+        print("\nCancelled. Nothing was committed or pushed.\n")
         return
 
-    print("\n6/8 Staging changed JSON...")
+    print("\n8/10 Staging changed JSON...")
     run(["git", "add", "data"])
-
-    print("7/8 Committing...")
+    print("9/10 Committing...")
     stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
     run(["git", "commit", "-m", f"Update Welling data {stamp}"])
-
-    print("8/8 Pushing to GitHub...")
+    print("10/10 Pushing to GitHub...")
     run(["git", "push"])
-
     print("\n============================================")
-    print(" SUCCESS")
+    print(" SUCCESS — VALIDATED")
     print("============================================")
-    if sync_ok:
-        print("Central Attendance / Matchday submissions reconciled into Excel.")
-    else:
-        print("Published from the last successful workbook snapshot; central submissions remain safe for later reconciliation.")
-    print("Completed Matchday data was applied authoritatively after the Excel export.")
-    print("Dashboard data published, including result, goals, assists, playing minutes and match timeline.")
-    print("Attendance / Matchday will use the same shared squad and fixture feeds.")
+    print("Completed Matchday result, timeline, scorers, assists, minutes and match attendance were checked against Supabase before publish.")
     print("GitHub Pages normally updates shortly afterwards.\n")
 
 

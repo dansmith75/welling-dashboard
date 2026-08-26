@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#111111"/><circle cx="32" cy="32" r="23" fill="#fff" stroke="#d71920" stroke-width="3"/><path d="M16 20h7l5 23 4-16h5l4 16 5-23h7l-8 30h-7l-4-15-4 15h-7z" fill="#111111"/><path d="M20 14h24" stroke="#d71920" stroke-width="4" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="22" fill="#111111"/>
+  <circle cx="64" cy="64" r="53" fill="#ffffff"/>
+  <image href="images/Welling-Logo.jpg" x="13" y="13" width="102" height="102" preserveAspectRatio="xMidYMid meet"/>
+</svg>

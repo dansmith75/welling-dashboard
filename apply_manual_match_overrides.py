@@ -42,7 +42,12 @@ def upsert_stat(rows: list[dict[str, Any]], override: dict[str, Any], key: str) 
             "opposition": override["opposition"],
         }
         rows.append(row)
-    row[key] = override.get(key, {})
+    # Manual facts supplement the workbook. This is especially important for
+    # guest players, who have no permanent column on the wide Goals/Assists
+    # sheets, while retaining any squad-player statistics entered in Excel.
+    values = dict(row.get(key) or {})
+    values.update(override.get(key, {}))
+    row[key] = values
 
 
 def main() -> None:

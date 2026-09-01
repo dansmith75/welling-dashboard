@@ -71,9 +71,11 @@ def main() -> None:
         for key in ("goalsFor", "goalsAgainst", "result"):
             if match.get(key) != override.get(key):
                 errors.append(f"{label}: manual {key} override was not applied")
-        if (goal_by_id.get(mid) or {}).get("goals", {}) != override.get("goals", {}):
+        actual_goals = (goal_by_id.get(mid) or {}).get("goals", {})
+        actual_assists = (assist_by_id.get(mid) or {}).get("assists", {})
+        if any(actual_goals.get(pid) != value for pid, value in override.get("goals", {}).items()):
             errors.append(f"{label}: manual scorer override was not applied")
-        if (assist_by_id.get(mid) or {}).get("assists", {}) != override.get("assists", {}):
+        if any(actual_assists.get(pid) != value for pid, value in override.get("assists", {}).items()):
             errors.append(f"{label}: manual assist override was not applied")
         for guest_id in override.get("goals", {}):
             if str(guest_id).startswith("guest-") and canonical_id(guest_id) in player_by_id:

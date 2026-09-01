@@ -59,6 +59,7 @@ def main() -> None:
     matches = read_json("matches.json", [])
     goals = read_json("goals.json", [])
     assists = read_json("assists.json", [])
+    timeline = read_json("timeline.json", [])
     attendance = read_json("attendance.json", {"team": "Welling United Red OBDSFL", "season": "2026/27", "sessions": []})
 
     player_by_id = {str(player.get("id")): player for player in read_json("players.json", [])}
@@ -69,6 +70,17 @@ def main() -> None:
         match.update({key: override[key] for key in ("goalsFor", "goalsAgainst", "result")})
         upsert_stat(goals, override, "goals")
         upsert_stat(assists, override, "assists")
+        if override.get("timelineEvents"):
+            timeline_row = find_match_row(timeline, override)
+            if timeline_row is None:
+                timeline_row = {
+                    "matchId": override["matchId"],
+                    "date": override["date"],
+                    "opposition": override["opposition"],
+                    "competition": match.get("competition"),
+                }
+                timeline.append(timeline_row)
+            timeline_row["events"] = override["timelineEvents"]
 
         sessions = attendance.setdefault("sessions", [])
         session = next((item for item in sessions if str(item.get("type") or "").lower() == "match" and str(item.get("date") or "")[:10] == override["date"]), None)
@@ -104,6 +116,8 @@ def main() -> None:
     write_json("matches.json", matches)
     write_json("goals.json", goals)
     write_json("assists.json", assists)
+    timeline.sort(key=lambda item: (str(item.get("date") or ""), str(item.get("opposition") or "")))
+    write_json("timeline.json", timeline)
     write_json("attendance.json", attendance)
     print(f"  + Applied {len(overrides)} manual match override(s).")
 

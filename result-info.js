@@ -107,7 +107,7 @@
       const count = eventCount(event);
       let scoreText = "";
       let scoreState = "";
-      if (type === "goal" || type === "own goal") {
+      if ((type === "goal" || type === "own goal") && !event.suppressRunningScore) {
         goalsFor += count;
         scoreText = `${goalsFor}–${goalsAgainst}`;
       } else if (type === "opponent goal") {

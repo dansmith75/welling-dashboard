@@ -12,6 +12,41 @@
     "assists": {
       "imre-s": 1
     },
+    "timelineEvents": [
+      {
+        "type": "Goal",
+        "playerId": "bailey-s",
+        "player": "Bailey",
+        "relatedPlayerId": "imre-s",
+        "relatedPlayer": "Imre",
+        "detail": "Goal",
+        "value": 1,
+        "suppressRunningScore": true,
+        "source": "Manual match authority"
+      },
+      {
+        "type": "Goal",
+        "playerId": "guest-tommy",
+        "player": "Tommy",
+        "relatedPlayerId": "ryan-b",
+        "relatedPlayer": "Ryan",
+        "detail": "Goal",
+        "value": 1,
+        "suppressRunningScore": true,
+        "source": "Manual match authority"
+      },
+      {
+        "type": "Goal",
+        "playerId": "rocco-b",
+        "player": "Rocco",
+        "relatedPlayerId": "darren-r",
+        "relatedPlayer": "Darren",
+        "detail": "Goal",
+        "value": 1,
+        "suppressRunningScore": true,
+        "source": "Manual match authority"
+      }
+    ],
     "appearances": [
       {
         "playerId": "imre-s",

@@ -77,6 +77,10 @@ def main() -> None:
             errors.append(f"{label}: manual scorer override was not applied")
         if any(actual_assists.get(pid) != value for pid, value in override.get("assists", {}).items()):
             errors.append(f"{label}: manual assist override was not applied")
+        if override.get("timelineEvents"):
+            actual_timeline = (timeline_by_id.get(mid) or {}).get("events", [])
+            if actual_timeline != override["timelineEvents"]:
+                errors.append(f"{label}: manual scorer/assist pairings were not applied")
         for guest_id in override.get("goals", {}):
             if str(guest_id).startswith("guest-") and canonical_id(guest_id) in player_by_id:
                 errors.append(f"{label}: guest scorer {guest_id} must not be in players.json")

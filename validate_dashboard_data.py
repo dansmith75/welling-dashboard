@@ -28,12 +28,14 @@ def match_key(row: dict[str, Any]) -> tuple[str, str]:
 
 
 def main() -> None:
+    players = read_json("players.json", [])
     matches = read_json("matches.json", [])
     goals = read_json("goals.json", [])
     assists = read_json("assists.json", [])
     minutes = read_json("minutes.json", [])
     timeline = read_json("timeline.json", [])
     attendance = read_json("attendance.json", {"sessions": []})
+    manual_overrides = read_json("manual-match-overrides.json", [])
 
     match_by_id = {str(row.get("id") or ""): row for row in matches}
     goal_by_id = {str(row.get("matchId") or ""): row for row in goals}
@@ -57,6 +59,29 @@ def main() -> None:
     completed = list(latest.values())
 
     errors: list[str] = []
+
+    player_by_id = {canonical_id(player.get("id")): player for player in players}
+    for override in manual_overrides:
+        mid = str(override.get("matchId") or "")
+        match = match_by_id.get(mid)
+        label = f"{override.get('date')} v {override.get('opposition')}"
+        if not match:
+            errors.append(f"{label}: manual override fixture is missing")
+            continue
+        for key in ("goalsFor", "goalsAgainst", "result"):
+            if match.get(key) != override.get(key):
+                errors.append(f"{label}: manual {key} override was not applied")
+        if (goal_by_id.get(mid) or {}).get("goals", {}) != override.get("goals", {}):
+            errors.append(f"{label}: manual scorer override was not applied")
+        if (assist_by_id.get(mid) or {}).get("assists", {}) != override.get("assists", {}):
+            errors.append(f"{label}: manual assist override was not applied")
+        for guest_id in override.get("goals", {}):
+            if str(guest_id).startswith("guest-") and canonical_id(guest_id) in player_by_id:
+                errors.append(f"{label}: guest scorer {guest_id} must not be in players.json")
+        for appearance in override.get("appearances", []):
+            pid = canonical_id(appearance.get("playerId"))
+            if pid and player_by_id.get(pid, {}).get("active") is not False:
+                errors.append(f"{label}: inactive appearance {pid} was unexpectedly reactivated")
     for session in completed:
         payload = session.get("payload") or {}
         fixture = payload.get("fixture") or {}

@@ -228,7 +228,7 @@
       store.timeline = rows;
       timelineLoaded = true;
       reconcileMatchdayTimelineData();
-      if (typeof renderOverview === "function") renderOverview();
+      if (typeof renderOverview === "function" && Array.isArray(store.matches) && Array.isArray(store.trainingAttendance)) renderOverview();
       if (typeof renderGoals === "function" && document.getElementById("goals")?.classList.contains("active")) renderGoals();
       if (document.getElementById("results")?.classList.contains("active")) renderResults();
     })

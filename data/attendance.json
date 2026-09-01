@@ -871,6 +871,23 @@
           "source": "Matchday App"
         }
       ]
+    },
+    {
+      "sessionKey": "manual-2026-08-29-welling-saturday-reserves",
+      "sessionId": "manual-2026-08-29-welling-saturday-reserves",
+      "date": "2026-08-29",
+      "type": "Match",
+      "venue": "Home",
+      "submittedBy": "Manual match authority",
+      "submittedAt": null,
+      "records": [
+        {
+          "playerId": "imre-s",
+          "displayName": "Imre",
+          "status": "Present",
+          "source": "Manual match authority"
+        }
+      ]
     }
   ]
 }

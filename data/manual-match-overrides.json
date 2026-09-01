@@ -1,0 +1,22 @@
+[
+  {
+    "matchId": "2026-08-29-welling-saturday-reserves",
+    "date": "2026-08-29",
+    "opposition": "Welling Saturday Reserves",
+    "goalsFor": 3,
+    "goalsAgainst": 3,
+    "result": "D",
+    "goals": {
+      "guest-tommy": 1
+    },
+    "assists": {
+      "imre-s": 1
+    },
+    "appearances": [
+      {
+        "playerId": "imre-s",
+        "displayName": "Imre"
+      }
+    ]
+  }
+]

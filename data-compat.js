@@ -16,6 +16,9 @@ function wellingDisplayNameForId(playerId) {
   const canonicalId = wellingCanonicalPlayerId(playerId);
   const player = (store.players || []).find(item => item && wellingCanonicalPlayerId(item.id) === canonicalId);
   if (canonicalId === "kieran-d") return "Kieran";
+  if (canonicalId.startsWith("guest-")) {
+    return canonicalId.slice(6).replace(/(^|-)([a-z])/g, (_, separator, letter) => `${separator ? " " : ""}${letter.toUpperCase()}`);
+  }
   return player?.displayName || canonicalId;
 }
 

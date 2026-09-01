@@ -205,6 +205,9 @@ def main():
     print("4/10 Applying authoritative completed Matchday data...")
     run([sys.executable, str(ROOT / "apply_matchday_authority.py")])
 
+    print("Applying explicit manual match authority...")
+    run([sys.executable, str(ROOT / "apply_manual_match_overrides.py")])
+
     print("5/10 Merging completed Matchday appearances into attendance...")
     run([sys.executable, str(ROOT / "merge_matchday_attendance.py")])
 

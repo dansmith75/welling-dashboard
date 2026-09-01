@@ -44,7 +44,9 @@
     "matchId": "2026-08-29-welling-saturday-reserves",
     "date": "2026-08-29",
     "opposition": "Welling Saturday Reserves",
-    "goals": {}
+    "goals": {
+      "guest-tommy": 1
+    }
   },
   {
     "matchId": "2026-09-06-sydenham-lions",

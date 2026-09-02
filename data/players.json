@@ -1,9 +1,15 @@
 [
   {
-    "id": "ronnie-d",
-    "displayName": "Ronnie D",
+    "id": "alex-l",
+    "displayName": "Alex",
     "active": true,
-    "position": "GK"
+    "position": "CB"
+  },
+  {
+    "id": "alfie-f",
+    "displayName": "Alf",
+    "active": true,
+    "position": "ST"
   },
   {
     "id": "bailey-s",
@@ -12,22 +18,16 @@
     "position": "RB"
   },
   {
-    "id": "will-b",
-    "displayName": "Will",
-    "active": true,
-    "position": "LB"
-  },
-  {
-    "id": "josh-m",
-    "displayName": "Josh",
-    "active": true,
-    "position": "CB"
-  },
-  {
     "id": "brad-e",
     "displayName": "Brad",
     "active": true,
     "position": "CB"
+  },
+  {
+    "id": "darren-r",
+    "displayName": "Darren",
+    "active": true,
+    "position": "ST"
   },
   {
     "id": "frank-a",
@@ -36,8 +36,14 @@
     "position": "CM"
   },
   {
-    "id": "rocco-b",
-    "displayName": "Rocco",
+    "id": "george-h",
+    "displayName": "George H",
+    "active": true,
+    "position": "CDM"
+  },
+  {
+    "id": "george-w",
+    "displayName": "George W",
     "active": true,
     "position": "LW"
   },
@@ -60,22 +66,16 @@
     "position": "CDM"
   },
   {
-    "id": "george-h",
-    "displayName": "George H",
+    "id": "josh-m",
+    "displayName": "Josh",
     "active": true,
-    "position": "CDM"
+    "position": "CB"
   },
   {
-    "id": "ryan-b",
-    "displayName": "Ryan",
+    "id": "jude-g",
+    "displayName": "Jude",
     "active": true,
-    "position": "RW"
-  },
-  {
-    "id": "alfie-f",
-    "displayName": "Alf",
-    "active": true,
-    "position": "ST"
+    "position": "CM"
   },
   {
     "id": "kalan-w",
@@ -84,8 +84,14 @@
     "position": "CAM"
   },
   {
-    "id": "jude-g",
-    "displayName": "Jude",
+    "id": "kieran-d",
+    "displayName": "Kieran",
+    "active": true,
+    "position": "CDM"
+  },
+  {
+    "id": "liam-s",
+    "displayName": "Liam",
     "active": true,
     "position": "CM"
   },
@@ -96,28 +102,22 @@
     "position": "RW"
   },
   {
-    "id": "kieran-d",
-    "displayName": "Kieran",
-    "active": true,
-    "position": "CDM"
-  },
-  {
     "id": "morgan-s",
     "displayName": "Morgan",
     "active": true,
     "position": "CM"
   },
   {
-    "id": "george-w",
-    "displayName": "George W",
+    "id": "rocco-b",
+    "displayName": "Rocco",
     "active": true,
     "position": "LW"
   },
   {
-    "id": "liam-s",
-    "displayName": "Liam",
+    "id": "ronnie-d",
+    "displayName": "Ronnie D",
     "active": true,
-    "position": "CM"
+    "position": "GK"
   },
   {
     "id": "ronnie-t",
@@ -126,15 +126,21 @@
     "position": "CB"
   },
   {
+    "id": "ryan-b",
+    "displayName": "Ryan",
+    "active": true,
+    "position": "RW"
+  },
+  {
     "id": "ryeley-d",
     "displayName": "Ryeley",
     "active": true,
     "position": "LB"
   },
   {
-    "id": "darren-r",
-    "displayName": "Darren",
+    "id": "will-b",
+    "displayName": "Will",
     "active": true,
-    "position": "ST"
+    "position": "LB"
   }
 ]

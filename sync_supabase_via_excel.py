@@ -79,15 +79,26 @@ def main() -> None:
 
         attendance_rows = core.import_attendance(book)
         attendance_views = core.refresh_wide_attendance_sheets(book)
-        matchday_sessions, matchday_rows_added, warnings = import_matchday_authoritative(book)
+        # Persist the attendance reconciliation before the independent Matchday
+        # phase so a transient Excel COM rejection cannot roll it back.
+        book.save()
+        try:
+            matchday_sessions, matchday_rows_added, warnings = import_matchday_authoritative(book)
 
-        # Rebuild Match Attendance again after authoritative Matchday reconciliation
-        # so a completed match appears in Excel on the same updater run.
-        attendance_views["matchRows"] = core.refresh_match_attendance_sheet(book)
+            # Rebuild Match Attendance again after authoritative Matchday reconciliation
+            # so a completed match appears in Excel on the same updater run.
+            attendance_views["matchRows"] = core.refresh_match_attendance_sheet(book)
 
-        # Squad Selection depends on the latest fixtures, training attendance and
-        # Matchday minutes, so refresh it last after all authoritative data is in place.
-        refresh_squad_selection.build(book)
+            # Squad Selection depends on the latest fixtures, training attendance and
+            # Matchday minutes, so refresh it last after all authoritative data is in place.
+            refresh_squad_selection.build(book)
+        except Exception as exc:
+            # The JSON publish phase reapplies Matchday authority independently.
+            # Do not discard a successfully saved attendance update because Excel
+            # temporarily rejects a later COM call in this optional phase.
+            matchday_sessions = 0
+            matchday_rows_added = 0
+            warnings = [f"Excel Matchday reconciliation deferred: {exc}"]
 
         # Save through Excel whether the book was already open or opened here.
         book.save()

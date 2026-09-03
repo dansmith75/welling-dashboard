@@ -252,11 +252,16 @@ def export_wide_player_stats(workbook_path: Path, sheet_name: str, output_key: s
 
 def export_attendance(workbook_path: Path) -> Dict[str, Any]:
     rows = table_rows(workbook_path, "AttendanceRecords", "AttendanceRecords")
+    player_names = {
+        str(player.get("id")): str(player.get("displayName") or player.get("name") or player.get("id"))
+        for player in export_players(workbook_path)
+        if player.get("id")
+    }
     sessions: Dict[str, Dict[str, Any]] = {}
     for row in rows:
         session_key = row.get("sessionKey")
         player_id = row.get("playerId")
-        display_name = row.get("displayName")
+        display_name = player_names.get(str(player_id), row.get("displayName"))
         status = row.get("status")
         if not session_key or not player_id or not status:
             continue

@@ -26,6 +26,8 @@ def active_player_ids(core, book) -> list[str]:
         pid = canonical_id(row.get("ID"))
         status = str(row.get("Status") or "").strip().lower()
         active = bool(row.get("Active")) and status != "left"
+        if pid.lower() in ("total", "count"):
+            continue
         if pid and active and pid not in players:
             players.append(pid)
     return players
@@ -103,23 +105,27 @@ def _write_matrix(sheet, table_name: str, matrix: list[list[Any]], count_col: in
     old_last_row = max(sheet.used_range.last_cell.row, 2)
     old_last_col = max(sheet.used_range.last_cell.column, len(headers))
     sheet.range((1, 1), (old_last_row, old_last_col)).clear_contents()
-    sheet.range((1, 1), (len(matrix), len(headers))).value = matrix
+    sheet.range("A1").value = matrix
 
     try:
         table = sheet.tables[table_name]
         table.resize(sheet.range((1, 1), (max(len(matrix), 2), len(headers))))
     except Exception:
-        table = sheet.tables.add(sheet.range((1, 1), (max(len(matrix), 2), len(headers))), name=table_name)
+        # These two display sheets are ordinary ranges in the master workbook.
+        # Do not turn them into tables: Excel can revive deleted calculated
+        # columns (notably the old Total column) when a ListObject is created.
+        pass
 
     # Excel tables may try to reapply an old calculated-column formula after a resize.
-    # Rewrite values once more so COUNT/Count stays numeric rather than #REF!.
-    sheet.range((1, 1), (len(matrix), len(headers))).value = matrix
+    # Rewrite the data, then explicitly restore the final calculated Count column.
+    sheet.range("A1").value = matrix
     if len(matrix) == 1:
         sheet.range((2, 1), (2, len(headers))).clear_contents()
 
     if len(matrix) > 1:
-        count_values = [[row[count_col - 1]] for row in matrix[1:]]
-        sheet.range((2, count_col), (len(matrix), count_col)).value = count_values
+        # Player attendance starts in column D and Count is always the last column.
+        # R1C1 keeps the formula correct when players are added or removed.
+        sheet.range((2, count_col), (len(matrix), count_col)).api.FormulaR1C1 = "=COUNTIF(RC4:RC[-1],TRUE)"
 
     sheet.range("A:A").number_format = "dd-mm-yy"
     sheet.range("B:B").number_format = "dddd"
@@ -185,6 +191,65 @@ def _existing_training_dates(core, sheet) -> list[Any]:
     return dates
 
 
+def _existing_training_statuses(core, sheet) -> dict[str, dict[str, bool]]:
+    """Retain manually entered rows that do not yet exist in AttendanceRecords."""
+    values = sheet.used_range.value
+    if not values:
+        return {}
+    if not isinstance(values[0], list):
+        values = [values]
+    headers = [canonical_id(value) for value in values[0]]
+    result: dict[str, dict[str, bool]] = {}
+    for row in values[1:]:
+        if not row:
+            continue
+        date_key = core.iso_date(row[0] if len(row) else None)
+        if not date_key:
+            continue
+        statuses: dict[str, bool] = {}
+        for index in range(3, min(len(row), len(headers))):
+            player_id = headers[index]
+            if player_id and player_id.lower() not in ("count", "total"):
+                statuses[player_id] = bool(row[index])
+        result[date_key] = statuses
+    return result
+
+
+def _promote_manual_training_rows(core, book, sheet) -> int:
+    """Copy completed manual wide-sheet rows into the authoritative raw table."""
+    existing_dates = {
+        core.iso_date(session.get("SessionDate"))
+        for session in attendance_sessions(core, book, "Training")
+    }
+    manual = _existing_training_statuses(core, sheet)
+    raw_sheet = book.sheets[core.ATTENDANCE_SHEET]
+    raw_table = raw_sheet.tables[core.ATTENDANCE_TABLE]
+    new_rows: list[dict[str, Any]] = []
+    for date_key, statuses in manual.items():
+        if date_key in existing_dates or not any(statuses.values()):
+            continue
+        session_key = f"{date_key}-training-na-manual"
+        for player_id, present in statuses.items():
+            new_rows.append({
+                "RecordKey": f"{session_key}-{player_id}",
+                "SessionKey": session_key,
+                "SessionId": session_key,
+                "SessionDate": date_key,
+                "SessionType": "Training",
+                "Venue": "",
+                "PlayerId": player_id,
+                "DisplayName": DISPLAY_OVERRIDES.get(player_id, player_id),
+                "Status": "Present" if present else "Absent",
+                "FeePaid": "",
+                "PaymentStatus": "",
+                "LatePayment": "",
+                "SubmittedBy": "Dan",
+                "SubmittedAt": "",
+                "Source": "Excel",
+            })
+    return core.append_table_rows(raw_sheet, raw_table, new_rows)
+
+
 def refresh_training_attendance_sheet(core, book) -> int:
     sheet_name = "Training Attendance"
     table_name = "Training_Attendance"
@@ -193,8 +258,10 @@ def refresh_training_attendance_sheet(core, book) -> int:
 
     sheet = book.sheets[sheet_name]
     players = active_player_ids(core, book)
+    _promote_manual_training_rows(core, book, sheet)
     sessions = attendance_sessions(core, book, "Training")
     by_date = {core.iso_date(s.get("SessionDate")): s for s in sessions}
+    existing_statuses = _existing_training_statuses(core, sheet)
 
     # Preserve the workbook's scheduled training-date rows, then add any submitted
     # sessions that are not already represented. This avoids turning the sheet into
@@ -217,8 +284,14 @@ def refresh_training_attendance_sheet(core, book) -> int:
     matrix: list[list[Any]] = [headers]
     for session_date in dates:
         session = by_date.get(core.iso_date(session_date))
-        statuses = (session or {}).get("Players") or {}
-        present = [str(statuses.get(canonical_id(pid)) or "").lower() in ("present", "late") for pid in players]
+        if session:
+            statuses = session.get("Players") or {}
+            present = [str(statuses.get(canonical_id(pid)) or "").lower() in ("present", "late") for pid in players]
+        else:
+            # A coach may add an older training row directly to this view before
+            # it exists in the app's raw AttendanceRecords table.
+            saved = existing_statuses.get(core.iso_date(session_date), {})
+            present = [bool(saved.get(canonical_id(pid), False)) for pid in players]
         matrix.append([
             core.excel_date(session_date),
             core.excel_date(session_date),

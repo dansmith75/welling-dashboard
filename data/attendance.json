@@ -756,6 +756,12 @@
           "displayName": "Kieran",
           "status": "Present",
           "source": "App"
+        },
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Present",
+          "source": "App"
         }
       ]
     },
@@ -886,6 +892,143 @@
           "displayName": "Imre",
           "status": "Present",
           "source": "Manual match authority"
+        }
+      ]
+    },
+    {
+      "sessionKey": "2026-09-02-training-na-6ef8ab20",
+      "sessionId": "6ef8ab20-9b52-4c15-8d3b-588e678d093a",
+      "date": "2026-09-02",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-09-02T22:48:26.879492+00:00",
+      "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George H",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Late",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Injured",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "App"
         }
       ]
     }

@@ -100,6 +100,30 @@ def matchday_presence(core) -> dict[str, set[str]]:
     return presence
 
 
+def _existing_wide_statuses(core, sheet) -> dict[str, dict[str, bool]]:
+    """Read player flags from a wide attendance view before rebuilding it."""
+    values = sheet.used_range.value
+    if not values:
+        return {}
+    if not isinstance(values[0], list):
+        values = [values]
+    headers = [canonical_id(value) for value in values[0]]
+    result: dict[str, dict[str, bool]] = {}
+    for row in values[1:]:
+        if not row:
+            continue
+        date_key = core.iso_date(row[0] if len(row) else None)
+        if not date_key:
+            continue
+        statuses: dict[str, bool] = {}
+        for index in range(3, min(len(row), len(headers))):
+            player_id = headers[index]
+            if player_id and player_id.lower() not in ("count", "total"):
+                statuses[player_id] = bool(row[index])
+        result[date_key] = statuses
+    return result
+
+
 def _write_matrix(sheet, table_name: str, matrix: list[list[Any]], count_col: int) -> None:
     headers = matrix[0]
     old_last_row = max(sheet.used_range.last_cell.row, 2)
@@ -142,6 +166,7 @@ def refresh_match_attendance_sheet(core, book) -> int:
     fixtures = core.fixture_rows(book)
     sessions = attendance_sessions(core, book, "Match")
     presence = matchday_presence(core)
+    existing_statuses = _existing_wide_statuses(core, sheet)
 
     lookup: dict[tuple[str, str], dict[str, Any]] = {}
     for session in sessions:
@@ -159,10 +184,16 @@ def refresh_match_attendance_sheet(core, book) -> int:
         session = lookup.get((date_key, venue_key)) or lookup.get((date_key, ""))
         statuses = (session or {}).get("Players") or {}
         matchday_players = presence.get(date_key, set())
-        present = [
-            (canonical_id(pid) in matchday_players) or str(statuses.get(canonical_id(pid)) or "").lower() in ("present", "late")
-            for pid in players
-        ]
+        if session or matchday_players:
+            present = [
+                (canonical_id(pid) in matchday_players) or str(statuses.get(canonical_id(pid)) or "").lower() in ("present", "late")
+                for pid in players
+            ]
+        else:
+            # Preserve manually maintained match rows when no central attendance
+            # or completed Matchday record exists for the fixture yet.
+            saved = existing_statuses.get(date_key, {})
+            present = [bool(saved.get(canonical_id(pid), False)) for pid in players]
         matrix.append([
             core.excel_date(match_date),
             core.excel_date(match_date),
@@ -193,26 +224,7 @@ def _existing_training_dates(core, sheet) -> list[Any]:
 
 def _existing_training_statuses(core, sheet) -> dict[str, dict[str, bool]]:
     """Retain manually entered rows that do not yet exist in AttendanceRecords."""
-    values = sheet.used_range.value
-    if not values:
-        return {}
-    if not isinstance(values[0], list):
-        values = [values]
-    headers = [canonical_id(value) for value in values[0]]
-    result: dict[str, dict[str, bool]] = {}
-    for row in values[1:]:
-        if not row:
-            continue
-        date_key = core.iso_date(row[0] if len(row) else None)
-        if not date_key:
-            continue
-        statuses: dict[str, bool] = {}
-        for index in range(3, min(len(row), len(headers))):
-            player_id = headers[index]
-            if player_id and player_id.lower() not in ("count", "total"):
-                statuses[player_id] = bool(row[index])
-        result[date_key] = statuses
-    return result
+    return _existing_wide_statuses(core, sheet)
 
 
 def _promote_manual_training_rows(core, book, sheet) -> int:

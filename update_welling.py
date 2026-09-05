@@ -202,6 +202,9 @@ def main():
     print("\n3/10 Exporting snapshot to JSON...")
     run([sys.executable, str(ROOT / "export_welling_json.py"), "--workbook", str(export_workbook)])
 
+    print("Applying official FA Full-Time fixture schedule...")
+    run([sys.executable, str(ROOT / "apply_official_fixtures.py")])
+
     print("4/10 Applying authoritative completed Matchday data...")
     run([sys.executable, str(ROOT / "apply_matchday_authority.py")])
 

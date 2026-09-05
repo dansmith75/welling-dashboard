@@ -62,7 +62,7 @@
   {
     "id": "joe-g",
     "displayName": "Joe",
-    "active": false,
+    "active": true,
     "position": "CDM"
   },
   {

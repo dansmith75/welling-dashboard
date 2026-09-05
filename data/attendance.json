@@ -766,14 +766,20 @@
       ]
     },
     {
-      "sessionKey": "matchday-2026-08-23-crayford-arrows",
-      "sessionId": "matchday-2026-08-23-crayford-arrows",
+      "sessionKey": "2026-08-23-match-home-manual",
+      "sessionId": "2026-08-23-match-home-manual",
       "date": "2026-08-23",
       "type": "Match",
       "venue": "Home",
-      "submittedBy": "Matchday App",
+      "submittedBy": "Dan",
       "submittedAt": null,
       "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Absent",
+          "source": "Excel"
+        },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
@@ -805,10 +811,22 @@
           "source": "Matchday App"
         },
         {
+          "playerId": "george-h",
+          "displayName": "George H",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
           "playerId": "george-w",
           "displayName": "George W",
           "status": "Present",
           "source": "Matchday App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
@@ -839,6 +857,18 @@
           "displayName": "Liam",
           "status": "Present",
           "source": "Matchday App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "rocco-b",
@@ -1016,14 +1046,146 @@
       ]
     },
     {
-      "sessionKey": "manual-2026-08-29-welling-saturday-reserves",
-      "sessionId": "manual-2026-08-29-welling-saturday-reserves",
+      "sessionKey": "2026-08-29-match-home-manual",
+      "sessionId": "2026-08-29-match-home-manual",
       "date": "2026-08-29",
       "type": "Match",
       "venue": "Home",
-      "submittedBy": "Manual match authority",
+      "submittedBy": "Dan",
       "submittedAt": null,
       "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George H",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
         {
           "playerId": "imre-s",
           "displayName": "Imre",

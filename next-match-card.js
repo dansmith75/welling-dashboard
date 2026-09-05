@@ -37,7 +37,7 @@
       <div class="next-match-page-heading">
         <div class="next-detail-label">Next Match</div>
         <h1>${match.opposition || "Opposition TBC"}</h1>
-        <p>${formatDateUK(match.date)}${match.competition ? ` · ${match.competition}` : ""}${match.homeAway ? ` · ${match.homeAway}` : ""}</p>
+        <p>${formatDateUK(match.date)}${match.kickoff ? ` · ${match.kickoff}` : ""}${match.competition ? ` · ${match.competition}` : ""}${match.homeAway ? ` · ${match.homeAway}` : ""}</p>
       </div>
       <div class="next-match-details-grid">
         <section class="card next-match-detail-card">
@@ -106,7 +106,7 @@
     target.innerHTML = `
       <div class="next-match-label">Next Match</div>
       <div class="next-match-opposition">${match.opposition || "TBC"}</div>
-      <div class="next-match-meta">${formatDateUK(match.date)}${venue ? ` · ${venue}` : ""}</div>
+      <div class="next-match-meta">${formatDateUK(match.date)}${match.kickoff ? ` · ${match.kickoff}` : ""}${venue ? ` · ${venue}` : ""}</div>
       ${competition ? `<div class="next-match-competition">${competition}</div>` : ""}
       <div class="next-match-hint">View fixture →</div>
     `;

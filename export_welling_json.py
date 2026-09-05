@@ -201,6 +201,8 @@ def export_players(workbook_path: Path) -> List[Dict[str, Any]]:
 
 def export_matches(workbook_path: Path) -> List[Dict[str, Any]]:
     rows = table_rows(workbook_path, "Fixtures", "Fixtures")
+    metadata_path = Path(__file__).resolve().parent / "data" / "fixture-metadata.json"
+    metadata = json.loads(metadata_path.read_text(encoding="utf-8")) if metadata_path.exists() else {}
     matches = []
     for row in rows:
         if row.get("opposition") in (None, "", 0, "0"):
@@ -208,7 +210,7 @@ def export_matches(workbook_path: Path) -> List[Dict[str, Any]]:
         match_id = slugify(f"{row.get('date')}-{row.get('opposition')}")
         home_away = row.get("homeAway")
         venue = row.get("venue")
-        matches.append({
+        match = {
             "id": match_id,
             "date": row.get("date"),
             "day": row.get("day"),
@@ -220,7 +222,9 @@ def export_matches(workbook_path: Path) -> List[Dict[str, Any]]:
             "goalsFor": row.get("goalsFor"),
             "goalsAgainst": row.get("goalsAgainst"),
             "result": row.get("result"),
-        })
+        }
+        match.update(metadata.get(match_id, {}))
+        matches.append(match)
     return matches
 
 

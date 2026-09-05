@@ -4,6 +4,7 @@
   let attendanceMode = "match";
   store.links = store.links || [];
   store.leagueTable = store.leagueTable || [];
+  store.venues = store.venues || {};
 
   function completed(match) { return ["Win", "Draw", "Loss"].includes(match?.result); }
   function mobile() { return window.matchMedia("(max-width:650px)").matches; }
@@ -123,11 +124,13 @@
 
   Promise.all([
     fetch("data/links.json", { cache: "no-store" }).then(r => r.ok ? r.json() : []),
-    fetch("data/league-table.json", { cache: "no-store" }).then(r => r.ok ? r.json() : [])
-  ]).then(([links, league]) => {
+    fetch("data/league-table.json", { cache: "no-store" }).then(r => r.ok ? r.json() : []),
+    fetch("data/venues.json", { cache: "no-store" }).then(r => r.ok ? r.json() : {})
+  ]).then(([links, league, venues]) => {
     store.links = Array.isArray(links) ? links : []; store.leagueTable = Array.isArray(league) ? league : [];
+    store.venues = venues && typeof venues === "object" ? venues : {};
     const activePage = document.querySelector(".page.active")?.id; if (activePage === "links") renderLinks(); if (activePage === "league") renderLeagueTable();
-  }).catch(() => { store.links = []; store.leagueTable = []; });
+  }).catch(() => { store.links = []; store.leagueTable = []; store.venues = {}; });
 
   const style = document.createElement("style");
   style.textContent = `.attendance-toggle-card{padding:10px;margin-bottom:18px}.attendance-toggle{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.attendance-mode{border:1px solid var(--line);border-radius:12px;padding:11px 16px;background:transparent;color:var(--text);font-weight:bold;cursor:pointer}.attendance-mode.active{background:linear-gradient(135deg,#1e3a8a,#2563eb);border-color:#2563eb;color:white}.link-group+.link-group{margin-top:24px}.useful-links-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.useful-link-card{display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--text);text-decoration:none}.useful-link-card:hover{transform:translateY(-1px);border-color:#38bdf8}.useful-link-card span{color:var(--muted);font-size:13px;line-height:1.4}.our-team-row td{font-weight:bold;background:rgba(37,99,235,.14)}@media(max-width:650px){#attendance .chart-scroll{overflow-x:visible}#attendance .chart-box{width:100%;min-width:0!important}.useful-links-grid{grid-template-columns:1fr}.league-table-wrap{border-right:2px solid rgba(56,189,248,.45);-webkit-overflow-scrolling:touch}}`;

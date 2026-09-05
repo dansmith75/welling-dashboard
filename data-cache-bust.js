@@ -6,7 +6,7 @@
   window.fetch = (input, init = {}) => {
     if (typeof input !== "string") return nativeFetch(input, init);
 
-    const isDashboardData = /(^|\/)data\/(players|matches|goals|assists|events|attendance|minutes|timeline|bios|links|league-table)\.json(?:\?|$)/i.test(input);
+    const isDashboardData = /(^|\/)data\/(players|matches|goals|assists|events|attendance|minutes|timeline|bios|links|league-table|venues)\.json(?:\?|$)/i.test(input);
     if (!isDashboardData) return nativeFetch(input, init);
 
     const separator = input.includes("?") ? "&" : "?";

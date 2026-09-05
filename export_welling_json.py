@@ -207,6 +207,7 @@ def export_matches(workbook_path: Path) -> List[Dict[str, Any]]:
             continue
         match_id = slugify(f"{row.get('date')}-{row.get('opposition')}")
         home_away = row.get("homeAway")
+        venue = row.get("venue")
         matches.append({
             "id": match_id,
             "date": row.get("date"),
@@ -214,9 +215,7 @@ def export_matches(workbook_path: Path) -> List[Dict[str, Any]]:
             "opposition": row.get("opposition"),
             "competition": row.get("competition"),
             "homeAway": home_away,
-            # Transitional alias so older Welling Match code can keep consuming
-            # the shared fixture feed while homeAway becomes the canonical field.
-            "venue": home_away,
+            "venue": venue or home_away,
             "postponed": bool(row.get("postponed")) if row.get("postponed") is not None else False,
             "goalsFor": row.get("goalsFor"),
             "goalsAgainst": row.get("goalsAgainst"),

@@ -34,6 +34,11 @@
       : "League record is not available yet";
 
     target.innerHTML = `
+      <div class="next-match-page-heading">
+        <div class="next-detail-label">Next Match</div>
+        <h1>${match.opposition || "Opposition TBC"}</h1>
+        <p>${formatDateUK(match.date)}${match.competition ? ` · ${match.competition}` : ""}${match.homeAway ? ` · ${match.homeAway}` : ""}</p>
+      </div>
       <div class="next-match-details-grid">
         <section class="card next-match-detail-card">
           <div class="next-detail-label">Venue</div>
@@ -133,6 +138,9 @@
     .next-match-hint{font-size:12px;color:#38bdf8;margin-top:9px;font-weight:700}
     .next-match-none{font-size:16px;color:var(--muted)}
     .next-match-details-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:18px}
+    .next-match-page-heading{margin:4px 0 18px}
+    .next-match-page-heading h1{margin:4px 0 5px;font-size:30px;line-height:1.15}
+    .next-match-page-heading p{margin:0;color:var(--muted)}
     .next-match-detail-card{margin:0;min-width:0}
     .next-match-detail-card h2{margin:5px 0 7px;font-size:22px}
     .next-match-detail-card p{margin:0;color:var(--muted);line-height:1.45}

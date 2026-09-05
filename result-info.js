@@ -168,8 +168,9 @@
   renderResults = function () {
     const label = activeResultsFilter?.label || "";
     const rows = activeResultsFilter ? store.matches.filter(activeResultsFilter.filterFn) : store.matches;
-    setDrillLabel("resultsDrillLabel", label);
-    document.getElementById("resultsTitle").textContent = label || "Match Results";
+    const isNextMatch = label.startsWith("Next Match —");
+    setDrillLabel("resultsDrillLabel", isNextMatch ? "" : label);
+    document.getElementById("resultsTitle").textContent = isNextMatch ? "Fixture Details" : (label || "Match Results");
 
     document.getElementById("resultsTable").innerHTML = rows.map((match, index) => {
       const timeline = timelineForMatch(match);

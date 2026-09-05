@@ -155,6 +155,44 @@ def _write_matrix(sheet, table_name: str, matrix: list[list[Any]], count_col: in
     sheet.range("B:B").number_format = "dddd"
 
 
+def _promote_manual_match_rows(core, book, sheet, fixtures: list[dict[str, Any]]) -> int:
+    """Copy completed manual match rows into the authoritative raw table."""
+    sessions = attendance_sessions(core, book, "Match")
+    existing_dates = {core.iso_date(session.get("SessionDate")) for session in sessions}
+    manual = _existing_wide_statuses(core, sheet)
+    fixture_by_date = {core.iso_date(fixture.get("Date")): fixture for fixture in fixtures}
+    raw_sheet = book.sheets[core.ATTENDANCE_SHEET]
+    raw_table = raw_sheet.tables[core.ATTENDANCE_TABLE]
+    new_rows: list[dict[str, Any]] = []
+
+    for date_key, statuses in manual.items():
+        if date_key in existing_dates or not any(statuses.values()):
+            continue
+        fixture = fixture_by_date.get(date_key) or {}
+        venue = str(fixture.get("HomeAway") or "").strip()
+        venue_key = venue.lower() or "na"
+        session_key = f"{date_key}-match-{venue_key}-manual"
+        for player_id, present in statuses.items():
+            new_rows.append({
+                "RecordKey": f"{session_key}-{player_id}",
+                "SessionKey": session_key,
+                "SessionId": session_key,
+                "SessionDate": date_key,
+                "SessionType": "Match",
+                "Venue": venue,
+                "PlayerId": player_id,
+                "DisplayName": DISPLAY_OVERRIDES.get(player_id, player_id),
+                "Status": "Present" if present else "Absent",
+                "FeePaid": "",
+                "PaymentStatus": "",
+                "LatePayment": "",
+                "SubmittedBy": "Dan",
+                "SubmittedAt": "",
+                "Source": "Excel",
+            })
+    return core.append_table_rows(raw_sheet, raw_table, new_rows)
+
+
 def refresh_match_attendance_sheet(core, book) -> int:
     sheet_name = "Match Attendance"
     table_name = "Match_Attendance"
@@ -164,6 +202,7 @@ def refresh_match_attendance_sheet(core, book) -> int:
     sheet = book.sheets[sheet_name]
     players = active_player_ids(core, book)
     fixtures = core.fixture_rows(book)
+    _promote_manual_match_rows(core, book, sheet, fixtures)
     sessions = attendance_sessions(core, book, "Match")
     presence = matchday_presence(core)
     existing_statuses = _existing_wide_statuses(core, sheet)

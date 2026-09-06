@@ -54,7 +54,12 @@
     "matchId": "2026-09-06-sydenham-lions",
     "date": "2026-09-06",
     "opposition": "Sydenham Lions",
-    "goals": {}
+    "goals": {
+      "bailey-s": 1,
+      "rocco-b": 1,
+      "josh-m": 1,
+      "kalan-w": 1
+    }
   },
   {
     "matchId": "2026-09-13-sydenham-lions",

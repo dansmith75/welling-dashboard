@@ -37,7 +37,12 @@
     "matchId": "2026-09-06-sydenham-lions",
     "date": "2026-09-06",
     "opposition": "Sydenham Lions",
-    "events": {}
+    "events": {
+      "kieran-d": "84' Yellow",
+      "frank-a": "95' Penalty missed",
+      "louie-j": "95' Penalty missed",
+      "jude-g": "95' Penalty missed"
+    }
   },
   {
     "matchId": "2026-09-13-sydenham-lions",

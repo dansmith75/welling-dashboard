@@ -412,5 +412,244 @@
         "source": "Manual match authority"
       }
     ]
+  },
+  {
+    "matchId": "2026-09-06-sydenham-lions",
+    "date": "2026-09-06",
+    "opposition": "Sydenham Lions",
+    "competition": "Vic Farrow Cup",
+    "events": [
+      {
+        "type": "Substitution",
+        "minute": 23,
+        "playerId": "frank-a",
+        "player": "Frank",
+        "relatedPlayerId": "kieran-d",
+        "relatedPlayer": "Kieran",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 25,
+        "playerId": "george-h",
+        "player": "George H",
+        "relatedPlayerId": "liam-s",
+        "relatedPlayer": "Liam",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 28,
+        "playerId": "jude-g",
+        "player": "Jude",
+        "relatedPlayerId": "morgan-s",
+        "relatedPlayer": "Morgan",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 28,
+        "playerId": "rocco-b",
+        "player": "Rocco",
+        "relatedPlayerId": "kalan-w",
+        "relatedPlayer": "Kalan",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 30,
+        "playerId": "will-b",
+        "player": "Will",
+        "relatedPlayerId": "ryeley-d",
+        "relatedPlayer": "Ryeley",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 53,
+        "playerId": "kieran-d",
+        "player": "Kieran",
+        "relatedPlayerId": "george-h",
+        "relatedPlayer": "George H",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 53,
+        "playerId": "morgan-s",
+        "player": "Morgan",
+        "relatedPlayerId": "rocco-b",
+        "relatedPlayer": "Rocco",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 56,
+        "playerId": "bailey-s",
+        "player": "Bailey",
+        "relatedPlayerId": "george-h",
+        "relatedPlayer": "George H",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 58,
+        "playerId": "liam-s",
+        "player": "Liam",
+        "relatedPlayerId": "frank-a",
+        "relatedPlayer": "Frank",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 72,
+        "playerId": "rocco-b",
+        "player": "Rocco",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 74,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "jude-g",
+        "relatedPlayer": "Jude",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 79,
+        "playerId": "bailey-s",
+        "player": "Bailey",
+        "relatedPlayerId": "morgan-s",
+        "relatedPlayer": "Morgan",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 79,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Card",
+        "minute": 84,
+        "playerId": "kieran-d",
+        "player": "Kieran",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Yellow",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 89,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Goal",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 95,
+        "playerId": "josh-m",
+        "player": "Josh",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Note",
+        "minute": 95,
+        "playerId": "frank-a",
+        "player": "Frank",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty missed",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Note",
+        "minute": 95,
+        "playerId": "louie-j",
+        "player": "Louie",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty missed",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 95,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Note",
+        "minute": 95,
+        "playerId": "jude-g",
+        "player": "Jude",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty missed",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 95,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty",
+        "value": 1,
+        "source": "Matchday App"
+      }
+    ]
   }
 ]

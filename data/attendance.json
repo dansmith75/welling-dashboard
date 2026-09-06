@@ -1332,19 +1332,37 @@
       ]
     },
     {
-      "sessionKey": "matchday-2026-09-06-sydenham-lions",
-      "sessionId": "matchday-2026-09-06-sydenham-lions",
+      "sessionKey": "2026-09-06-match-away-manual",
+      "sessionId": "2026-09-06-match-away-manual",
       "date": "2026-09-06",
       "type": "Match",
       "venue": "Away",
-      "submittedBy": "Matchday App",
+      "submittedBy": "Dan",
       "submittedAt": null,
       "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "Excel"
+        },
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Present",
           "source": "Matchday App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
@@ -1363,6 +1381,18 @@
           "displayName": "George H",
           "status": "Present",
           "source": "Matchday App"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
@@ -1423,6 +1453,12 @@
           "displayName": "Ronnie T",
           "status": "Present",
           "source": "Matchday App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "ryeley-d",

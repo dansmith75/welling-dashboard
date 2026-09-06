@@ -115,7 +115,8 @@ async function loadData() {
 
 
 function isCompetitive(match) {
-  return ["League", "Cup", "Shield"].includes(match.competition);
+  const competition = String(match?.competition || "").trim().toLowerCase();
+  return competition === "league" || competition.includes("cup") || competition.includes("shield");
 }
 
 function chartTextColour() {

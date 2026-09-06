@@ -674,8 +674,11 @@ ${assistsText}
 function goalFilters(row) {
   const comp = selected("goalComp");
   const ha = selected("goalHA");
+  const competition = String(row.competition || "").trim().toLowerCase();
+  const matchesCompetition = comp === "All" ||
+    (comp === "Cup" ? competition.includes("cup") || competition.includes("shield") : competition === comp.toLowerCase());
 
-  return (comp === "All" || row.competition === comp) &&
+  return matchesCompetition &&
          (ha === "Both" || row.homeAway === ha);
 }
 

@@ -166,6 +166,8 @@ def _promote_manual_match_rows(core, book, sheet, fixtures: list[dict[str, Any]]
     new_rows: list[dict[str, Any]] = []
 
     for date_key, statuses in manual.items():
+        if (date_key, "match", str((fixture_by_date.get(date_key) or {}).get("HomeAway") or "").strip().lower()) in getattr(core, "REMOVED_APP_SESSION_KEYS", set()):
+            continue
         if date_key in existing_dates or not any(statuses.values()):
             continue
         fixture = fixture_by_date.get(date_key) or {}
@@ -277,6 +279,8 @@ def _promote_manual_training_rows(core, book, sheet) -> int:
     raw_table = raw_sheet.tables[core.ATTENDANCE_TABLE]
     new_rows: list[dict[str, Any]] = []
     for date_key, statuses in manual.items():
+        if (date_key, "training", "") in getattr(core, "REMOVED_APP_SESSION_KEYS", set()):
+            continue
         if date_key in existing_dates or not any(statuses.values()):
             continue
         session_key = f"{date_key}-training-na-manual"
@@ -317,7 +321,8 @@ def refresh_training_attendance_sheet(core, book) -> int:
     # Preserve the workbook's scheduled training-date rows, then add any submitted
     # sessions that are not already represented. This avoids turning the sheet into
     # an apparently empty table between sessions.
-    dates = _existing_training_dates(core, sheet)
+    removed_dates = {date_key for date_key, session_type, _ in getattr(core, "REMOVED_APP_SESSION_KEYS", set()) if session_type == "training"}
+    dates = [date_value for date_value in _existing_training_dates(core, sheet) if core.iso_date(date_value) not in removed_dates]
     seen = {core.iso_date(d) for d in dates}
     for session in sessions:
         key = core.iso_date(session.get("SessionDate"))

@@ -21,6 +21,7 @@ SUPABASE_KEY = "sb_publishable_uTJVDSSD7jPePv1BdODmSg_qO6U8get"
 
 ATTENDANCE_SHEET = "AttendanceRecords"
 ATTENDANCE_TABLE = "AttendanceRecords"
+REMOVED_APP_SESSION_KEYS: set[tuple[str, str, str]] = set()
 MATCHDAY_SHEET = "MatchdayRecords"
 MATCHDAY_TABLE = "MatchdayRecords"
 
@@ -131,21 +132,48 @@ def make_session_key(session:dict[str,Any])->str:
 
 
 def import_attendance(book)->int:
+    global REMOVED_APP_SESSION_KEYS
     sessions=api_get("attendance_sessions","id,session_date,session_type,venue,submitted_by,submitted_at","submitted_at.asc")
     records=api_get("attendance_records","session_id,player_id,display_name,status")
     if ATTENDANCE_SHEET not in [s.name for s in book.sheets]: raise RuntimeError(f"Workbook sheet '{ATTENDANCE_SHEET}' was not found.")
     sheet=book.sheets[ATTENDANCE_SHEET]
     try: table=sheet.tables[ATTENDANCE_TABLE]
     except Exception as exc: raise RuntimeError(f"Excel table '{ATTENDANCE_TABLE}' was not found.") from exc
-    existing=table_existing_column_values(table,"RecordKey"); sessions_by_id={str(s["id"]):s for s in sessions}; new_rows=[]
+    headers=table_headers(table); existing_rows=table_dict_rows(table); sessions_by_id={str(s["id"]):s for s in sessions}; desired_rows=[]
+    existing_app={str(row.get("RecordKey") or ""):row for row in existing_rows if str(row.get("Source") or "").strip().lower()=="app"}
+    manual_rows=[row for row in existing_rows if str(row.get("Source") or "").strip().lower()!="app"]
+    REMOVED_APP_SESSION_KEYS=set()
+    for row in existing_app.values():
+        session=sessions_by_id.get(str(row.get("SessionId") or ""))
+        old_key=(iso_date(row.get("SessionDate")),str(row.get("SessionType") or "").strip().lower(),str(row.get("Venue") or "").strip().lower())
+        new_key=(iso_date(session.get("session_date")),str(session.get("session_type") or "").strip().lower(),str(session.get("venue") or "").strip().lower()) if session else None
+        if not session or old_key!=new_key: REMOVED_APP_SESSION_KEYS.add(old_key)
     for record in records:
         session=sessions_by_id.get(str(record.get("session_id")))
         if not session:continue
         session_key=make_session_key(session); record_key=f"{session_key}-{record.get('player_id')}"
-        if record_key in existing:continue
-        new_rows.append({"RecordKey":record_key,"SessionKey":session_key,"SessionId":session.get("id"),"SessionDate":session.get("session_date"),"SessionType":session.get("session_type"),"Venue":session.get("venue") or "","PlayerId":record.get("player_id"),"DisplayName":record.get("display_name"),"Status":record.get("status"),"FeePaid":"","PaymentStatus":"","LatePayment":"","SubmittedBy":session.get("submitted_by") or "","SubmittedAt":session.get("submitted_at") or "","Source":"App"})
-        existing.add(record_key)
-    return append_table_rows(sheet,table,new_rows)
+        row=dict(existing_app.get(record_key) or {})
+        row.update({"RecordKey":record_key,"SessionKey":session_key,"SessionId":session.get("id"),"SessionDate":session.get("session_date"),"SessionType":session.get("session_type"),"Venue":session.get("venue") or "","PlayerId":record.get("player_id"),"DisplayName":record.get("display_name"),"Status":record.get("status"),"SubmittedBy":session.get("submitted_by") or "","SubmittedAt":session.get("submitted_at") or "","Source":"App"})
+        desired_rows.append(row)
+
+    reconciled=manual_rows+desired_rows
+    old_keys={str(row.get("RecordKey") or "") for row in existing_rows}
+    new_keys={str(row.get("RecordKey") or "") for row in reconciled}
+    authoritative=("SessionKey","SessionId","SessionDate","SessionType","Venue","PlayerId","DisplayName","Status","SubmittedBy","SubmittedAt","Source")
+    desired_by_key={str(row.get("RecordKey") or ""):row for row in desired_rows}
+    changed=sum(1 for key,row in desired_by_key.items() if key not in existing_app or any((iso_date(existing_app[key].get(field))!=iso_date(row.get(field)) if field=="SessionDate" else str(existing_app[key].get(field) or "")!=str(row.get(field) or "")) for field in authoritative))
+    changed+=len(old_keys-new_keys)
+    if not changed:return 0
+
+    start_row=table.range.row; start_col=table.range.column; old_last_row=start_row+table.range.rows.count-1; end_col=start_col+len(headers)-1
+    if old_last_row>start_row: sheet.range((start_row+1,start_col),(old_last_row,end_col)).clear_contents()
+    if reconciled:
+        matrix=[[row.get(header,"") for header in headers] for row in reconciled]; new_last_row=start_row+len(matrix)
+        sheet.range((start_row+1,start_col),(new_last_row,end_col)).value=matrix
+        table.resize(sheet.range((start_row,start_col),(new_last_row,end_col)))
+    else:
+        seed_row=start_row+1; sheet.range((seed_row,start_col),(seed_row,end_col)).clear_contents(); table.resize(sheet.range((start_row,start_col),(seed_row,end_col)))
+    return changed
 
 
 def active_player_ids(book)->list[str]:

@@ -14,16 +14,6 @@
     ) || null;
   }
 
-  function fallbackStrapline(position) {
-    const p = String(position || "").toLowerCase();
-    if (/keeper|goalkeeper|\bgk\b/.test(p)) return "Hands like glue. Volume control still under development.";
-    if (/wing|wide/.test(p)) return "One mission: get at the full-back until one of them needs a sit down.";
-    if (/striker|forward|\bcf\b/.test(p)) return "Shoots on sight. Definition of sight may vary.";
-    if (/mid|\bcm\b|\bdm\b|\bam\b/.test(p)) return "Covers every blade of grass, including a few that aren't technically on the pitch.";
-    if (/back|def|\bcb\b|\blb\b|\brb\b/.test(p)) return "Built for tackles, headers and insisting it was definitely all ball.";
-    return "Position: yes. Job: whatever needs doing.";
-  }
-
   // The page contains both upcoming fixtures and completed results, so the
   // top-level destination is simply Fixtures.
   const coreRenderResults = renderResults;
@@ -89,7 +79,7 @@
     const squad = playerRecord(player) || {};
     const bio = bioRecord(player) || {};
     const position = bio.position || squad.position || "Squad Player";
-    const strapLine = bio.strapLine || fallbackStrapline(position);
+    const strapLine = String(squad.strapLine || "").trim();
 
     const oldSubtitle = profileHeader.querySelector(".profile-subtitle");
     if (oldSubtitle) oldSubtitle.remove();
@@ -100,9 +90,11 @@
       heading.innerHTML = `<span>${player}</span><span class="player-position">${position}</span>`;
     }
 
-    profileHeader.insertAdjacentHTML("beforeend", `
-      <div class="player-strapline">“${strapLine}”</div>
-    `);
+    if (strapLine) {
+      profileHeader.insertAdjacentHTML("beforeend", `
+        <div class="player-strapline">“${strapLine}”</div>
+      `);
+    }
   };
 
   const style = document.createElement("style");

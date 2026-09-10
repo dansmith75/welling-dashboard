@@ -9,138 +9,161 @@
     "id": "alfie-f",
     "displayName": "Alf",
     "active": true,
-    "position": "ST"
+    "position": "ST",
+    "strapLine": "Big Alf - the only one scarier is his old man with a shandy"
   },
   {
     "id": "bailey-s",
     "displayName": "Bailey",
     "active": true,
-    "position": "RB"
+    "position": "RB",
+    "strapLine": "One mode - Fast - No feet."
   },
   {
     "id": "brad-e",
     "displayName": "Brad",
     "active": true,
-    "position": "CB"
+    "position": "CB",
+    "strapLine": "Brad the Biker - like Brad Pitt, but uglier"
   },
   {
     "id": "darren-r",
     "displayName": "Darren",
     "active": true,
-    "position": "ST"
+    "position": "ST",
+    "strapLine": "The Amber assasin ?? *never predictable*"
   },
   {
     "id": "frank-a",
     "displayName": "Frank",
     "active": true,
-    "position": "CM"
+    "position": "CM",
+    "strapLine": "Frank the Tank - new but somehow seems old"
   },
   {
     "id": "george-h",
     "displayName": "George",
     "active": true,
-    "position": "CDM"
+    "position": "CDM",
+    "strapLine": "Big G Hicks - So calm he's virtually horizontal"
   },
   {
     "id": "george-w",
     "displayName": "George W",
     "active": false,
-    "position": "LW"
+    "position": "LW",
+    "strapLine": "Not enough data…"
   },
   {
     "id": "imre-s",
     "displayName": "Imre",
     "active": false,
-    "position": "CM"
+    "position": "CM",
+    "strapLine": "Links defence and attack, plus several conversations the referee didn't ask for."
   },
   {
     "id": "jay-p",
     "displayName": "Jay",
     "active": false,
-    "position": "RW"
+    "position": "RW",
+    "strapLine": "In - Jay - ry."
   },
   {
     "id": "joe-g",
     "displayName": "Joe",
     "active": true,
-    "position": "CDM"
+    "position": "CDM",
+    "strapLine": "The Oki-Koki - He's in, He's out"
   },
   {
     "id": "josh-m",
     "displayName": "Josh",
     "active": true,
-    "position": "CB"
+    "position": "CB",
+    "strapLine": "Good with his head and hands. Don’t mention the feet..."
   },
   {
     "id": "jude-g",
     "displayName": "Jude",
     "active": true,
-    "position": "CM"
+    "position": "CM",
+    "strapLine": "All Italian, just without the ability"
   },
   {
     "id": "kalan-w",
     "displayName": "Kalan",
     "active": true,
-    "position": "CAM"
+    "position": "CAM",
+    "strapLine": "...if Aldi made a Messi"
   },
   {
     "id": "kieran-d",
     "displayName": "Kieran",
     "active": true,
-    "position": "CDM"
+    "position": "CDM",
+    "strapLine": "All chat, no teeth"
   },
   {
     "id": "liam-s",
     "displayName": "Liam",
     "active": true,
-    "position": "CM"
+    "position": "CM",
+    "strapLine": "Liam, \"I'll score 20 goals a season\"…"
   },
   {
     "id": "louie-j",
     "displayName": "Louie",
     "active": true,
-    "position": "RW"
+    "position": "RW",
+    "strapLine": "Best lino we've ever had"
   },
   {
     "id": "morgan-s",
     "displayName": "Morgan",
     "active": true,
-    "position": "CM"
+    "position": "CM",
+    "strapLine": "The Joey Essex of the team"
   },
   {
     "id": "rocco-b",
     "displayName": "Rocco",
     "active": true,
-    "position": "LW"
+    "position": "LW",
+    "strapLine": "Extraordinary ability not to pass the ball at the right time"
   },
   {
     "id": "ronnie-d",
     "displayName": "Ronnie D",
     "active": true,
-    "position": "GK"
+    "position": "GK",
+    "strapLine": "Mad as a box of frogs. Nuclear powered."
   },
   {
     "id": "ronnie-t",
     "displayName": "Ronnie T",
     "active": true,
-    "position": "CB"
+    "position": "CB",
+    "strapLine": "now, wheres my wallet ??"
   },
   {
     "id": "ryan-b",
     "displayName": "Ryan",
     "active": true,
-    "position": "RW"
+    "position": "RW",
+    "strapLine": "Saturday Reject"
   },
   {
     "id": "ryeley-d",
     "displayName": "Ryeley",
     "active": true,
-    "position": "LB"
+    "position": "LB",
+    "strapLine": "No, I'm Batman."
   },
   {
     "id": "will-b",
     "displayName": "Will",
     "active": true,
-    "position": "LB"
+    "position": "LB",
+    "strapLine": "Will \"Don't forget you are last man\" Beecham"
   }
 ]

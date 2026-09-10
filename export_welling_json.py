@@ -152,7 +152,13 @@ def table_rows(workbook_path: Path, sheet_name: str, table_name: Optional[str] =
         table_name = next(iter(ws.tables.keys()))
 
     if table_name not in ws.tables:
-        return []
+        # The master workbook's squad table name may change (for example,
+        # Squad -> Squad26) while the sheet remains the authoritative source.
+        # Use the sheet's sole table instead of silently exporting no rows.
+        if len(ws.tables) == 1:
+            table_name = next(iter(ws.tables.keys()))
+        else:
+            return []
 
     table = ws.tables[table_name]
     min_col, min_row, max_col, max_row = range_boundaries(table.ref)
@@ -195,6 +201,9 @@ def export_players(workbook_path: Path) -> List[Dict[str, Any]]:
         position = row.get("position")
         if position not in (None, ""):
             player["position"] = position
+        strapline = row.get("strapLine")
+        if strapline not in (None, ""):
+            player["strapLine"] = strapline
         players.append(player)
     return players
 

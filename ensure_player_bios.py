@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""Ensure Squad has a Strap Line column and export player bios for the Dashboard.
+"""Export player bios while keeping Squad > Strap Line authoritative.
 
-Blank straplines are filled with a light-hearted default based on playing position.
-Existing straplines are never overwritten, so they can be edited freely in Excel.
+Blank Excel straplines remain blank and are never replaced with generated text.
 """
 from __future__ import annotations
 
@@ -106,7 +105,12 @@ def main() -> None:
     try:
         book = app.books.open(str(workbook), update_links=False, read_only=False)
         sheet = book.sheets["Squad"]
-        table = sheet.tables["Squad"]
+        try:
+            table = sheet.tables["Squad"]
+        except Exception:
+            if len(sheet.tables) != 1:
+                raise RuntimeError("Squad sheet needs one identifiable player table")
+            table = sheet.tables[0]
 
         headers = [text(v) for v in table.range.rows[0].value]
         header_lookup = {normal(value).replace(" ", ""): index for index, value in enumerate(headers)}
@@ -151,11 +155,6 @@ def main() -> None:
 
             position = text(row[position_idx] if position_idx is not None and position_idx < len(row) else "")
             strapline = text(row[strap_idx] if strap_idx < len(row) else "")
-            if not strapline:
-                strapline = default_strapline(player_id, position)
-                sheet.range((first_data_row + offset, first_col + strap_idx)).value = strapline
-                filled += 1
-
             group = position_group(position)
             exported.append({
                 "id": player_id,

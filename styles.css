@@ -247,6 +247,12 @@ main {
   margin-top:0;
 }
 
+.chart-detail-hint {
+  margin:-4px 0 10px;
+  color:var(--muted);
+  font-size:12px;
+}
+
 .chart-scroll {
   overflow-x:auto;
   overflow-y:hidden;

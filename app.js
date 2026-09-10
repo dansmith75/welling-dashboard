@@ -377,7 +377,9 @@ function resultClass(result) {
   return "";
 }
 
-function showPage(pageId) {
+function showPage(pageId, updateHistory = true) {
+  const currentPage = document.querySelector(".page.active")?.id || "overview";
+
   document.querySelectorAll(".tab-btn").forEach(button => {
     button.classList.toggle("active", button.dataset.page === pageId);
   });
@@ -386,8 +388,28 @@ function showPage(pageId) {
     page.classList.toggle("active", page.id === pageId);
   });
 
+  if (updateHistory && currentPage !== pageId) {
+    const url = new URL(window.location.href);
+    url.hash = pageId === "overview" ? "" : pageId;
+    window.history.pushState({ dashboardPage: pageId }, "", url);
+  }
+
   setTimeout(renderCurrentPage, 80);
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function setupDashboardHistory() {
+  const hashPage = window.location.hash.replace(/^#/, "");
+  const validPages = new Set(Array.from(document.querySelectorAll(".page")).map(page => page.id));
+  const initialPage = validPages.has(hashPage) ? hashPage : "overview";
+
+  window.history.replaceState({ dashboardPage: initialPage }, "", window.location.href);
+  if (initialPage !== "overview") showPage(initialPage, false);
+
+  window.addEventListener("popstate", event => {
+    const pageId = event.state?.dashboardPage || "overview";
+    showPage(validPages.has(pageId) ? pageId : "overview", false);
+  });
 }
 
 function setDrillLabel(elementId, text) {
@@ -1144,6 +1166,7 @@ document.addEventListener("keydown", event => {
 loadData()
   .then(() => {
     setupTabs();
+    setupDashboardHistory();
     setupThemeToggle();
     setupFullscreenGallery();
     setupVisitCounter();

@@ -730,14 +730,22 @@ function isRealEvent(value) {
   return text !== "" && text !== "0" && text !== "-" && text.toLowerCase() !== "null";
 }
 
+function isYellowCardEvent(value) {
+  return /\byellow(?:\s+card)?\b/i.test(String(value ?? ""));
+}
+
+function isRedCardEvent(value) {
+  return /\bred(?:\s+card)?\b/i.test(String(value ?? ""));
+}
+
 function eventTone(eventText) {
   const text = eventText.toLowerCase();
 
   if (text.includes("double hat trick")) return "🎩🎩 Double hat-trick alert";
   if (text.includes("hat trick")) return "🎩 Hat-trick watch";
   if (text.includes("pen")) return "⚽ Penalty";
-  if (text.includes("yellow")) return "🟨 Into the book";
-  if (text.includes("red")) return "🟥 Early shower";
+  if (isYellowCardEvent(text)) return "🟨 Into the book";
+  if (isRedCardEvent(text)) return "🟥 Early shower";
   if (text.includes("injur") || text.includes("split") || text.includes("shoulder")) return "🩹 Treatment room note";
   if (text.includes("fell")) return "🫣 One for the blooper reel";
   if (text.includes("last game") || text.includes("joined")) return "📌 Squad note";
@@ -819,8 +827,8 @@ function getCardCounts(player) {
   const events = getPlayerEvents(player);
 
   return {
-    yellow: events.filter(e => e.event.toLowerCase().includes("yellow")).length,
-    red: events.filter(e => e.event.toLowerCase().includes("red")).length
+    yellow: events.filter(e => isYellowCardEvent(e.event)).length,
+    red: events.filter(e => isRedCardEvent(e.event)).length
   };
 }
 
@@ -957,7 +965,7 @@ if (type === "assists") {
     title = `${player} — Yellow Cards`;
 
     const yellows = getPlayerEvents(player)
-      .filter(e => e.event.toLowerCase().includes("yellow"))
+      .filter(e => isYellowCardEvent(e.event))
       .map(e => `<li>${formatDateUK(e.date)} vs ${e.opposition}: ${e.event}</li>`);
 
     content = yellows.length ? `<ul>${yellows.join("")}</ul>` : `<p>No yellow cards recorded for ${player}.</p>`;
@@ -967,7 +975,7 @@ if (type === "assists") {
     title = `${player} — Red Cards`;
 
     const reds = getPlayerEvents(player)
-      .filter(e => e.event.toLowerCase().includes("red"))
+      .filter(e => isRedCardEvent(e.event))
       .map(e => `<li>${formatDateUK(e.date)} vs ${e.opposition}: ${e.event}</li>`);
 
     content = reds.length ? `<ul>${reds.join("")}</ul>` : `<p>No red cards recorded for ${player}.</p>`;

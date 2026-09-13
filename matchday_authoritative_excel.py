@@ -32,10 +32,16 @@ def latest_completed_sessions() -> list[dict[str, Any]]:
 
 
 def rebuild_matchday_records(book,sessions):
-    sheet,table=core.ensure_matchday_table(book); headers=core.table_headers(table); rows=[]
+    sheet,table=core.ensure_matchday_table(book); headers=list(core.MATCHDAY_HEADERS); rows=[]
     for session in sessions: rows.extend(core.matchday_rows(session))
-    sr,sc=table.range.row,table.range.column; oldr=max(table.range.rows.count,2); oldc=max(table.range.columns.count,len(headers))
-    sheet.range((sr+1,sc),(sr+oldr-1,sc+oldc-1)).clear_contents(); endr=max(len(rows)+1,2); table.resize(sheet.range((sr,sc),(sr+endr-1,sc+len(headers)-1)))
+    sr,sc=table.range.row,table.range.column; oldr=max(sheet.used_range.last_cell.row-sr+1,2); oldc=max(sheet.used_range.last_cell.column-sc+1,len(headers))
+    # MatchdayRecords is a generated audit table.  Restore its canonical width
+    # before rebuilding so duplicated/repaired Excel columns cannot truncate a
+    # later completed session or leak stale audit data into the workbook.
+    if oldr > 1:
+        sheet.range((sr+1,sc),(sr+oldr-1,sc+oldc-1)).clear_contents()
+    endr=max(len(rows)+1,2); table.resize(sheet.range((sr,sc),(sr+endr-1,sc+len(headers)-1)))
+    sheet.range((sr,sc),(sr,sc+len(headers)-1)).value=[headers]
     if rows: sheet.range((sr+1,sc),(sr+len(rows),sc+len(headers)-1)).value=[[r.get(h,"") for h in headers] for r in rows]
     return len(rows)
 

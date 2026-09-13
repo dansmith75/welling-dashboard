@@ -65,7 +65,9 @@
     "matchId": "2026-09-13-sydenham-lions",
     "date": "2026-09-13",
     "opposition": "Sydenham Lions",
-    "goals": {}
+    "goals": {
+      "rocco-b": 1
+    }
   },
   {
     "matchId": "2026-09-20-taketime",

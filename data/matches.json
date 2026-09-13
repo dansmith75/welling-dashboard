@@ -86,9 +86,9 @@
     "venue": "SYDENHAM SPORTS GROUND #2",
     "kickoff": "10:30",
     "postponed": false,
-    "goalsFor": null,
-    "goalsAgainst": null,
-    "result": null
+    "goalsFor": 1,
+    "goalsAgainst": 2,
+    "result": "L"
   },
   {
     "id": "2026-09-20-taketime",

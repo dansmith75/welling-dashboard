@@ -48,7 +48,9 @@
     "matchId": "2026-09-13-sydenham-lions",
     "date": "2026-09-13",
     "opposition": "Sydenham Lions",
-    "events": {}
+    "events": {
+      "rocco-b": "51' Penalty awarded"
+    }
   },
   {
     "matchId": "2026-09-20-taketime",

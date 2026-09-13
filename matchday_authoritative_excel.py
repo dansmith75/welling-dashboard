@@ -56,7 +56,7 @@ def find_header_column(sheet,*names):
 
 def squad_rows(book):
     if "Squad" not in [s.name for s in book.sheets]:return []
-    try:return core.table_dict_rows(book.sheets["Squad"].tables["Squad"])
+    try:return core.table_dict_rows(core.find_table(book.sheets["Squad"],"Squad",("ID","Display Name","Active")))
     except Exception:return []
 
 

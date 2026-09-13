@@ -96,6 +96,23 @@ def table_headers(table) -> list[str]:
     return [str(v or "").strip() for v in _flat_row(table.range.rows[0].value)]
 
 
+def find_table(sheet, preferred_name: str, required_headers: tuple[str, ...] = ()):
+    """Return the intended table even if Excel added a numeric suffix to its name."""
+    try:
+        return sheet.tables[preferred_name]
+    except Exception:
+        pass
+    wanted = {_normal_header(value) for value in required_headers}
+    candidates = []
+    for table in sheet.tables:
+        present = {_normal_header(value) for value in table_headers(table)}
+        if not wanted or wanted.issubset(present):
+            candidates.append(table)
+    if len(candidates) == 1:
+        return candidates[0]
+    raise KeyError(f"Excel table '{preferred_name}' was not found on sheet '{sheet.name}'.")
+
+
 def table_existing_column_values(table,header:str)->set[str]:
     headers=table_headers(table)
     if header not in headers:return set()
@@ -137,7 +154,7 @@ def import_attendance(book)->int:
     records=api_get("attendance_records","session_id,player_id,display_name,status")
     if ATTENDANCE_SHEET not in [s.name for s in book.sheets]: raise RuntimeError(f"Workbook sheet '{ATTENDANCE_SHEET}' was not found.")
     sheet=book.sheets[ATTENDANCE_SHEET]
-    try: table=sheet.tables[ATTENDANCE_TABLE]
+    try: table=find_table(sheet,ATTENDANCE_TABLE,("RecordKey","SessionId","SessionDate","PlayerId","Status","Source"))
     except Exception as exc: raise RuntimeError(f"Excel table '{ATTENDANCE_TABLE}' was not found.") from exc
     headers=table_headers(table); existing_rows=table_dict_rows(table); sessions_by_id={str(s["id"]):s for s in sessions}; desired_rows=[]
     existing_app={str(row.get("RecordKey") or ""):row for row in existing_rows if str(row.get("Source") or "").strip().lower()=="app"}
@@ -178,7 +195,7 @@ def import_attendance(book)->int:
 
 def active_player_ids(book)->list[str]:
     if "Squad" not in [s.name for s in book.sheets]:return []
-    try: table=book.sheets["Squad"].tables["Squad"]
+    try: table=find_table(book.sheets["Squad"],"Squad",("ID","Display Name","Active"))
     except Exception:return []
     players=[]
     for row in table_dict_rows(table):
@@ -189,7 +206,7 @@ def active_player_ids(book)->list[str]:
 
 def fixture_rows(book)->list[dict[str,Any]]:
     if "Fixtures" not in [s.name for s in book.sheets]:return []
-    try: table=book.sheets["Fixtures"].tables["Fixtures"]
+    try: table=find_table(book.sheets["Fixtures"],"Fixtures",("Date","Opposition","Home / Away"))
     except Exception:return []
     rows=[]
     for row in table_dict_rows(table):
@@ -199,7 +216,7 @@ def fixture_rows(book)->list[dict[str,Any]]:
 
 
 def latest_attendance_sessions(book,session_type:str)->list[dict[str,Any]]:
-    sheet=book.sheets[ATTENDANCE_SHEET]; table=sheet.tables[ATTENDANCE_TABLE]; rows=table_dict_rows(table); grouped={}
+    sheet=book.sheets[ATTENDANCE_SHEET]; table=find_table(sheet,ATTENDANCE_TABLE,("RecordKey","SessionId","SessionDate","PlayerId","Status","Source")); rows=table_dict_rows(table); grouped={}
     for row in rows:
         if str(row.get("SessionType") or "").strip().lower()!=session_type.lower():continue
         key=str(row.get("SessionKey") or "").strip()
@@ -260,7 +277,7 @@ def refresh_wide_attendance_sheets(book)->dict[str,int]:return {"matchRows":refr
 
 def ensure_matchday_table(book):
     names=[s.name for s in book.sheets]; sheet=book.sheets[MATCHDAY_SHEET] if MATCHDAY_SHEET in names else book.sheets.add(MATCHDAY_SHEET,after=book.sheets[-1])
-    try:return sheet,sheet.tables[MATCHDAY_TABLE]
+    try:return sheet,find_table(sheet,MATCHDAY_TABLE,("ImportKey","SessionId","MatchId","RecordType"))
     except Exception:
         sheet.range("A1").value=[MATCHDAY_HEADERS]; table=sheet.tables.add(sheet.range((1,1),(2,len(MATCHDAY_HEADERS))),name=MATCHDAY_TABLE); sheet.range((2,1),(2,len(MATCHDAY_HEADERS))).clear_contents(); return sheet,table
 

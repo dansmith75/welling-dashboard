@@ -35,7 +35,14 @@ def to_date(value: Any):
 def table_rows(book,sheet_name,table_name=None):
     if sheet_name not in [s.name for s in book.sheets]: return []
     sheet=book.sheets[sheet_name]
-    try: table=sheet.tables[table_name] if table_name else sheet.tables[0]
+    try:
+        if table_name:
+            try: table=sheet.tables[table_name]
+            except Exception:
+                tables=list(sheet.tables)
+                if len(tables)!=1:return []
+                table=tables[0]
+        else: table=sheet.tables[0]
     except Exception: return []
     values=table.range.value
     if not values: return []

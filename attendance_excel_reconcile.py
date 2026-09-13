@@ -17,7 +17,7 @@ def active_player_ids(core, book) -> list[str]:
         return []
     sheet = book.sheets["Squad"]
     try:
-        table = sheet.tables["Squad"]
+        table = core.find_table(sheet,"Squad",("ID","Display Name","Active"))
     except Exception:
         return []
 
@@ -37,7 +37,7 @@ def attendance_sessions(core, book, session_type: str) -> list[dict[str, Any]]:
     if core.ATTENDANCE_SHEET not in [s.name for s in book.sheets]:
         return []
     sheet = book.sheets[core.ATTENDANCE_SHEET]
-    table = sheet.tables[core.ATTENDANCE_TABLE]
+    table = core.find_table(sheet,core.ATTENDANCE_TABLE,("RecordKey","SessionId","SessionDate","PlayerId","Status","Source"))
     rows = core.table_dict_rows(table)
 
     grouped: dict[str, dict[str, Any]] = {}
@@ -162,7 +162,7 @@ def _promote_manual_match_rows(core, book, sheet, fixtures: list[dict[str, Any]]
     manual = _existing_wide_statuses(core, sheet)
     fixture_by_date = {core.iso_date(fixture.get("Date")): fixture for fixture in fixtures}
     raw_sheet = book.sheets[core.ATTENDANCE_SHEET]
-    raw_table = raw_sheet.tables[core.ATTENDANCE_TABLE]
+    raw_table = core.find_table(raw_sheet,core.ATTENDANCE_TABLE,("RecordKey","SessionId","SessionDate","PlayerId","Status","Source"))
     new_rows: list[dict[str, Any]] = []
 
     for date_key, statuses in manual.items():
@@ -276,7 +276,7 @@ def _promote_manual_training_rows(core, book, sheet) -> int:
     }
     manual = _existing_training_statuses(core, sheet)
     raw_sheet = book.sheets[core.ATTENDANCE_SHEET]
-    raw_table = raw_sheet.tables[core.ATTENDANCE_TABLE]
+    raw_table = core.find_table(raw_sheet,core.ATTENDANCE_TABLE,("RecordKey","SessionId","SessionDate","PlayerId","Status","Source"))
     new_rows: list[dict[str, Any]] = []
     for date_key, statuses in manual.items():
         if (date_key, "training", "") in getattr(core, "REMOVED_APP_SESSION_KEYS", set()):

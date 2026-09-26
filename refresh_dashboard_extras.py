@@ -13,6 +13,8 @@ from typing import Any
 LINK_HEADERS = ["Category", "Name", "URL", "Description", "Active", "Sort Order"]
 LEAGUE_HEADERS = ["Position", "Team", "P", "W", "D", "L", "GF", "GA", "GD", "Pts"]
 FA_LEAGUE_TABLE_URL = "https://fulltime.thefa.com/table.html?league=3117271&selectedSeason=964418083&selectedDivision=387107891&selectedCompetition=0&selectedFixtureGroupKey=1_822238577"
+FA_LEAGUE_HOME_URL = "http://fulltime.thefa.com/index.html?league=3117271&selectedCompetition=0&selectedDivision=387107891&selectedFixtureGroupKey=1_822238577&selectedSeason=964418083"
+FA_TEXT_PROXY_URL = "https://r.jina.ai/" + FA_LEAGUE_HOME_URL.replace("&", "%26")
 FULLTIME_API_URLS = [
     "https://faapi.jwhsolutions.co.uk/api/League/822238577",
     "https://faapi.jwhsolutions.co.uk/api/League/822238577/season/964418083",
@@ -96,13 +98,17 @@ def ensure_table(book, sheet_name, table_name, headers):
     try:
         table = sheet.tables[table_name]
     except Exception:
-        sheet.range("A1").value = [headers]
-        sheet.range((2, 1), (2, len(headers))).clear_contents()
-        table = sheet.tables.add(sheet.range((1, 1), (2, len(headers))), name=table_name)
-        try:
-            table.table_style = "TableStyleMedium2"
-        except Exception:
-            pass
+        candidates = list(sheet.tables)
+        if len(candidates) == 1:
+            table = candidates[0]
+        else:
+            sheet.range("A1").value = [headers]
+            sheet.range((2, 1), (2, len(headers))).clear_contents()
+            table = sheet.tables.add(sheet.range((1, 1), (2, len(headers))), name=table_name)
+            try:
+                table.table_style = "TableStyleMedium2"
+            except Exception:
+                pass
     if [str(v or "").strip() for v in table.range.rows[0].value] != headers:
         rewrite_table(sheet, table, headers, table_rows(table))
     return sheet, table
@@ -239,6 +245,42 @@ def fetch_fa_html():
     raise RuntimeError("could not identify standings table")
 
 
+def fetch_fa_markdown():
+    """Read the public Full-Time page through a text renderer when FA blocks scripts."""
+    req = urllib.request.Request(FA_TEXT_PROXY_URL, headers={"User-Agent": "Mozilla/5.0", "Accept": "text/plain"})
+    with urllib.request.urlopen(req, timeout=60) as response:
+        text = response.read().decode("utf-8", errors="replace")
+    marker = "## League Table"
+    if marker not in text:
+        raise RuntimeError("league table heading was not found")
+    section = text.split(marker, 1)[1]
+    rows = []
+    for line in section.splitlines():
+        line = line.strip()
+        if not line.startswith("|"):
+            if rows:
+                break
+            continue
+        cells = [cell.strip() for cell in line.strip("|").split("|")]
+        if len(cells) < 10 or clean(cells[0]) in {"pos", "position", ""} or set(cells[0]) == {"-"}:
+            continue
+        try:
+            position = int(cells[0])
+        except ValueError:
+            continue
+        team = re.sub(r"^\[([^]]+)\]\([^)]*\)$", r"\1", cells[1]).strip()
+        rows.append({
+            "Position": position, "Team": team,
+            "P": number(cells[2]) or 0, "W": number(cells[3]) or 0,
+            "D": number(cells[4]) or 0, "L": number(cells[5]) or 0,
+            "GF": number(cells[6]) or 0, "GA": number(cells[7]) or 0,
+            "GD": number(cells[8]) or 0, "Pts": number(cells[9]) or 0,
+        })
+    if len(rows) < 2:
+        raise RuntimeError("proxied Full-Time page contained no standings")
+    return rows
+
+
 def league_json(rows):
     out = []
     for row in rows:
@@ -336,18 +378,24 @@ def main():
         source = None
 
         try:
-            live_rows, used_url = fetch_api_league()
-            source = "FullTime API"
-            print(f"League table refreshed via FullTime API: {len(live_rows)} teams")
-            print(f"League source: {used_url}")
-        except Exception as api_exc:
-            print(f"WARNING: FullTime API refresh failed: {api_exc}")
+            live_rows = fetch_fa_markdown()
+            source = "FA Full-Time public page"
+            print(f"League table refreshed from FA Full-Time: {len(live_rows)} teams")
+        except Exception as proxy_exc:
+            print(f"WARNING: Full-Time text refresh failed: {proxy_exc}")
             try:
-                live_rows = fetch_fa_html()
-                source = "FA Full-Time page"
-                print(f"League table refreshed directly from FA Full-Time: {len(live_rows)} teams")
-            except Exception as fa_exc:
-                print(f"WARNING: Direct FA Full-Time refresh failed: {fa_exc}")
+                live_rows, used_url = fetch_api_league()
+                source = "FullTime API"
+                print(f"League table refreshed via FullTime API: {len(live_rows)} teams")
+                print(f"League source: {used_url}")
+            except Exception as api_exc:
+                print(f"WARNING: FullTime API refresh failed: {api_exc}")
+                try:
+                    live_rows = fetch_fa_html()
+                    source = "FA Full-Time page"
+                    print(f"League table refreshed directly from FA Full-Time: {len(live_rows)} teams")
+                except Exception as fa_exc:
+                    print(f"WARNING: Direct FA Full-Time refresh failed: {fa_exc}")
 
         if live_rows:
             chosen_rows = live_rows

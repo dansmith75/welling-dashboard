@@ -10,7 +10,7 @@ from datetime import datetime
 from pathlib import Path
 
 WORKBOOK_NAME = "Welling United Red OBDSFL 26-27.xlsx"
-EXPECTED = ["players.json", "matches.json", "goals.json", "assists.json", "events.json", "attendance.json", "minutes.json", "timeline.json"]
+EXPECTED = ["players.json", "matches.json", "goals.json", "assists.json", "events.json", "attendance.json", "minutes.json", "timeline.json", "links.json", "league-table.json", "venues.json"]
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data"
 CACHE = ROOT / ".welling-cache"
@@ -199,6 +199,9 @@ def main():
     print("\nPreparing local workbook snapshot for dashboard export...")
     export_workbook = create_export_snapshot(workbook) if sync_ok else EXPORT_SNAPSHOT
 
+    print("\nRefreshing links and league table...")
+    run([sys.executable, str(ROOT / "refresh_dashboard_extras.py"), str(export_workbook)])
+
     print("\n3/10 Exporting snapshot to JSON...")
     run([sys.executable, str(ROOT / "export_welling_json.py"), "--workbook", str(export_workbook)])
 
@@ -243,7 +246,7 @@ def main():
     print("\nFixtures / Results\n------------------")
     print("\n".join(lines) if lines else "  No fixture/result changes")
     print("\nOther data\n----------")
-    labels = {"data/goals.json":"Goals","data/assists.json":"Assists","data/events.json":"Events","data/attendance.json":"Attendance","data/minutes.json":"Playing minutes","data/timeline.json":"Match timeline"}
+    labels = {"data/goals.json":"Goals","data/assists.json":"Assists","data/events.json":"Events","data/attendance.json":"Attendance","data/minutes.json":"Playing minutes","data/timeline.json":"Match timeline","data/links.json":"Useful links","data/league-table.json":"League table","data/venues.json":"Venues"}
     other = [f"  * {labels[p]} updated" for p in changed if p in labels]
     print("\n".join(other) if other else "  No other data changes")
     print("\nFiles to publish:")

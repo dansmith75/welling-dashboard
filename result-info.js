@@ -173,6 +173,7 @@
     document.getElementById("resultsTitle").textContent = isNextMatch ? "Fixture Details" : (label || "Match Results");
 
     document.getElementById("resultsTable").innerHTML = rows.map((match, index) => {
+      const postponed = Boolean(match.postponed);
       const timeline = timelineForMatch(match);
       const detailedEvents = detailedTimelineLines(timeline?.events || []);
       const matchday = isMatchdayMatch(match);
@@ -187,12 +188,12 @@
       return `
         <tr>
           <td>${formatDateUK(match.date)}</td><td>${match.opposition || ""}</td><td>${match.homeAway || ""}</td><td>${match.competition || ""}</td>
-          <td>${safeNumber(match.goalsFor)}</td><td>${safeNumber(match.goalsAgainst)}</td>
-          <td><span class="result-badge ${resultClass(match.result)}">${match.result || ""}</span></td>
+          <td>${match.goalsFor == null ? "—" : safeNumber(match.goalsFor)}</td><td>${match.goalsAgainst == null ? "—" : safeNumber(match.goalsAgainst)}</td>
+          <td><span class="result-badge ${postponed ? "postponed" : resultClass(match.result)}">${postponed ? "Postponed" : (match.result || "")}</span></td>
           <td><button class="scorers-btn" onclick="toggleScorers(${index})">Info</button></td>
         </tr>
         <tr class="scorers-row" id="scorers-row-${index}"><td colspan="8"><div class="scorers-box match-info-box">
-          <div class="match-info-heading"><strong>${formatDateUK(match.date)} · ${match.homeAway || ""} vs ${match.opposition || ""}</strong><span>${match.competition || ""} · ${safeNumber(match.goalsFor)}–${safeNumber(match.goalsAgainst)} ${match.result || ""}</span></div>
+          <div class="match-info-heading"><strong>${formatDateUK(match.date)} · ${match.homeAway || ""} vs ${match.opposition || ""}</strong><span>${match.competition || ""} · ${postponed ? "Postponed" : `${match.goalsFor == null ? "—" : safeNumber(match.goalsFor)}–${match.goalsAgainst == null ? "—" : safeNumber(match.goalsAgainst)} ${match.result || ""}`}</span></div>
           <h3>Game Timeline</h3>
           ${information.length ? `<ol class="match-timeline">${information.join("")}</ol>` : `<p class="timeline-muted">${message || "No detailed match events were recorded for this fixture."}</p>`}
         </div></td></tr>`;
@@ -201,6 +202,7 @@
 
   const style = document.createElement("style");
   style.textContent = `#visitCounter,#overview .card.executive{display:none!important}.match-info-heading{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 18px;margin-bottom:16px}.match-info-heading span,.timeline-muted{color:var(--muted)}.opponent-goal-icon{filter:hue-rotate(145deg) saturate(4.5) brightness(.9)}.timeline-score{margin-left:8px;font-weight:900;padding:2px 7px;border-radius:999px}.timeline-score.losing{color:#fecaca;background:rgba(220,38,38,.18)}.timeline-score.drawing{color:#fdba74;background:rgba(249,115,22,.16)}.timeline-score.winning{color:#86efac;background:rgba(34,197,94,.16)}.match-info-box h3{margin:0 0 10px}.match-timeline{margin:0;padding-left:24px}.match-timeline li{padding:7px 0;line-height:1.45;border-bottom:1px solid var(--line)}.match-timeline li:last-child{border-bottom:0}`;
+  style.textContent += `.result-badge.postponed{background:rgba(249,115,22,.18);color:#fdba74}`;
   document.head.appendChild(style);
 
   async function loadVerifiedTimeline() {

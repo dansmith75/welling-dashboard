@@ -219,6 +219,9 @@ def export_matches(workbook_path: Path) -> List[Dict[str, Any]]:
         match_id = slugify(f"{row.get('date')}-{row.get('opposition')}")
         home_away = row.get("homeAway")
         venue = row.get("venue")
+        kickoff_value = row.get("kickOff") or row.get("kickoff")
+        if hasattr(kickoff_value, "strftime"):
+            kickoff_value = kickoff_value.strftime("%H:%M")
         match = {
             "id": match_id,
             "date": row.get("date"),
@@ -227,6 +230,7 @@ def export_matches(workbook_path: Path) -> List[Dict[str, Any]]:
             "competition": row.get("competition"),
             "homeAway": home_away,
             "venue": venue or home_away,
+            "kickoff": kickoff_value,
             "postponed": bool(row.get("postponed")) if row.get("postponed") is not None else False,
             "goalsFor": row.get("goalsFor"),
             "goalsAgainst": row.get("goalsAgainst"),

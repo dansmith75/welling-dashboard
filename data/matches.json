@@ -7,6 +7,7 @@
     "competition": "Friendly",
     "homeAway": "Home",
     "venue": "Home",
+    "kickoff": null,
     "postponed": false,
     "goalsFor": 3,
     "goalsAgainst": 1,
@@ -20,6 +21,7 @@
     "competition": "Friendly",
     "homeAway": "Away",
     "venue": "Away",
+    "kickoff": null,
     "postponed": false,
     "goalsFor": 1,
     "goalsAgainst": 2,
@@ -33,6 +35,7 @@
     "competition": "Friendly",
     "homeAway": "Away",
     "venue": "Away",
+    "kickoff": null,
     "postponed": false,
     "goalsFor": 7,
     "goalsAgainst": 8,
@@ -46,6 +49,7 @@
     "competition": "Friendly",
     "homeAway": "Home",
     "venue": "Home",
+    "kickoff": null,
     "postponed": false,
     "goalsFor": 5,
     "goalsAgainst": 3,
@@ -59,6 +63,7 @@
     "competition": "Friendly",
     "homeAway": "Home",
     "venue": "Home",
+    "kickoff": null,
     "postponed": false,
     "goalsFor": 3,
     "goalsAgainst": 3,
@@ -75,7 +80,8 @@
     "postponed": false,
     "goalsFor": 4,
     "goalsAgainst": 3,
-    "result": "W"
+    "result": "W",
+    "day": "2026-09-06"
   },
   {
     "id": "2026-09-13-sydenham-lions",
@@ -83,12 +89,13 @@
     "opposition": "Sydenham Lions",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "SYDENHAM SPORTS GROUND #2",
-    "kickoff": "10:30",
+    "venue": "Norman Park Recreation Ground",
+    "kickoff": "12:30",
     "postponed": false,
     "goalsFor": 1,
     "goalsAgainst": 2,
-    "result": "L"
+    "result": "L",
+    "day": "2026-09-13"
   },
   {
     "id": "2026-09-20-taketime",
@@ -96,12 +103,13 @@
     "opposition": "Taketime",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
-    "postponed": false,
+    "postponed": true,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-09-20"
   },
   {
     "id": "2026-09-27-orpington-town",
@@ -117,17 +125,32 @@
     "result": null
   },
   {
-    "id": "2026-10-04-spitfire-united",
-    "date": "2026-10-04",
-    "opposition": "Spitfire United",
-    "competition": "League",
-    "homeAway": "Away",
-    "venue": "NORMAN PARK RECREATION GROUND B",
+    "id": "2026-09-27-taketime",
+    "date": "2026-09-27",
+    "day": "2026-09-27",
+    "opposition": "Taketime",
+    "competition": "Vic Farrow Cup",
+    "homeAway": "Home",
+    "venue": "Mottingham Sports Ground",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
     "result": null
+  },
+  {
+    "id": "2026-10-04-spitfire-united",
+    "date": "2026-10-04",
+    "opposition": "Spitfire United",
+    "competition": "League",
+    "homeAway": "Away",
+    "venue": "Norman Park Recreation Ground B",
+    "kickoff": "10:30",
+    "postponed": false,
+    "goalsFor": null,
+    "goalsAgainst": null,
+    "result": null,
+    "day": "2026-10-04"
   },
   {
     "id": "2026-10-11-huxley-guards",
@@ -135,12 +158,13 @@
     "opposition": "Huxley Guards",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-10-11"
   },
   {
     "id": "2026-10-18-qob",
@@ -148,12 +172,13 @@
     "opposition": "QOB",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "NORMAN PARK RECREATION GROUND D",
+    "venue": "Norman Park Recreation Ground D",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-10-18"
   },
   {
     "id": "2026-10-25-sydenham-lions",
@@ -161,12 +186,13 @@
     "opposition": "Sydenham Lions",
     "competition": "Presidents' Charity Cup",
     "homeAway": "Away",
-    "venue": "SYDENHAM SPORTS GROUND #2",
+    "venue": "Sydenham Sports Ground #2",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-10-25"
   },
   {
     "id": "2026-10-25-the-warren-development",
@@ -174,12 +200,13 @@
     "opposition": "The Warren Development",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "METROPOLITAN POLICE SPORTS CLUB #1",
+    "venue": "Metropolitan Police Sports Club #1",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-10-25"
   },
   {
     "id": "2026-11-01-bexley-athletic",
@@ -187,12 +214,13 @@
     "opposition": "Bexley Athletic",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-11-01"
   },
   {
     "id": "2026-11-08-ravensbury-rovers",
@@ -200,12 +228,13 @@
     "opposition": "Ravensbury Rovers",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "HOBLINGWELL WOOD RECREATION GROUND #1",
+    "venue": "Hoblingwell Wood Recreation Ground #1",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-11-08"
   },
   {
     "id": "2026-11-15-warlingham-warriors",
@@ -213,12 +242,13 @@
     "opposition": "Warlingham Warriors",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-11-15"
   },
   {
     "id": "2026-11-22-football-lawyers",
@@ -226,12 +256,13 @@
     "opposition": "Football Lawyers",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "NORMAN PARK RECREATION GROUND C",
+    "venue": "Norman Park Recreation Ground C",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-11-22"
   },
   {
     "id": "2026-11-29-sydenham-lions",
@@ -239,12 +270,13 @@
     "opposition": "Sydenham Lions",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-11-29"
   },
   {
     "id": "2026-12-13-taketime",
@@ -252,12 +284,13 @@
     "opposition": "Taketime",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "MOTTINGHAM SPORTS GROUND",
+    "venue": "Mottingham Sports Ground",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-12-13"
   },
   {
     "id": "2026-12-20-spitfire-united",
@@ -265,12 +298,13 @@
     "opposition": "Spitfire United",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2026-12-20"
   },
   {
     "id": "2027-01-03-huxley-guards",
@@ -278,12 +312,13 @@
     "opposition": "Huxley Guards",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "NORMAN PARK RECREATION GROUND A",
+    "venue": "Norman Park Recreation Ground A",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2027-01-03"
   },
   {
     "id": "2027-01-10-qob",
@@ -291,12 +326,13 @@
     "opposition": "QOB",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2027-01-10"
   },
   {
     "id": "2027-01-17-the-warren-development",
@@ -304,12 +340,13 @@
     "opposition": "The Warren Development",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2027-01-17"
   },
   {
     "id": "2027-01-24-bexley-athletic",
@@ -317,12 +354,13 @@
     "opposition": "Bexley Athletic",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "HALL PLACE #1",
+    "venue": "Hall Place #1",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2027-01-24"
   },
   {
     "id": "2027-01-31-ravensbury-rovers",
@@ -330,12 +368,13 @@
     "opposition": "Ravensbury Rovers",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2027-01-31"
   },
   {
     "id": "2027-02-07-warlingham-warriors",
@@ -343,12 +382,13 @@
     "opposition": "Warlingham Warriors",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "WARLINGHAM SPORTS CLUB",
+    "venue": "Warlingham Sports Club",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2027-02-07"
   },
   {
     "id": "2027-02-14-football-lawyers",
@@ -356,12 +396,13 @@
     "opposition": "Football Lawyers",
     "competition": "League",
     "homeAway": "Home",
-    "venue": "DANSON SPORTS FC",
+    "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2027-02-14"
   },
   {
     "id": "2027-02-21-orpington-town",
@@ -369,11 +410,12 @@
     "opposition": "Orpington Town",
     "competition": "League",
     "homeAway": "Away",
-    "venue": "ST MARY CRAY RECREATION GROUND",
+    "venue": "St Mary Cray Recreation Ground",
     "kickoff": "10:30",
     "postponed": false,
     "goalsFor": null,
     "goalsAgainst": null,
-    "result": null
+    "result": null,
+    "day": "2027-02-21"
   }
 ]

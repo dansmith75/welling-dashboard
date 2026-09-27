@@ -79,7 +79,12 @@
     "matchId": "2026-09-27-taketime",
     "date": "2026-09-27",
     "opposition": "Taketime",
-    "goals": {}
+    "goals": {
+      "rocco-b": 2,
+      "darren-r": 1,
+      "josh-m": 1,
+      "alfie-f": 1
+    }
   },
   {
     "matchId": "2026-10-04-spitfire-united",

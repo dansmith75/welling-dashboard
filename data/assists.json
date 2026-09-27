@@ -69,7 +69,12 @@
     "matchId": "2026-09-27-taketime",
     "date": "2026-09-27",
     "opposition": "Taketime",
-    "assists": {}
+    "assists": {
+      "jude-g": 1,
+      "josh-m": 1,
+      "kalan-w": 1,
+      "darren-r": 1
+    }
   },
   {
     "matchId": "2026-10-04-spitfire-united",

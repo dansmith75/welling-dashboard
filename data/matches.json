@@ -134,9 +134,9 @@
     "venue": "Mottingham Sports Ground",
     "kickoff": "10:30",
     "postponed": false,
-    "goalsFor": null,
-    "goalsAgainst": null,
-    "result": null
+    "goalsFor": 5,
+    "goalsAgainst": 4,
+    "result": "W"
   },
   {
     "id": "2026-10-04-spitfire-united",

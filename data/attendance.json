@@ -1991,6 +1991,143 @@
           "source": "App"
         }
       ]
+    },
+    {
+      "sessionKey": "2026-09-27-match-home-manual",
+      "sessionId": "2026-09-27-match-home-manual",
+      "date": "2026-09-27",
+      "type": "Match",
+      "venue": "Home",
+      "submittedBy": "Dan",
+      "submittedAt": null,
+      "records": [
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Matchday App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Matchday App"
+        }
+      ]
     }
   ]
 }

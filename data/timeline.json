@@ -900,10 +900,10 @@
       {
         "type": "Substitution",
         "minute": 23,
-        "playerId": "ronnie-t",
-        "player": "Ronnie T",
-        "relatedPlayerId": "brad-e",
-        "relatedPlayer": "Brad",
+        "playerId": "jude-g",
+        "player": "Jude",
+        "relatedPlayerId": "ronnie-t",
+        "relatedPlayer": "Ronnie T",
         "detail": "OFF → ON",
         "value": null,
         "source": "Matchday App"
@@ -943,7 +943,7 @@
       },
       {
         "type": "Substitution",
-        "minute": 45,
+        "minute": 46,
         "playerId": "brad-e",
         "player": "Brad",
         "relatedPlayerId": "ryeley-d",
@@ -954,7 +954,7 @@
       },
       {
         "type": "Substitution",
-        "minute": 45,
+        "minute": 46,
         "playerId": "joe-g",
         "player": "Joe",
         "relatedPlayerId": "kieran-d",

@@ -595,8 +595,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "alfie-f",
     "displayName": "Alf",
-    "minutes": 111,
-    "starter": false,
+    "minutes": 91,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -608,7 +608,7 @@
     "playerId": "bailey-s",
     "displayName": "Bailey",
     "minutes": 74,
-    "starter": false,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -619,8 +619,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "brad-e",
     "displayName": "Brad",
-    "minutes": 22,
-    "starter": false,
+    "minutes": 46,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -631,8 +631,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "darren-r",
     "displayName": "Darren",
-    "minutes": 111,
-    "starter": false,
+    "minutes": 91,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -643,8 +643,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "frank-a",
     "displayName": "Frank",
-    "minutes": 61,
-    "starter": false,
+    "minutes": 41,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -655,8 +655,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "joe-g",
     "displayName": "Joe",
-    "minutes": 45,
-    "starter": false,
+    "minutes": 46,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -667,8 +667,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "josh-m",
     "displayName": "Josh",
-    "minutes": 111,
-    "starter": false,
+    "minutes": 91,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -679,8 +679,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "jude-g",
     "displayName": "Jude",
-    "minutes": 111,
-    "starter": false,
+    "minutes": 23,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -691,7 +691,7 @@
     "competition": "Vic Farrow Cup",
     "playerId": "kalan-w",
     "displayName": "Kalan",
-    "minutes": 84,
+    "minutes": 64,
     "starter": false,
     "submittedBy": "Dan"
   },
@@ -703,7 +703,7 @@
     "competition": "Vic Farrow Cup",
     "playerId": "kieran-d",
     "displayName": "Kieran",
-    "minutes": 32,
+    "minutes": 31,
     "starter": false,
     "submittedBy": "Dan"
   },
@@ -715,8 +715,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "liam-s",
     "displayName": "Liam",
-    "minutes": 64,
-    "starter": false,
+    "minutes": 44,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -727,8 +727,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "rocco-b",
     "displayName": "Rocco",
-    "minutes": 111,
-    "starter": false,
+    "minutes": 91,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -739,8 +739,8 @@
     "competition": "Vic Farrow Cup",
     "playerId": "ronnie-d",
     "displayName": "Ronnie D",
-    "minutes": 111,
-    "starter": false,
+    "minutes": 91,
+    "starter": true,
     "submittedBy": "Dan"
   },
   {
@@ -751,7 +751,7 @@
     "competition": "Vic Farrow Cup",
     "playerId": "ronnie-t",
     "displayName": "Ronnie T",
-    "minutes": 23,
+    "minutes": 68,
     "starter": false,
     "submittedBy": "Dan"
   },
@@ -763,7 +763,7 @@
     "competition": "Vic Farrow Cup",
     "playerId": "ryan-b",
     "displayName": "Ryan",
-    "minutes": 84,
+    "minutes": 64,
     "starter": false,
     "submittedBy": "Dan"
   },
@@ -775,7 +775,7 @@
     "competition": "Vic Farrow Cup",
     "playerId": "ryeley-d",
     "displayName": "Ryeley",
-    "minutes": 66,
+    "minutes": 45,
     "starter": false,
     "submittedBy": "Dan"
   }

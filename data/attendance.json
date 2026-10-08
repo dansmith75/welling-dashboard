@@ -3,149 +3,6 @@
   "season": "2026/27",
   "sessions": [
     {
-      "sessionKey": "2026-07-31-match-home-d99ba4a9",
-      "sessionId": "d99ba4a9-a000-441c-a3b2-280024345caa",
-      "date": null,
-      "type": "Match",
-      "venue": "Home",
-      "submittedBy": "Historical import",
-      "submittedAt": "2026-08-18T16:59:42.213111+00:00",
-      "records": [
-        {
-          "playerId": "alfie-f",
-          "displayName": "Alf",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "bailey-s",
-          "displayName": "Bailey",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "brad-e",
-          "displayName": "Brad",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "darren-r",
-          "displayName": "Darren",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "frank-a",
-          "displayName": "Frank",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "george-h",
-          "displayName": "George",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "george-w",
-          "displayName": "George W",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "jay-p",
-          "displayName": "Jay",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "joe-g",
-          "displayName": "Joe",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "josh-m",
-          "displayName": "Josh",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "jude-g",
-          "displayName": "Jude",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "kalan-w",
-          "displayName": "Kalan",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "liam-s",
-          "displayName": "Liam",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "louie-j",
-          "displayName": "Louie",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "morgan-s",
-          "displayName": "Morgan",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "rocco-b",
-          "displayName": "Rocco",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-d",
-          "displayName": "Ronnie D",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-t",
-          "displayName": "Ronnie T",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ryan-b",
-          "displayName": "Ryan",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "ryeley-d",
-          "displayName": "Ryeley",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "will-b",
-          "displayName": "Will",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "kieran-d",
-          "displayName": "Kieran",
-          "status": "Present",
-          "source": "App"
-        }
-      ]
-    },
-    {
       "sessionKey": "2026-07-31-match-home-manual",
       "sessionId": "2026-07-31-match-home-manual",
       "date": null,
@@ -993,149 +850,246 @@
           "displayName": "Will",
           "status": "Absent",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-08-02-match-away-529c0520",
-      "sessionId": "529c0520-ff7b-4dcc-8260-eea7fb6aad89",
-      "date": null,
-      "type": "Match",
-      "venue": "Away",
-      "submittedBy": "Historical import",
-      "submittedAt": "2026-08-18T16:59:42.213111+00:00",
-      "records": [
+        },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Absent",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "brad-e",
           "displayName": "Brad",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
           "displayName": "Darren",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "frank-a",
           "displayName": "Frank",
           "status": "Absent",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "george-h",
           "displayName": "George",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "george-w",
-          "displayName": "George W",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "jay-p",
-          "displayName": "Jay",
-          "status": "Absent",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "joe-g",
           "displayName": "Joe",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
           "displayName": "Josh",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "jude-g",
           "displayName": "Jude",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "kalan-w",
           "displayName": "Kalan",
           "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "liam-s",
-          "displayName": "Liam",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "louie-j",
-          "displayName": "Louie",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "morgan-s",
-          "displayName": "Morgan",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "rocco-b",
-          "displayName": "Rocco",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-d",
-          "displayName": "Ronnie D",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-t",
-          "displayName": "Ronnie T",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ryan-b",
-          "displayName": "Ryan",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "ryeley-d",
-          "displayName": "Ryeley",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "will-b",
-          "displayName": "Will",
-          "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
         }
       ]
     },
@@ -1987,149 +1941,246 @@
           "displayName": "Will",
           "status": "Present",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-08-09-match-away-ea9bf1f8",
-      "sessionId": "ea9bf1f8-3dec-4db6-872a-2da123a823ec",
-      "date": null,
-      "type": "Match",
-      "venue": "Away",
-      "submittedBy": "Historical import",
-      "submittedAt": "2026-08-18T16:59:42.213111+00:00",
-      "records": [
+        },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
-          "status": "Absent",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "brad-e",
           "displayName": "Brad",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
           "displayName": "Darren",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "frank-a",
           "displayName": "Frank",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "george-h",
           "displayName": "George",
           "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "george-w",
-          "displayName": "George W",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "jay-p",
-          "displayName": "Jay",
-          "status": "Absent",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "joe-g",
           "displayName": "Joe",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
           "displayName": "Josh",
-          "status": "Absent",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "jude-g",
           "displayName": "Jude",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kalan-w",
           "displayName": "Kalan",
           "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "liam-s",
-          "displayName": "Liam",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "louie-j",
-          "displayName": "Louie",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "morgan-s",
-          "displayName": "Morgan",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "rocco-b",
-          "displayName": "Rocco",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-d",
-          "displayName": "Ronnie D",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-t",
-          "displayName": "Ronnie T",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ryan-b",
-          "displayName": "Ryan",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "ryeley-d",
-          "displayName": "Ryeley",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "will-b",
-          "displayName": "Will",
-          "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
         }
       ]
     },
@@ -2142,6 +2193,246 @@
       "submittedBy": "Dan",
       "submittedAt": null,
       "records": [
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
@@ -3039,6 +3330,486 @@
           "playerId": "george-w",
           "displayName": "George W",
           "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
           "source": "Excel"
         },
         {
@@ -4947,6 +5718,486 @@
           "displayName": "Will",
           "status": "Present",
           "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
         }
       ]
     },
@@ -5005,6 +6256,486 @@
           "playerId": "george-w",
           "displayName": "George W",
           "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
           "source": "Excel"
         },
         {
@@ -7033,6 +8764,486 @@
           "displayName": "Will",
           "status": "Present",
           "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
         }
       ]
     },
@@ -7169,6 +9380,486 @@
           "playerId": "darren-r",
           "displayName": "Darren",
           "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
           "source": "Excel"
         },
         {
@@ -8741,155 +11432,486 @@
           "displayName": "Will",
           "status": "Absent",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-08-12-training-na-ca65eb66",
-      "sessionId": "ca65eb66-6a28-46e4-80b0-bbe87b7b98d2",
-      "date": null,
-      "type": "Training",
-      "venue": null,
-      "submittedBy": "Dan",
-      "submittedAt": "2026-08-18T16:06:38.93335+00:00",
-      "records": [
-        {
-          "playerId": "bailey-s",
-          "displayName": "Bailey",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "brad-e",
-          "displayName": "Brad",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "darren-r",
-          "displayName": "Darren",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "frank-a",
-          "displayName": "Frank",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "george-h",
-          "displayName": "George",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "george-w",
-          "displayName": "George W",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "jay-p",
-          "displayName": "Jay",
-          "status": "Injured",
-          "source": "App"
-        },
-        {
-          "playerId": "joe-g",
-          "displayName": "Joe",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "josh-m",
-          "displayName": "Josh",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "imre-s",
-          "displayName": "Imre",
-          "status": "Present",
-          "source": "App"
         },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "jude-g",
           "displayName": "Jude",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kalan-w",
           "displayName": "Kalan",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "liam-s",
-          "displayName": "Liam",
           "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "louie-j",
-          "displayName": "Louie",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "morgan-s",
-          "displayName": "Morgan",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "rocco-b",
-          "displayName": "Rocco",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-d",
-          "displayName": "Ronnie D",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-t",
-          "displayName": "Ronnie T",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ryan-b",
-          "displayName": "Ryan",
-          "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "ryeley-d",
-          "displayName": "Ryeley",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "will-b",
-          "displayName": "Will",
-          "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
         }
       ]
     },
@@ -9381,161 +12403,126 @@
           "displayName": "Will",
           "status": "Present",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-08-19-training-na-8d51ec97",
-      "sessionId": "8d51ec97-d1d9-4105-9b70-5c0c85956042",
-      "date": null,
-      "type": "Training",
-      "venue": null,
-      "submittedBy": "Dan",
-      "submittedAt": "2026-08-19T20:17:50.218196+00:00",
-      "records": [
-        {
-          "playerId": "alex-l",
-          "displayName": "Alex",
-          "status": "Present",
-          "source": "App"
         },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
-          "status": "Absent",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "brad-e",
           "displayName": "Brad",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
           "displayName": "Darren",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "frank-a",
           "displayName": "Frank",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "george-h",
           "displayName": "George",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "george-w",
-          "displayName": "George W",
           "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "imre-s",
-          "displayName": "Imre",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "jay-p",
-          "displayName": "Jay",
-          "status": "Injured",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "joe-g",
           "displayName": "Joe",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
           "displayName": "Josh",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "jude-g",
           "displayName": "Jude",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kalan-w",
           "displayName": "Kalan",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "liam-s",
-          "displayName": "Liam",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "louie-j",
-          "displayName": "Louie",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "morgan-s",
-          "displayName": "Morgan",
           "status": "Absent",
-          "source": "App"
-        },
-        {
-          "playerId": "rocco-b",
-          "displayName": "Rocco",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-d",
-          "displayName": "Ronnie D",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-t",
-          "displayName": "Ronnie T",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ryan-b",
-          "displayName": "Ryan",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ryeley-d",
-          "displayName": "Ryeley",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "will-b",
-          "displayName": "Will",
-          "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
         }
       ]
     },
@@ -9548,6 +12535,126 @@
       "submittedBy": "Dan",
       "submittedAt": null,
       "records": [
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
+        },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
@@ -10644,143 +13751,246 @@
           "displayName": "Will",
           "status": "Present",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-09-02-training-na-6ef8ab20",
-      "sessionId": "6ef8ab20-9b52-4c15-8d3b-588e678d093a",
-      "date": null,
-      "type": "Training",
-      "venue": null,
-      "submittedBy": "Dan",
-      "submittedAt": "2026-09-02T22:48:26.879492+00:00",
-      "records": [
-        {
-          "playerId": "alex-l",
-          "displayName": "Alex",
-          "status": "Absent",
-          "source": "App"
         },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "brad-e",
           "displayName": "Brad",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
           "displayName": "Darren",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "frank-a",
           "displayName": "Frank",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "george-h",
           "displayName": "George",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
-          "playerId": "george-w",
-          "displayName": "George W",
+          "playerId": "joe-g",
+          "displayName": "Joe",
           "status": "Absent",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
           "displayName": "Josh",
-          "status": "Late",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "jude-g",
           "displayName": "Jude",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "kalan-w",
           "displayName": "Kalan",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "liam-s",
           "displayName": "Liam",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "louie-j",
           "displayName": "Louie",
-          "status": "Injured",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "morgan-s",
           "displayName": "Morgan",
-          "status": "Absent",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "rocco-b",
           "displayName": "Rocco",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "ronnie-d",
           "displayName": "Ronnie D",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "ronnie-t",
           "displayName": "Ronnie T",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "ryan-b",
           "displayName": "Ryan",
-          "status": "Absent",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "ryeley-d",
           "displayName": "Ryeley",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "will-b",
           "displayName": "Will",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "Excel"
         }
       ]
     },
@@ -11272,143 +14482,126 @@
           "displayName": "Will",
           "status": "Present",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-09-09-training-na-dde253c1",
-      "sessionId": "dde253c1-52b4-4390-b7f8-cf371068cae0",
-      "date": null,
-      "type": "Training",
-      "venue": null,
-      "submittedBy": "Dan",
-      "submittedAt": "2026-09-10T07:22:44.33157+00:00",
-      "records": [
-        {
-          "playerId": "alex-l",
-          "displayName": "Alex",
-          "status": "Absent",
-          "source": "App"
         },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "brad-e",
           "displayName": "Brad",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
           "displayName": "Darren",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "frank-a",
           "displayName": "Frank",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "george-h",
           "displayName": "George",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "joe-g",
           "displayName": "Joe",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
           "displayName": "Josh",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "jude-g",
           "displayName": "Jude",
-          "status": "Unavailable",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "kalan-w",
           "displayName": "Kalan",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "liam-s",
           "displayName": "Liam",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "louie-j",
           "displayName": "Louie",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "morgan-s",
           "displayName": "Morgan",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "rocco-b",
           "displayName": "Rocco",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "ronnie-d",
           "displayName": "Ronnie D",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "ronnie-t",
           "displayName": "Ronnie T",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "ryan-b",
           "displayName": "Ryan",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "ryeley-d",
           "displayName": "Ryeley",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "will-b",
           "displayName": "Will",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         }
       ]
     },
@@ -11900,143 +15093,126 @@
           "displayName": "Will",
           "status": "Present",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-09-16-training-na-2711ba77",
-      "sessionId": "2711ba77-2c51-49af-baa6-d0a93041fcb1",
-      "date": null,
-      "type": "Training",
-      "venue": null,
-      "submittedBy": "Dan",
-      "submittedAt": "2026-09-16T21:36:04.351728+00:00",
-      "records": [
-        {
-          "playerId": "alex-l",
-          "displayName": "Alex",
-          "status": "Unmarked",
-          "source": "App"
         },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "brad-e",
           "displayName": "Brad",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
           "displayName": "Darren",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "frank-a",
           "displayName": "Frank",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "george-h",
           "displayName": "George",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "joe-g",
           "displayName": "Joe",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
           "displayName": "Josh",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "jude-g",
           "displayName": "Jude",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "kalan-w",
           "displayName": "Kalan",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "liam-s",
           "displayName": "Liam",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "louie-j",
           "displayName": "Louie",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "morgan-s",
           "displayName": "Morgan",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "rocco-b",
           "displayName": "Rocco",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "ronnie-d",
           "displayName": "Ronnie D",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "ronnie-t",
           "displayName": "Ronnie T",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "ryan-b",
           "displayName": "Ryan",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "ryeley-d",
           "displayName": "Ryeley",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "will-b",
           "displayName": "Will",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         }
       ]
     },
@@ -12528,143 +15704,126 @@
           "displayName": "Will",
           "status": "Absent",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-09-23-training-na-56f0678a",
-      "sessionId": "56f0678a-15e5-44dd-8e52-29a735222660",
-      "date": null,
-      "type": "Training",
-      "venue": null,
-      "submittedBy": "Dan",
-      "submittedAt": "2026-09-26T06:56:39.703134+00:00",
-      "records": [
-        {
-          "playerId": "alex-l",
-          "displayName": "Alex",
-          "status": "Unmarked",
-          "source": "App"
         },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
-          "status": "Unavailable",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "brad-e",
           "displayName": "Brad",
-          "status": "Rotated",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
           "displayName": "Darren",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "frank-a",
           "displayName": "Frank",
-          "status": "Present",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "george-h",
           "displayName": "George",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "joe-g",
           "displayName": "Joe",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "josh-m",
           "displayName": "Josh",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "jude-g",
           "displayName": "Jude",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "kalan-w",
           "displayName": "Kalan",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "kieran-d",
           "displayName": "Kieran",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "liam-s",
           "displayName": "Liam",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "louie-j",
           "displayName": "Louie",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "morgan-s",
           "displayName": "Morgan",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "rocco-b",
           "displayName": "Rocco",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "ronnie-d",
           "displayName": "Ronnie D",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "ronnie-t",
           "displayName": "Ronnie T",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "ryan-b",
           "displayName": "Ryan",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
           "playerId": "ryeley-d",
           "displayName": "Ryeley",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Present",
+          "source": "Excel"
         },
         {
           "playerId": "will-b",
           "displayName": "Will",
-          "status": "Unmarked",
-          "source": "App"
+          "status": "Absent",
+          "source": "Excel"
         }
       ]
     },
@@ -13156,143 +16315,126 @@
           "displayName": "Will",
           "status": "Absent",
           "source": "Excel"
-        }
-      ]
-    },
-    {
-      "sessionKey": "2026-09-30-training-na-f02a2357",
-      "sessionId": "f02a2357-899e-4c34-bdbe-f31d520abb46",
-      "date": null,
-      "type": "Training",
-      "venue": null,
-      "submittedBy": "Dan",
-      "submittedAt": "2026-09-30T20:24:28.368253+00:00",
-      "records": [
-        {
-          "playerId": "ronnie-d",
-          "displayName": "Ronnie D",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "bailey-s",
-          "displayName": "Bailey",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "will-b",
-          "displayName": "Will",
-          "status": "Unmarked",
-          "source": "App"
-        },
-        {
-          "playerId": "josh-m",
-          "displayName": "Josh",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "brad-e",
-          "displayName": "Brad",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "frank-a",
-          "displayName": "Frank",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "rocco-b",
-          "displayName": "Rocco",
-          "status": "Unmarked",
-          "source": "App"
-        },
-        {
-          "playerId": "george-h",
-          "displayName": "George",
-          "status": "Unmarked",
-          "source": "App"
-        },
-        {
-          "playerId": "ryan-b",
-          "displayName": "Ryan",
-          "status": "Present",
-          "source": "App"
         },
         {
           "playerId": "alfie-f",
           "displayName": "Alf",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
         },
         {
-          "playerId": "kalan-w",
-          "displayName": "Kalan",
-          "status": "Present",
-          "source": "App"
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Absent",
+          "source": "Excel"
         },
         {
-          "playerId": "alex-l",
-          "displayName": "Alex",
-          "status": "Unmarked",
-          "source": "App"
-        },
-        {
-          "playerId": "louie-j",
-          "displayName": "Louie",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "kieran-d",
-          "displayName": "Kieran",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "morgan-s",
-          "displayName": "Morgan",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "liam-s",
-          "displayName": "Liam",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ronnie-t",
-          "displayName": "Ronnie T",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "joe-g",
-          "displayName": "Joe",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "jude-g",
-          "displayName": "Jude",
-          "status": "Present",
-          "source": "App"
-        },
-        {
-          "playerId": "ryeley-d",
-          "displayName": "Ryeley",
-          "status": "Present",
-          "source": "App"
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Absent",
+          "source": "Excel"
         },
         {
           "playerId": "darren-r",
           "displayName": "Darren",
           "status": "Present",
-          "source": "App"
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
         }
       ]
     },
@@ -13784,17 +16926,137 @@
           "displayName": "Will",
           "status": "Absent",
           "source": "Excel"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Absent",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "Excel"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "Excel"
         }
       ]
     },
     {
-      "sessionKey": "2026-10-07-training-na-131983fe",
-      "sessionId": "131983fe-d988-4aad-84d6-49787e0a8c60",
-      "date": null,
-      "type": "Training",
-      "venue": null,
-      "submittedBy": "Dan",
-      "submittedAt": "2026-10-08T16:24:16.736551+00:00",
+      "sessionKey": "2026-07-31-match-home-d99ba4a9",
+      "sessionId": "d99ba4a9-a000-441c-a3b2-280024345caa",
+      "date": "2026-07-31",
+      "type": "Match",
+      "venue": "Home",
+      "submittedBy": "Historical import",
+      "submittedAt": "2026-08-18T16:59:42.213111+00:00",
       "records": [
         {
           "playerId": "alfie-f",
@@ -13805,13 +17067,13 @@
         {
           "playerId": "bailey-s",
           "displayName": "Bailey",
-          "status": "Present",
+          "status": "Absent",
           "source": "App"
         },
         {
           "playerId": "brad-e",
           "displayName": "Brad",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
@@ -13823,19 +17085,31 @@
         {
           "playerId": "frank-a",
           "displayName": "Frank",
-          "status": "Late",
+          "status": "Absent",
           "source": "App"
         },
         {
           "playerId": "george-h",
           "displayName": "George",
-          "status": "Unmarked",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "jay-p",
+          "displayName": "Jay",
+          "status": "Absent",
           "source": "App"
         },
         {
           "playerId": "joe-g",
           "displayName": "Joe",
-          "status": "Late",
+          "status": "Present",
           "source": "App"
         },
         {
@@ -13847,7 +17121,7 @@
         {
           "playerId": "jude-g",
           "displayName": "Jude",
-          "status": "Unmarked",
+          "status": "Absent",
           "source": "App"
         },
         {
@@ -13857,8 +17131,145 @@
           "source": "App"
         },
         {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
           "playerId": "kieran-d",
           "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        }
+      ]
+    },
+    {
+      "sessionKey": "2026-08-02-match-away-529c0520",
+      "sessionId": "529c0520-ff7b-4dcc-8260-eea7fb6aad89",
+      "date": "2026-08-02",
+      "type": "Match",
+      "venue": "Away",
+      "submittedBy": "Historical import",
+      "submittedAt": "2026-08-18T16:59:42.213111+00:00",
+      "records": [
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "jay-p",
+          "displayName": "Jay",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
           "status": "Present",
           "source": "App"
         },
@@ -13871,13 +17282,460 @@
         {
           "playerId": "louie-j",
           "displayName": "Louie",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
           "playerId": "morgan-s",
           "displayName": "Morgan",
-          "status": "Unmarked",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        }
+      ]
+    },
+    {
+      "sessionKey": "2026-08-09-match-away-ea9bf1f8",
+      "sessionId": "ea9bf1f8-3dec-4db6-872a-2da123a823ec",
+      "date": "2026-08-09",
+      "type": "Match",
+      "venue": "Away",
+      "submittedBy": "Historical import",
+      "submittedAt": "2026-08-18T16:59:42.213111+00:00",
+      "records": [
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jay-p",
+          "displayName": "Jay",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        }
+      ]
+    },
+    {
+      "sessionKey": "2026-08-12-training-na-ca65eb66",
+      "sessionId": "ca65eb66-6a28-46e4-80b0-bbe87b7b98d2",
+      "date": "2026-08-12",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-08-18T16:06:38.93335+00:00",
+      "records": [
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "jay-p",
+          "displayName": "Jay",
+          "status": "Injured",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "imre-s",
+          "displayName": "Imre",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        }
+      ]
+    },
+    {
+      "sessionKey": "2026-08-19-training-na-8d51ec97",
+      "sessionId": "8d51ec97-d1d9-4105-9b70-5c0c85956042",
+      "date": "2026-08-19",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-08-19T20:17:50.218196+00:00",
+      "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "imre-s",
+          "displayName": "Imre",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jay-p",
+          "displayName": "Jay",
+          "status": "Injured",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
           "source": "App"
         },
         {
@@ -13907,12 +17765,18 @@
         {
           "playerId": "ryeley-d",
           "displayName": "Ryeley",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
           "playerId": "will-b",
           "displayName": "Will",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
           "status": "Present",
           "source": "App"
         }
@@ -14049,6 +17913,143 @@
       ]
     },
     {
+      "sessionKey": "2026-09-02-training-na-6ef8ab20",
+      "sessionId": "6ef8ab20-9b52-4c15-8d3b-588e678d093a",
+      "date": "2026-09-02",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-09-02T22:48:26.879492+00:00",
+      "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-w",
+          "displayName": "George W",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Late",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Injured",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "App"
+        }
+      ]
+    },
+    {
       "sessionKey": "matchday-2026-09-06-sydenham-lions",
       "sessionId": "matchday-2026-09-06-sydenham-lions",
       "date": "2026-09-06",
@@ -14152,6 +18153,143 @@
           "displayName": "Will",
           "status": "Present",
           "source": "Matchday App"
+        }
+      ]
+    },
+    {
+      "sessionKey": "2026-09-09-training-na-dde253c1",
+      "sessionId": "dde253c1-52b4-4390-b7f8-cf371068cae0",
+      "date": "2026-09-09",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-09-10T07:22:44.33157+00:00",
+      "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Absent",
+          "source": "App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "App"
         }
       ]
     },
@@ -14263,6 +18401,280 @@
       ]
     },
     {
+      "sessionKey": "2026-09-16-training-na-2711ba77",
+      "sessionId": "2711ba77-2c51-49af-baa6-d0a93041fcb1",
+      "date": "2026-09-16",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-09-16T21:36:04.351728+00:00",
+      "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Unmarked",
+          "source": "App"
+        }
+      ]
+    },
+    {
+      "sessionKey": "2026-09-23-training-na-56f0678a",
+      "sessionId": "56f0678a-15e5-44dd-8e52-29a735222660",
+      "date": "2026-09-23",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-09-26T06:56:39.703134+00:00",
+      "records": [
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Rotated",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Unmarked",
+          "source": "App"
+        }
+      ]
+    },
+    {
       "sessionKey": "matchday-2026-09-27-taketime",
       "sessionId": "matchday-2026-09-27-taketime",
       "date": "2026-09-27",
@@ -14370,6 +18782,143 @@
       ]
     },
     {
+      "sessionKey": "2026-09-30-training-na-f02a2357",
+      "sessionId": "f02a2357-899e-4c34-bdbe-f31d520abb46",
+      "date": "2026-09-30",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-09-30T20:24:28.368253+00:00",
+      "records": [
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "alex-l",
+          "displayName": "Alex",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        }
+      ]
+    },
+    {
       "sessionKey": "matchday-2026-10-04-spitfire-united",
       "sessionId": "matchday-2026-10-04-spitfire-united",
       "date": "2026-10-04",
@@ -14467,6 +19016,137 @@
           "displayName": "Ronnie T",
           "status": "Present",
           "source": "Matchday App"
+        }
+      ]
+    },
+    {
+      "sessionKey": "2026-10-07-training-na-131983fe",
+      "sessionId": "131983fe-d988-4aad-84d6-49787e0a8c60",
+      "date": "2026-10-07",
+      "type": "Training",
+      "venue": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-10-08T16:24:16.736551+00:00",
+      "records": [
+        {
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Late",
+          "source": "App"
+        },
+        {
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Late",
+          "source": "App"
+        },
+        {
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "App"
         }
       ]
     }

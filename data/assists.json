@@ -80,7 +80,12 @@
     "matchId": "2026-10-04-spitfire-united",
     "date": "2026-10-04",
     "opposition": "Spitfire United",
-    "assists": {}
+    "assists": {
+      "morgan-s": 1,
+      "brad-e": 1,
+      "alfie-f": 2,
+      "louie-j": 1
+    }
   },
   {
     "matchId": "2026-10-11-huxley-guards",

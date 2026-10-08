@@ -1030,5 +1030,200 @@
         "source": "Matchday App"
       }
     ]
+  },
+  {
+    "matchId": "2026-10-04-spitfire-united",
+    "date": "2026-10-04",
+    "opposition": "Spitfire United",
+    "competition": "League",
+    "events": [
+      {
+        "type": "Goal",
+        "minute": 15,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 21,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": "morgan-s",
+        "relatedPlayer": "Morgan",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 43,
+        "playerId": "morgan-s",
+        "player": "Morgan",
+        "relatedPlayerId": "alfie-f",
+        "relatedPlayer": "Alf",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 43,
+        "playerId": "liam-s",
+        "player": "Liam",
+        "relatedPlayerId": "george-h",
+        "relatedPlayer": "George",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 43,
+        "playerId": "louie-j",
+        "player": "Louie",
+        "relatedPlayerId": "frank-a",
+        "relatedPlayer": "Frank",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 43,
+        "playerId": "kieran-d",
+        "player": "Kieran",
+        "relatedPlayerId": "darren-r",
+        "relatedPlayer": "Darren",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 52,
+        "playerId": "alfie-f",
+        "player": "Alf",
+        "relatedPlayerId": "brad-e",
+        "relatedPlayer": "Brad",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 54,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 56,
+        "playerId": "brad-e",
+        "player": "Brad",
+        "relatedPlayerId": "liam-s",
+        "relatedPlayer": "Liam",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 56,
+        "playerId": "jude-g",
+        "player": "Jude",
+        "relatedPlayerId": "louie-j",
+        "relatedPlayer": "Louie",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 63,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": "alfie-f",
+        "relatedPlayer": "Alf",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 67,
+        "playerId": "bailey-s",
+        "player": "Bailey",
+        "relatedPlayerId": "morgan-s",
+        "relatedPlayer": "Morgan",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 68,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": "bailey-s",
+        "relatedPlayer": "Bailey",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 81,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "louie-j",
+        "relatedPlayer": "Louie",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 83,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "alfie-f",
+        "relatedPlayer": "Alf",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Card",
+        "minute": 87,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Yellow",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 90,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      }
+    ]
   }
 ]

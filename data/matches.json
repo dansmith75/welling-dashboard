@@ -147,9 +147,9 @@
     "venue": "Norman Park Recreation Ground B",
     "kickoff": "10:30",
     "postponed": false,
-    "goalsFor": null,
-    "goalsAgainst": null,
-    "result": null,
+    "goalsFor": 6,
+    "goalsAgainst": 2,
+    "result": "W",
     "day": "2026-10-04"
   },
   {

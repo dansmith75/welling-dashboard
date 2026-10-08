@@ -70,7 +70,9 @@
     "matchId": "2026-10-04-spitfire-united",
     "date": "2026-10-04",
     "opposition": "Spitfire United",
-    "events": {}
+    "events": {
+      "darren-r": "87' Yellow"
+    }
   },
   {
     "matchId": "2026-10-11-huxley-guards",

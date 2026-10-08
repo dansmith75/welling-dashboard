@@ -90,7 +90,11 @@
     "matchId": "2026-10-04-spitfire-united",
     "date": "2026-10-04",
     "opposition": "Spitfire United",
-    "goals": {}
+    "goals": {
+      "kalan-w": 3,
+      "alfie-f": 1,
+      "darren-r": 2
+    }
   },
   {
     "matchId": "2026-10-11-huxley-guards",

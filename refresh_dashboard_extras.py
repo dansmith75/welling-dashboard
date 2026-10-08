@@ -15,6 +15,9 @@ LEAGUE_HEADERS = ["Position", "Team", "P", "W", "D", "L", "GF", "GA", "GD", "Pts
 FA_LEAGUE_TABLE_URL = "https://fulltime.thefa.com/table.html?league=3117271&selectedSeason=964418083&selectedDivision=387107891&selectedCompetition=0&selectedFixtureGroupKey=1_822238577"
 FA_LEAGUE_HOME_URL = "http://fulltime.thefa.com/index.html?league=3117271&selectedCompetition=0&selectedDivision=387107891&selectedFixtureGroupKey=1_822238577&selectedSeason=964418083"
 FA_TEXT_PROXY_URL = "https://r.jina.ai/" + FA_LEAGUE_HOME_URL.replace("&", "%26")
+LIVE_FETCH_TIMEOUT = 8
+TEXT_PROXY_TIMEOUT = 12
+
 FULLTIME_API_URLS = [
     "https://faapi.jwhsolutions.co.uk/api/League/822238577",
     "https://faapi.jwhsolutions.co.uk/api/League/822238577/season/964418083",
@@ -134,7 +137,7 @@ def clean(value):
 
 def fetch_json(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"})
-    with urllib.request.urlopen(req, timeout=20) as response:
+    with urllib.request.urlopen(req, timeout=LIVE_FETCH_TIMEOUT) as response:
         return json.loads(response.read().decode("utf-8", errors="replace"))
 
 
@@ -203,7 +206,7 @@ def fetch_api_league():
 
 def fetch_fa_html():
     req = urllib.request.Request(FA_LEAGUE_TABLE_URL, headers={"User-Agent": "Mozilla/5.0", "Accept": "text/html"})
-    with urllib.request.urlopen(req, timeout=20) as response:
+    with urllib.request.urlopen(req, timeout=LIVE_FETCH_TIMEOUT) as response:
         markup = response.read().decode("utf-8", errors="replace")
     parser = TableParser(); parser.feed(markup)
     aliases = {
@@ -248,12 +251,13 @@ def fetch_fa_html():
 def fetch_fa_markdown():
     """Read the public Full-Time page through a text renderer when FA blocks scripts."""
     req = urllib.request.Request(FA_TEXT_PROXY_URL, headers={"User-Agent": "Mozilla/5.0", "Accept": "text/plain"})
-    with urllib.request.urlopen(req, timeout=60) as response:
+    with urllib.request.urlopen(req, timeout=TEXT_PROXY_TIMEOUT) as response:
         text = response.read().decode("utf-8", errors="replace")
     marker = "## League Table"
-    if marker not in text:
-        raise RuntimeError("league table heading was not found")
-    section = text.split(marker, 1)[1]
+    # Full-Time and text proxies occasionally change or omit this heading.
+    # Scan the whole response when that happens; the row parser below only
+    # accepts a ten-column table whose first cell is a numeric position.
+    section = text.split(marker, 1)[1] if marker in text else text
     rows = []
     for line in section.splitlines():
         line = line.strip()

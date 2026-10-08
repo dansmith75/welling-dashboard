@@ -126,6 +126,7 @@ def camel_key(header: Any) -> str:
         "playerid": "playerId",
         "sessionid": "sessionId",
         "sessionkey": "sessionKey",
+        "recordkey": "recordKey",
         "sessiondate": "sessionDate",
         "sessiontype": "sessionType",
         "submittedby": "submittedBy",
@@ -266,6 +267,43 @@ def export_wide_player_stats(workbook_path: Path, sheet_name: str, output_key: s
     return output
 
 
+def normalise_attendance(payload):
+    """Build a unique display projection without modifying workbook history."""
+    grouped = {}
+    flags = list(payload.get("conflicts") or [])
+    for session in payload.get("sessions") or []:
+        day = str(session.get("date") or "")[:10]
+        if not day:
+            match = re.match(r"^(\d{4}-\d{2}-\d{2})-(?:match|training)-", str(session.get("sessionKey") or ""), re.I)
+            day = match.group(1) if match else ""
+        try:
+            day = date.fromisoformat(day).isoformat()
+        except ValueError:
+            flags.append({"reason": "undated_session", "sessionKey": session.get("sessionKey")})
+            continue
+        kind = str(session.get("type") or "").strip().title()
+        venue = str(session.get("venue") or "").strip()
+        key = (day, kind, venue.casefold())
+        target = grouped.setdefault(key, {**session, "date": day, "type": kind, "venue": venue, "records": []})
+        by_player = target.setdefault("_players", {})
+        for record in session.get("records") or []:
+            pid = str(record.get("playerId") or "").strip()
+            pid = "kieran-d" if pid == "keiran-d" else pid
+            if not pid:
+                continue
+            source = str(record.get("source") or "").strip().casefold()
+            rank = ({"manual match authority": 4, "matchday app": 3, "app": 2}.get(source, 1), str(session.get("submittedAt") or ""))
+            previous = by_player.get(pid)
+            if previous and str(previous[1].get("status") or "").casefold() != str(record.get("status") or "").casefold():
+                flags.append({"reason": "display_status_conflict", "date": day, "type": kind, "playerId": pid,
+                              "existing": previous[1], "incoming": record})
+            if previous is None or rank > previous[0]:
+                by_player[pid] = (rank, {**record, "playerId": pid})
+    for session in grouped.values():
+        session["records"] = [record for _, record in session.pop("_players").values()]
+    return {**payload, "sessions": sorted(grouped.values(), key=lambda s: (s["date"], s["type"], s["venue"])), "conflicts": flags}
+
+
 def export_attendance(workbook_path: Path) -> Dict[str, Any]:
     rows = table_rows(workbook_path, "AttendanceRecords", "AttendanceRecords")
     player_names = {
@@ -303,7 +341,7 @@ def export_attendance(workbook_path: Path) -> Dict[str, Any]:
         sessions[session_key]["records"].append(record)
 
     ordered_sessions = sorted(sessions.values(), key=lambda session: (session.get("date") or "", session.get("submittedAt") or ""))
-    return {"team": TEAM, "season": SEASON, "sessions": ordered_sessions}
+    return normalise_attendance({"team": TEAM, "season": SEASON, "sessions": ordered_sessions})
 
 
 def _normal_header(value: Any) -> str:

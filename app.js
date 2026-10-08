@@ -284,8 +284,40 @@ function isAttendanceInjured(status) {
   return normaliseText(status) === "injured";
 }
 
+function normaliseAttendanceSessions(sessions) {
+  const grouped = new Map();
+  for (const session of sessions || []) {
+    let day = String(session.date || "").slice(0, 10);
+    if (!day) day = String(session.sessionKey || "").match(/^(\d{4}-\d{2}-\d{2})-(?:match|training)-/i)?.[1] || "";
+    const parsed = new Date(`${day}T00:00:00Z`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== day) continue;
+    const type = String(session.type || "").trim().toLowerCase();
+    const venue = String(session.venue || "").trim().toLowerCase();
+    const key = JSON.stringify([day, type, venue]);
+    if (!grouped.has(key)) grouped.set(key, { ...session, date: day, records: [], players: new Map() });
+    const target = grouped.get(key);
+    for (const record of session.records || []) {
+      let pid = String(record.playerId || "").trim();
+      if (pid === "keiran-d") pid = "kieran-d";
+      if (!pid) continue;
+      const source = String(record.source || "").trim().toLowerCase();
+      const rank = source === "manual match authority" ? 4 : source === "matchday app" ? 3 : source === "app" ? 2 : 1;
+      const submitted = String(session.submittedAt || "");
+      const previous = target.players.get(pid);
+      if (!previous || rank > previous.rank || (rank === previous.rank && submitted > previous.submitted)) {
+        target.players.set(pid, { rank, submitted, record: { ...record, playerId: pid } });
+      }
+    }
+  }
+  return Array.from(grouped.values(), session => {
+    const { players, ...result } = session;
+    result.records = Array.from(players.values(), value => value.record);
+    return result;
+  }).sort((a, b) => a.date.localeCompare(b.date));
+}
+
 function attendanceSessions(type = null) {
-  const sessions = store.attendance?.sessions || [];
+  const sessions = normaliseAttendanceSessions(store.attendance?.sessions || []);
 
   if (!type) return sessions;
 

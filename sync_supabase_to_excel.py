@@ -34,12 +34,29 @@ MATCHDAY_HEADERS = [
 
 def api_get(table: str, select: str, order: str | None = None) -> list[dict[str, Any]]:
     params={"select":select}
-    if order: params["order"]=order
+    if order: params["order"]=order + ",id.asc"
+    elif table == "attendance_records": params["order"]="session_id.asc,player_id.asc"
+    else: params["order"]="id.asc"
     url=f"{SUPABASE_URL}/rest/v1/{table}?{urllib.parse.urlencode(params)}"
-    request=urllib.request.Request(url,headers={"apikey":SUPABASE_KEY,"Authorization":f"Bearer {SUPABASE_KEY}","Accept":"application/json"})
+    # Fetch every page; PostgREST commonly limits a response to 1,000 rows.
+    result = []
+    offset = 0
     try:
-        with urllib.request.urlopen(request,timeout=60) as response:
-            return json.loads(response.read().decode("utf-8"))
+        while True:
+            page_params = {**params, "limit": "1000", "offset": str(offset)}
+            page_url = f"{SUPABASE_URL}/rest/v1/{table}?{urllib.parse.urlencode(page_params)}"
+            request = urllib.request.Request(page_url, headers={
+                "apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}",
+                "Accept": "application/json"})
+            with urllib.request.urlopen(request, timeout=60) as response:
+                page = json.loads(response.read().decode("utf-8"))
+            if not isinstance(page, list):
+                raise ValueError("Expected a row array")
+            if not page:
+                break
+            result.extend(page)
+            offset += len(page)
+        return result
     except Exception as exc:
         raise RuntimeError(f"Could not read Supabase table '{table}'. Check internet access and the anon SELECT policy.") from exc
 
@@ -134,14 +151,113 @@ def table_dict_rows(table)->list[dict[str,Any]]:
     return rows
 
 
-def append_table_rows(sheet,table,rows:list[dict[str,Any]])->int:
-    if not rows:return 0
-    headers=table_headers(table); start_row=table.range.row; start_col=table.range.column; current_rows=table.range.rows.count
-    next_row=start_row+current_rows; matrix=[[row.get(h,"") for h in headers] for row in rows]
-    end_row=next_row+len(matrix)-1; end_col=start_col+len(headers)-1
-    sheet.range((next_row,start_col),(end_row,end_col)).value=matrix
-    table.resize(sheet.range((start_row,start_col),(end_row,end_col)))
-    return len(matrix)
+RECONCILIATION_CONFLICTS: list[dict[str, Any]] = []
+
+
+def flag_conflict(reason, **details):
+    item = {"reason": reason, **details}
+    if item not in RECONCILIATION_CONFLICTS:
+        RECONCILIATION_CONFLICTS.append(item)
+
+
+def write_conflict_report(book):
+    path = Path(book.fullname).with_suffix(".reconciliation-conflicts.json")
+    path.write_text(json.dumps(RECONCILIATION_CONFLICTS, indent=2, default=str), encoding="utf-8")
+    print(f"Attendance reconciliation: {len(RECONCILIATION_CONFLICTS)} flags; {path}")
+    return path
+
+
+def identity(row):
+    return (str(row.get("SessionId") or "").strip(),
+            str(row.get("PlayerId") or "").strip())
+
+
+def row_differences(left, right):
+    fields = ("SessionDate", "SessionType", "Venue", "PlayerId", "DisplayName", "Status")
+    return [field for field in fields if
+            (iso_date(left.get(field)) if field == "SessionDate" else str(left.get(field) or "").strip()) !=
+            (iso_date(right.get(field)) if field == "SessionDate" else str(right.get(field) or "").strip())]
+
+
+def plan_attendance(existing, incoming):
+    """Append-only plan. Keep legacy keys; full identity also prevents reimports."""
+    by_key, by_identity = {}, {}
+    for row in existing:
+        key = str(row.get("RecordKey") or "").strip()
+        if not key:
+            flag_conflict("existing_missing_key", row=row)
+        else:
+            by_key.setdefault(key, []).append(row)
+        ident = identity(row)
+        if all(ident):
+            by_identity.setdefault(ident, []).append(row)
+    for key, matches in by_key.items():
+        if len(matches) > 1:
+            flag_conflict("existing_duplicate_key", RecordKey=key, rows=matches)
+    for ident, matches in by_identity.items():
+        if len(matches) > 1:
+            flag_conflict("existing_duplicate_identity", identity=ident, rows=matches)
+    # Group first so contradictory incoming rows never pick an arbitrary winner.
+    groups = {}
+    for row in incoming:
+        key = str(row.get("RecordKey") or "").strip()
+        if not key or not all(identity(row)):
+            flag_conflict("incoming_missing_identity", row=row)
+            continue
+        groups.setdefault(identity(row), []).append(row)
+    additions = []
+    for ident, candidates in groups.items():
+        row = candidates[0]
+        if any(row_differences(row, other) for other in candidates[1:]):
+            flag_conflict("incoming_conflict", rows=candidates)
+            continue
+        key = str(row["RecordKey"]).strip()
+        matches = by_key.get(key, []) + by_identity.get(ident, [])
+        if matches:
+            for old in matches:
+                differences = row_differences(old, row)
+                if differences or identity(old) != ident:
+                    flag_conflict("existing_incoming_conflict", RecordKey=key,
+                                  fields=differences, existing=old, incoming=row)
+            continue
+        additions.append(row)
+        by_key[key] = [row]
+        by_identity[ident] = [row]
+    return additions
+
+
+def append_table_rows(sheet, table, rows: list[dict[str, Any]]) -> int:
+    if not rows:
+        return 0
+    headers = table_headers(table)
+    key_header = "RecordKey" if "RecordKey" in headers else "ImportKey"
+    if key_header not in headers:
+        raise RuntimeError("Table has no RecordKey or ImportKey")
+    existing = table_dict_rows(table)
+    if key_header == "RecordKey":
+        rows = plan_attendance(existing, rows)
+    else:
+        seen = {str(r.get(key_header) or "").strip() for r in existing}
+        unique = []
+        for row in rows:
+            key = str(row.get(key_header) or "").strip()
+            if not key:
+                raise RuntimeError("Missing ImportKey")
+            if key not in seen:
+                unique.append(row)
+                seen.add(key)
+        rows = unique
+    if not rows:
+        return 0
+    if getattr(table, "show_totals", False):
+        raise RuntimeError("Disable the table totals row before importing")
+    start_row, start_col = table.range.row, table.range.column
+    next_row = start_row + table.range.rows.count
+    end_row, end_col = next_row + len(rows) - 1, start_col + len(headers) - 1
+    sheet.range((next_row, start_col), (end_row, end_col)).value = [
+        [row.get(h, "") for h in headers] for row in rows]
+    table.resize(sheet.range((start_row, start_col), (end_row, end_col)))
+    return len(rows)
 
 
 def make_session_key(session:dict[str,Any])->str:
@@ -149,48 +265,38 @@ def make_session_key(session:dict[str,Any])->str:
 
 
 def import_attendance(book)->int:
-    global REMOVED_APP_SESSION_KEYS
-    sessions=api_get("attendance_sessions","id,session_date,session_type,venue,submitted_by,submitted_at","submitted_at.asc")
-    records=api_get("attendance_records","session_id,player_id,display_name,status")
-    if ATTENDANCE_SHEET not in [s.name for s in book.sheets]: raise RuntimeError(f"Workbook sheet '{ATTENDANCE_SHEET}' was not found.")
-    sheet=book.sheets[ATTENDANCE_SHEET]
-    try: table=find_table(sheet,ATTENDANCE_TABLE,("RecordKey","SessionId","SessionDate","PlayerId","Status","Source"))
-    except Exception as exc: raise RuntimeError(f"Excel table '{ATTENDANCE_TABLE}' was not found.") from exc
-    headers=table_headers(table); existing_rows=table_dict_rows(table); sessions_by_id={str(s["id"]):s for s in sessions}; desired_rows=[]
-    existing_app={str(row.get("RecordKey") or ""):row for row in existing_rows if str(row.get("Source") or "").strip().lower()=="app"}
-    manual_rows=[row for row in existing_rows if str(row.get("Source") or "").strip().lower()!="app"]
-    REMOVED_APP_SESSION_KEYS=set()
-    for row in existing_app.values():
-        session=sessions_by_id.get(str(row.get("SessionId") or ""))
-        old_key=(iso_date(row.get("SessionDate")),str(row.get("SessionType") or "").strip().lower(),str(row.get("Venue") or "").strip().lower())
-        new_key=(iso_date(session.get("session_date")),str(session.get("session_type") or "").strip().lower(),str(session.get("venue") or "").strip().lower()) if session else None
-        if not session or old_key!=new_key: REMOVED_APP_SESSION_KEYS.add(old_key)
+    RECONCILIATION_CONFLICTS.clear()
+    sessions = api_get("attendance_sessions", "id,session_date,session_type,venue,submitted_by,submitted_at", "submitted_at.asc")
+    records = api_get("attendance_records", "session_id,player_id,display_name,status")
+    sheet = book.sheets[ATTENDANCE_SHEET]
+    table = find_table(sheet, ATTENDANCE_TABLE, ("RecordKey", "SessionId", "SessionDate", "PlayerId", "Status", "Source"))
+    sessions_by_id = {}
+    for session in sessions:
+        sid = str(session.get("id") or "").strip()
+        if sid in sessions_by_id and sessions_by_id[sid] != session:
+            raise RuntimeError("Conflicting source session: " + sid)
+        sessions_by_id[sid] = session
+    incoming = []
     for record in records:
-        session=sessions_by_id.get(str(record.get("session_id")))
-        if not session:continue
-        session_key=make_session_key(session); record_key=f"{session_key}-{record.get('player_id')}"
-        row=dict(existing_app.get(record_key) or {})
-        row.update({"RecordKey":record_key,"SessionKey":session_key,"SessionId":session.get("id"),"SessionDate":session.get("session_date"),"SessionType":session.get("session_type"),"Venue":session.get("venue") or "","PlayerId":record.get("player_id"),"DisplayName":record.get("display_name"),"Status":record.get("status"),"SubmittedBy":session.get("submitted_by") or "","SubmittedAt":session.get("submitted_at") or "","Source":"App"})
-        desired_rows.append(row)
-
-    reconciled=manual_rows+desired_rows
-    old_keys={str(row.get("RecordKey") or "") for row in existing_rows}
-    new_keys={str(row.get("RecordKey") or "") for row in reconciled}
-    authoritative=("SessionKey","SessionId","SessionDate","SessionType","Venue","PlayerId","DisplayName","Status","SubmittedBy","SubmittedAt","Source")
-    desired_by_key={str(row.get("RecordKey") or ""):row for row in desired_rows}
-    changed=sum(1 for key,row in desired_by_key.items() if key not in existing_app or any((iso_date(existing_app[key].get(field))!=iso_date(row.get(field)) if field=="SessionDate" else str(existing_app[key].get(field) or "")!=str(row.get(field) or "")) for field in authoritative))
-    changed+=len(old_keys-new_keys)
-    if not changed:return 0
-
-    start_row=table.range.row; start_col=table.range.column; old_last_row=start_row+table.range.rows.count-1; end_col=start_col+len(headers)-1
-    if old_last_row>start_row: sheet.range((start_row+1,start_col),(old_last_row,end_col)).clear_contents()
-    if reconciled:
-        matrix=[[row.get(header,"") for header in headers] for row in reconciled]; new_last_row=start_row+len(matrix)
-        sheet.range((start_row+1,start_col),(new_last_row,end_col)).value=matrix
-        table.resize(sheet.range((start_row,start_col),(new_last_row,end_col)))
-    else:
-        seed_row=start_row+1; sheet.range((seed_row,start_col),(seed_row,end_col)).clear_contents(); table.resize(sheet.range((start_row,start_col),(seed_row,end_col)))
-    return changed
+        sid = str(record.get("session_id") or "").strip()
+        pid = str(record.get("player_id") or "").strip()
+        session = sessions_by_id.get(sid)
+        if not session or not sid or not pid:
+            flag_conflict("orphan_or_missing_identity", record=record)
+            continue
+        session_key = "app|" + sid
+        incoming.append({"RecordKey": json.dumps([sid, pid], separators=(",", ":")),
+            "SessionKey": session_key, "SessionId": sid,
+            "SessionDate": session.get("session_date"), "SessionType": session.get("session_type"),
+            "Venue": session.get("venue") or "", "PlayerId": pid,
+            "DisplayName": record.get("display_name"), "Status": record.get("status"),
+            "SubmittedBy": session.get("submitted_by") or "",
+            "SubmittedAt": session.get("submitted_at") or "", "Source": "App"})
+    # An empty source is never interpreted as permission to remove history.
+    plan_attendance(table_dict_rows(table), [])
+    added = append_table_rows(sheet, table, incoming)
+    write_conflict_report(book)
+    return added
 
 
 def active_player_ids(book)->list[str]:
@@ -379,7 +485,16 @@ def main()->None:
     app=None;book=None
     try:
         app=xw.App(visible=False,add_book=False);app.display_alerts=False;app.screen_updating=False;book=app.books.open(str(workbook_path),update_links=False,read_only=False)
-        attendance_rows=import_attendance(book);attendance_views=refresh_wide_attendance_sheets(book);matchday_sessions,matchday_rows_added,warnings=import_matchday(book);book.save()
+        RECONCILIATION_CONFLICTS.clear()
+        attendance_rows=import_attendance(book)
+        import attendance_excel_reconcile
+        attendance_excel_reconcile.install(sys.modules[__name__])
+        attendance_views=refresh_wide_attendance_sheets(book)
+        matchday_sessions,matchday_rows_added,warnings=import_matchday(book)
+        report_path=workbook_path.with_suffix(".reconciliation-conflicts.json")
+        report_path.write_text(json.dumps(RECONCILIATION_CONFLICTS, indent=2, default=str), encoding="utf-8")
+        warnings += [f"{len(RECONCILIATION_CONFLICTS)} reconciliation flags; report: {report_path}"]
+        book.save()
         print("SUPABASE_SYNC_SUMMARY="+json.dumps({"attendanceRows":attendance_rows,"matchAttendanceRows":attendance_views.get("matchRows",0),"trainingAttendanceRows":attendance_views.get("trainingRows",0),"matchdaySessions":matchday_sessions,"matchdayRows":matchday_rows_added,"warnings":warnings},ensure_ascii=False))
     finally:
         if book is not None:

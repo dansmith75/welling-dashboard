@@ -407,7 +407,7 @@ def export_minutes(workbook_path: Path) -> List[Dict[str, Any]]:
         if not player_id or not display_name:
             continue
         try:
-            minutes = int(round(float(value("value") or 0)))
+            minutes = None if value("value") is None else int(round(float(value("value"))))
         except (TypeError, ValueError):
             minutes = 0
         output.append({

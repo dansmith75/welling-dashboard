@@ -161,9 +161,9 @@
     "venue": "Danson Sports FC",
     "kickoff": "10:30",
     "postponed": false,
-    "goalsFor": null,
-    "goalsAgainst": null,
-    "result": null,
+    "goalsFor": 2,
+    "goalsAgainst": 2,
+    "result": "D",
     "day": "2026-10-11"
   },
   {

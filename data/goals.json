@@ -100,7 +100,10 @@
     "matchId": "2026-10-11-huxley-guards",
     "date": "2026-10-11",
     "opposition": "Huxley Guards",
-    "goals": {}
+    "goals": {
+      "darren-r": 1,
+      "rocco-b": 1
+    }
   },
   {
     "matchId": "2026-10-18-qob",

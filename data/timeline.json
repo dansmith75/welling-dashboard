@@ -1225,5 +1225,79 @@
         "source": "Matchday App"
       }
     ]
+  },
+  {
+    "matchId": "2026-10-11-huxley-guards",
+    "date": "2026-10-11",
+    "opposition": "Huxley Guards",
+    "competition": "League",
+    "events": [
+      {
+        "type": "Card",
+        "minute": 0,
+        "playerId": "alfie-f",
+        "player": "Alf",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Yellow",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Card",
+        "minute": 0,
+        "playerId": "josh-m",
+        "player": "Josh",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Yellow",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 1,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 1,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "george-h",
+        "relatedPlayer": "George",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 1,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 1,
+        "playerId": "rocco-b",
+        "player": "Rocco",
+        "relatedPlayerId": "louie-j",
+        "relatedPlayer": "Louie",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      }
+    ]
   }
 ]

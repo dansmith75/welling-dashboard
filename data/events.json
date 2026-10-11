@@ -78,7 +78,10 @@
     "matchId": "2026-10-11-huxley-guards",
     "date": "2026-10-11",
     "opposition": "Huxley Guards",
-    "events": {}
+    "events": {
+      "alfie-f": "0' Yellow",
+      "josh-m": "0' Yellow"
+    }
   },
   {
     "matchId": "2026-10-18-qob",

@@ -269,7 +269,7 @@ def main() -> None:
             if not pid:
                 continue
             try:
-                played = int(round(float(stat.get("minutesPlayed") or 0)))
+                played = None if stat.get("minutesPlayed") in (None, "") else int(round(float(stat["minutesPlayed"])))
             except (TypeError, ValueError):
                 played = 0
             new_minutes.append({

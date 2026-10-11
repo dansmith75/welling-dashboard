@@ -413,7 +413,7 @@ def matchday_rows(session:dict[str,Any])->list[dict[str,Any]]:
     for i,stat in enumerate(payload.get("playerStats") or []):
         pid=stat.get("playerId") or ""
         if pid and stat.get("displayName"):names[str(pid)]=str(stat["displayName"])
-        add("Minutes",f"minutes-{i}-{pid}",player_id=pid,detail="Starter" if stat.get("starter") else "Squad",value=stat.get("minutesPlayed",0))
+        add("Minutes",f"minutes-{i}-{pid}",player_id=pid,detail="Starter" if stat.get("starter") else "Squad",value=stat.get("minutesPlayed"))
     for row in rows:
         if row["PlayerId"]:row["DisplayName"]=names.get(str(row["PlayerId"]),row["DisplayName"])
         if row["RelatedPlayerId"]:row["RelatedDisplayName"]=names.get(str(row["RelatedPlayerId"]),row["RelatedDisplayName"])

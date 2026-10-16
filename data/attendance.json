@@ -3077,6 +3077,13 @@
           "displayName": "Will",
           "status": "Unavailable",
           "source": "App"
+        },
+        {
+          "recordKey": "[\"5bf544d8-c263-4460-8d80-c2137fbd4b72\",\"jamie-s\"]",
+          "playerId": "jamie-s",
+          "displayName": "Jamie",
+          "status": "Present",
+          "source": "App"
         }
       ]
     },

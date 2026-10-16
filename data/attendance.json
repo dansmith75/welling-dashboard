@@ -3079,6 +3079,164 @@
           "source": "App"
         }
       ]
+    },
+    {
+      "sessionKey": "app|799ff45a-d585-448d-abaf-a29a68e7c800",
+      "sessionId": "799ff45a-d585-448d-abaf-a29a68e7c800",
+      "date": "2026-10-14",
+      "type": "Training",
+      "venue": "",
+      "submittedBy": "Dan",
+      "submittedAt": "2026-10-16T07:26:36.105474+00:00",
+      "records": [
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"alfie-f\"]",
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"bailey-s\"]",
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"brad-e\"]",
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"darren-r\"]",
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"frank-a\"]",
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"george-h\"]",
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"jamie-s\"]",
+          "playerId": "jamie-s",
+          "displayName": "Jamie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"joe-g\"]",
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"josh-m\"]",
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"jude-g\"]",
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"kalan-w\"]",
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"kieran-d\"]",
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"liam-s\"]",
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"louie-j\"]",
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"morgan-s\"]",
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"rocco-b\"]",
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"ronnie-d\"]",
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"ronnie-t\"]",
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"ryan-b\"]",
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"ryeley-d\"]",
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"799ff45a-d585-448d-abaf-a29a68e7c800\",\"will-b\"]",
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Unmarked",
+          "source": "App"
+        }
+      ]
     }
   ],
   "conflicts": [

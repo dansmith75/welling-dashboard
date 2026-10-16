@@ -62,6 +62,12 @@
     "strapLine": "Links defence and attack, plus several conversations the referee didn't ask for."
   },
   {
+    "id": "jamie-s",
+    "displayName": "Jamie",
+    "active": true,
+    "position": "CM"
+  },
+  {
     "id": "jay-p",
     "displayName": "Jay",
     "active": false,

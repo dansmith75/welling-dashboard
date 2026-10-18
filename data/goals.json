@@ -109,7 +109,10 @@
     "matchId": "2026-10-18-qob",
     "date": "2026-10-18",
     "opposition": "QOB",
-    "goals": {}
+    "goals": {
+      "darren-r": 2,
+      "rocco-b": 1
+    }
   },
   {
     "matchId": "2026-10-25-sydenham-lions",

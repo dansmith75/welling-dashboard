@@ -100,7 +100,9 @@
     "matchId": "2026-10-18-qob",
     "date": "2026-10-18",
     "opposition": "QOB",
-    "assists": {}
+    "assists": {
+      "kalan-w": 1
+    }
   },
   {
     "matchId": "2026-10-25-sydenham-lions",

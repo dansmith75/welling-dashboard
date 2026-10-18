@@ -1299,5 +1299,145 @@
         "source": "Matchday App"
       }
     ]
+  },
+  {
+    "matchId": "2026-10-18-qob",
+    "date": "2026-10-18",
+    "opposition": "QOB",
+    "competition": "League",
+    "events": [
+      {
+        "type": "Goal",
+        "minute": 1,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 20,
+        "playerId": "jude-g",
+        "player": "Jude",
+        "relatedPlayerId": "rocco-b",
+        "relatedPlayer": "Rocco",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 20,
+        "playerId": "kieran-d",
+        "player": "Kieran",
+        "relatedPlayerId": "joe-g",
+        "relatedPlayer": "Joe",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 20,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "kalan-w",
+        "relatedPlayer": "Kalan",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 26,
+        "playerId": "ryeley-d",
+        "player": "Ryeley",
+        "relatedPlayerId": "brad-e",
+        "relatedPlayer": "Brad",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 36,
+        "playerId": "jamie-s",
+        "player": "Jamie",
+        "relatedPlayerId": "louie-j",
+        "relatedPlayer": "Louie",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 71,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": "jamie-s",
+        "relatedPlayer": "Jamie",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 71,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "ryan-b",
+        "relatedPlayer": "Ryan",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 71,
+        "playerId": "liam-s",
+        "player": "Liam",
+        "relatedPlayerId": "ryeley-d",
+        "relatedPlayer": "Ryeley",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 74,
+        "playerId": "rocco-b",
+        "player": "Rocco",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 89,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Goal",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": null,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Goal",
+        "value": 1,
+        "source": "Matchday App"
+      }
+    ]
   }
 ]

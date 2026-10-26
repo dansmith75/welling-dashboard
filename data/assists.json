@@ -111,12 +111,6 @@
     "assists": {}
   },
   {
-    "matchId": "2026-10-25-the-warren-development",
-    "date": "2026-10-25",
-    "opposition": "The Warren Development",
-    "assists": {}
-  },
-  {
     "matchId": "2026-11-01-bexley-athletic",
     "date": "2026-11-01",
     "opposition": "Bexley Athletic",
@@ -144,12 +138,6 @@
     "matchId": "2026-11-29-sydenham-lions",
     "date": "2026-11-29",
     "opposition": "Sydenham Lions",
-    "assists": {}
-  },
-  {
-    "matchId": "2026-12-13-taketime",
-    "date": "2026-12-13",
-    "opposition": "Taketime",
     "assists": {}
   },
   {
@@ -198,6 +186,18 @@
     "matchId": "2027-02-14-football-lawyers",
     "date": "2027-02-14",
     "opposition": "Football Lawyers",
+    "assists": {}
+  },
+  {
+    "matchId": "2027-02-21-orpington-town",
+    "date": "2027-02-21",
+    "opposition": "Orpington Town",
+    "assists": {}
+  },
+  {
+    "matchId": "2027-02-28-orpington-town",
+    "date": "2027-02-28",
+    "opposition": "Orpington Town",
     "assists": {}
   }
 ]

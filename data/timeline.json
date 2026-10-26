@@ -1439,5 +1439,57 @@
         "source": "Matchday App"
       }
     ]
+  },
+  {
+    "matchId": "2026-10-25-sydenham-lions",
+    "date": "2026-10-25",
+    "opposition": "Sydenham Lions",
+    "competition": "Presidents' Charity Cup",
+    "events": [
+      {
+        "type": "Opponent Goal",
+        "minute": 20,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Goal",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 64,
+        "playerId": "brad-e",
+        "player": "Brad",
+        "relatedPlayerId": "jamie-s",
+        "relatedPlayer": "Jamie",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 64,
+        "playerId": "rocco-b",
+        "player": "Rocco",
+        "relatedPlayerId": "jude-g",
+        "relatedPlayer": "Jude",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 64,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": "ryeley-d",
+        "relatedPlayer": "Ryeley",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      }
+    ]
   }
 ]

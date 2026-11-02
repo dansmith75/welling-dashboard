@@ -1491,5 +1491,90 @@
         "source": "Matchday App"
       }
     ]
+  },
+  {
+    "matchId": "2026-11-01-bexley-athletic",
+    "date": "2026-11-01",
+    "opposition": "Bexley Athletic",
+    "competition": "League",
+    "events": [
+      {
+        "type": "Opponent Goal",
+        "minute": 10,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Goal",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 34,
+        "playerId": "jamie-s",
+        "player": "Jamie",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 62,
+        "playerId": "will-b",
+        "player": "Will",
+        "relatedPlayerId": "alfie-f",
+        "relatedPlayer": "Alf",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 62,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 62,
+        "playerId": "alfie-f",
+        "player": "Alf",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 170,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Goal",
+        "minute": 170,
+        "playerId": "kalan-w",
+        "player": "Kalan",
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Penalty",
+        "value": 1,
+        "source": "Matchday App"
+      }
+    ]
   }
 ]

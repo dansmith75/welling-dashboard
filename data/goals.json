@@ -124,7 +124,11 @@
     "matchId": "2026-11-01-bexley-athletic",
     "date": "2026-11-01",
     "opposition": "Bexley Athletic",
-    "goals": {}
+    "goals": {
+      "jamie-s": 1,
+      "alfie-f": 1,
+      "kalan-w": 1
+    }
   },
   {
     "matchId": "2026-11-08-ravensbury-rovers",

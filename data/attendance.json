@@ -3246,210 +3246,290 @@
       ]
     },
     {
-      "sessionKey": "matchday-2026-10-18-qob",
-      "sessionId": "matchday-2026-10-18-qob",
+      "sessionKey": "app|15162491-e182-4f50-a62c-11a31daa534a",
+      "sessionId": "15162491-e182-4f50-a62c-11a31daa534a",
       "date": "2026-10-18",
       "type": "Match",
       "venue": "Away",
-      "submittedBy": "Matchday App",
-      "submittedAt": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-11-02 09:46:50.966457+00",
       "records": [
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"bailey-s\"]",
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"brad-e\"]",
           "playerId": "brad-e",
           "displayName": "Brad",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"darren-r\"]",
           "playerId": "darren-r",
           "displayName": "Darren",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"jamie-s\"]",
           "playerId": "jamie-s",
           "displayName": "Jamie",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"joe-g\"]",
           "playerId": "joe-g",
           "displayName": "Joe",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"josh-m\"]",
           "playerId": "josh-m",
           "displayName": "Josh",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"jude-g\"]",
           "playerId": "jude-g",
           "displayName": "Jude",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"kalan-w\"]",
           "playerId": "kalan-w",
           "displayName": "Kalan",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"kieran-d\"]",
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"liam-s\"]",
           "playerId": "liam-s",
           "displayName": "Liam",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"louie-j\"]",
           "playerId": "louie-j",
           "displayName": "Louie",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"rocco-b\"]",
           "playerId": "rocco-b",
           "displayName": "Rocco",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"ronnie-d\"]",
           "playerId": "ronnie-d",
           "displayName": "Ronnie D",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"ronnie-t\"]",
           "playerId": "ronnie-t",
           "displayName": "Ronnie T",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"ryan-b\"]",
           "playerId": "ryan-b",
           "displayName": "Ryan",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"ryeley-d\"]",
           "playerId": "ryeley-d",
           "displayName": "Ryeley",
           "status": "Present",
           "source": "Matchday App"
+        },
+        {
+          "recordKey": "[\"15162491-e182-4f50-a62c-11a31daa534a\",\"will-b\"]",
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Unavailable",
+          "source": "App"
         }
       ]
     },
     {
-      "sessionKey": "matchday-2026-10-25-sydenham-lions",
-      "sessionId": "matchday-2026-10-25-sydenham-lions",
+      "sessionKey": "app|e18647e7-47cc-43ff-9acb-200bff345390",
+      "sessionId": "e18647e7-47cc-43ff-9acb-200bff345390",
       "date": "2026-10-25",
       "type": "Match",
       "venue": "Away",
-      "submittedBy": "Matchday App",
-      "submittedAt": null,
+      "submittedBy": "Dan",
+      "submittedAt": "2026-11-02 09:46:50.966457+00",
       "records": [
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"alfie-f\"]",
           "playerId": "alfie-f",
           "displayName": "Alf",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"bailey-s\"]",
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"brad-e\"]",
           "playerId": "brad-e",
           "displayName": "Brad",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"darren-r\"]",
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"frank-a\"]",
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"george-h\"]",
           "playerId": "george-h",
           "displayName": "George",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"jamie-s\"]",
           "playerId": "jamie-s",
           "displayName": "Jamie",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"joe-g\"]",
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"josh-m\"]",
           "playerId": "josh-m",
           "displayName": "Josh",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"jude-g\"]",
           "playerId": "jude-g",
           "displayName": "Jude",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"kalan-w\"]",
           "playerId": "kalan-w",
           "displayName": "Kalan",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"kieran-d\"]",
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"liam-s\"]",
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"louie-j\"]",
           "playerId": "louie-j",
           "displayName": "Louie",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"morgan-s\"]",
+          "playerId": "morgan-s",
+          "displayName": "Morgan",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"rocco-b\"]",
           "playerId": "rocco-b",
           "displayName": "Rocco",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"ronnie-d\"]",
           "playerId": "ronnie-d",
           "displayName": "Ronnie D",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"ronnie-t\"]",
           "playerId": "ronnie-t",
           "displayName": "Ronnie T",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"ryan-b\"]",
           "playerId": "ryan-b",
           "displayName": "Ryan",
           "status": "Present",
           "source": "Matchday App"
         },
         {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"ryeley-d\"]",
           "playerId": "ryeley-d",
           "displayName": "Ryeley",
           "status": "Present",
           "source": "Matchday App"
+        },
+        {
+          "recordKey": "[\"e18647e7-47cc-43ff-9acb-200bff345390\",\"will-b\"]",
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Unavailable",
+          "source": "App"
         }
       ]
     },
@@ -3463,147 +3543,298 @@
       "submittedAt": "2026-10-29T19:54:18.969857+00:00",
       "records": [
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"alfie-f\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"alfie-f\"]",
           "playerId": "alfie-f",
           "displayName": "Alf",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"bailey-s\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"bailey-s\"]",
           "playerId": "bailey-s",
           "displayName": "Bailey",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"brad-e\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"brad-e\"]",
           "playerId": "brad-e",
           "displayName": "Brad",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"darren-r\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"darren-r\"]",
           "playerId": "darren-r",
           "displayName": "Darren",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"frank-a\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"frank-a\"]",
           "playerId": "frank-a",
           "displayName": "Frank",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"george-h\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"george-h\"]",
           "playerId": "george-h",
           "displayName": "George",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"jamie-s\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"jamie-s\"]",
           "playerId": "jamie-s",
           "displayName": "Jamie",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"joe-g\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"joe-g\"]",
           "playerId": "joe-g",
           "displayName": "Joe",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"josh-m\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"josh-m\"]",
           "playerId": "josh-m",
           "displayName": "Josh",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"jude-g\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"jude-g\"]",
           "playerId": "jude-g",
           "displayName": "Jude",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"kalan-w\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"kalan-w\"]",
           "playerId": "kalan-w",
           "displayName": "Kalan",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"kieran-d\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"kieran-d\"]",
           "playerId": "kieran-d",
           "displayName": "Kieran",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"liam-s\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"liam-s\"]",
           "playerId": "liam-s",
           "displayName": "Liam",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"louie-j\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"louie-j\"]",
           "playerId": "louie-j",
           "displayName": "Louie",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"morgan-s\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"morgan-s\"]",
           "playerId": "morgan-s",
           "displayName": "Morgan",
           "status": "Unmarked",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"rocco-b\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"rocco-b\"]",
           "playerId": "rocco-b",
           "displayName": "Rocco",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"ronnie-d\"]",
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"ronnie-d\"]",
+          "playerId": "ronnie-d",
+          "displayName": "Ronnie D",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"ronnie-t\"]",
+          "playerId": "ronnie-t",
+          "displayName": "Ronnie T",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"ryan-b\"]",
+          "playerId": "ryan-b",
+          "displayName": "Ryan",
+          "status": "Unmarked",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"ryeley-d\"]",
+          "playerId": "ryeley-d",
+          "displayName": "Ryeley",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"will-b\"]",
+          "playerId": "will-b",
+          "displayName": "Will",
+          "status": "Present",
+          "source": "App"
+        }
+      ]
+    },
+    {
+      "sessionKey": "app|e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b",
+      "sessionId": "e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b",
+      "date": "2026-11-01",
+      "type": "Match",
+      "venue": "Home",
+      "submittedBy": "Dan",
+      "submittedAt": "2026-11-02 09:42:45.676839+00",
+      "records": [
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"alfie-f\"]",
+          "playerId": "alfie-f",
+          "displayName": "Alf",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"bailey-s\"]",
+          "playerId": "bailey-s",
+          "displayName": "Bailey",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"brad-e\"]",
+          "playerId": "brad-e",
+          "displayName": "Brad",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"darren-r\"]",
+          "playerId": "darren-r",
+          "displayName": "Darren",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"frank-a\"]",
+          "playerId": "frank-a",
+          "displayName": "Frank",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"george-h\"]",
+          "playerId": "george-h",
+          "displayName": "George",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"jamie-s\"]",
+          "playerId": "jamie-s",
+          "displayName": "Jamie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"joe-g\"]",
+          "playerId": "joe-g",
+          "displayName": "Joe",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"josh-m\"]",
+          "playerId": "josh-m",
+          "displayName": "Josh",
+          "status": "Unavailable",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"jude-g\"]",
+          "playerId": "jude-g",
+          "displayName": "Jude",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"kalan-w\"]",
+          "playerId": "kalan-w",
+          "displayName": "Kalan",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"kieran-d\"]",
+          "playerId": "kieran-d",
+          "displayName": "Kieran",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"liam-s\"]",
+          "playerId": "liam-s",
+          "displayName": "Liam",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"louie-j\"]",
+          "playerId": "louie-j",
+          "displayName": "Louie",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"rocco-b\"]",
+          "playerId": "rocco-b",
+          "displayName": "Rocco",
+          "status": "Present",
+          "source": "App"
+        },
+        {
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"ronnie-d\"]",
           "playerId": "ronnie-d",
           "displayName": "Ronnie D",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"ronnie-t\"]",
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"ronnie-t\"]",
           "playerId": "ronnie-t",
           "displayName": "Ronnie T",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"ryan-b\"]",
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"ryan-b\"]",
           "playerId": "ryan-b",
           "displayName": "Ryan",
           "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"ryeley-d\"]",
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"ryeley-d\"]",
           "playerId": "ryeley-d",
           "displayName": "Ryeley",
-          "status": "Unmarked",
+          "status": "Present",
           "source": "App"
         },
         {
-          "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"will-b\"]",
+          "recordKey": "[\"e12dfe2e-ef2c-4f1d-9ea8-b38117635d8b\",\"will-b\"]",
           "playerId": "will-b",
           "displayName": "Will",
           "status": "Present",
@@ -4190,6 +4421,246 @@
         "playerId": "george-h",
         "displayName": "George",
         "status": "Unmarked",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "alfie-f",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"alfie-f\"]",
+        "playerId": "alfie-f",
+        "displayName": "Alf",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"alfie-f\"]",
+        "playerId": "alfie-f",
+        "displayName": "Alf",
+        "status": "Present",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "brad-e",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"brad-e\"]",
+        "playerId": "brad-e",
+        "displayName": "Brad",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"brad-e\"]",
+        "playerId": "brad-e",
+        "displayName": "Brad",
+        "status": "Present",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "darren-r",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"darren-r\"]",
+        "playerId": "darren-r",
+        "displayName": "Darren",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"darren-r\"]",
+        "playerId": "darren-r",
+        "displayName": "Darren",
+        "status": "Present",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "frank-a",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"frank-a\"]",
+        "playerId": "frank-a",
+        "displayName": "Frank",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"frank-a\"]",
+        "playerId": "frank-a",
+        "displayName": "Frank",
+        "status": "Present",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "george-h",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"george-h\"]",
+        "playerId": "george-h",
+        "displayName": "George",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"george-h\"]",
+        "playerId": "george-h",
+        "displayName": "George",
+        "status": "Present",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "joe-g",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"joe-g\"]",
+        "playerId": "joe-g",
+        "displayName": "Joe",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"joe-g\"]",
+        "playerId": "joe-g",
+        "displayName": "Joe",
+        "status": "Present",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "josh-m",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"josh-m\"]",
+        "playerId": "josh-m",
+        "displayName": "Josh",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"josh-m\"]",
+        "playerId": "josh-m",
+        "displayName": "Josh",
+        "status": "Present",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "jude-g",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"jude-g\"]",
+        "playerId": "jude-g",
+        "displayName": "Jude",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"jude-g\"]",
+        "playerId": "jude-g",
+        "displayName": "Jude",
+        "status": "Present",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "ronnie-d",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"ronnie-d\"]",
+        "playerId": "ronnie-d",
+        "displayName": "Ronnie D",
+        "status": "Present",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"ronnie-d\"]",
+        "playerId": "ronnie-d",
+        "displayName": "Ronnie D",
+        "status": "Unmarked",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "ronnie-t",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"ronnie-t\"]",
+        "playerId": "ronnie-t",
+        "displayName": "Ronnie T",
+        "status": "Present",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"ronnie-t\"]",
+        "playerId": "ronnie-t",
+        "displayName": "Ronnie T",
+        "status": "Unmarked",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "ryan-b",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"ryan-b\"]",
+        "playerId": "ryan-b",
+        "displayName": "Ryan",
+        "status": "Present",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"ryan-b\"]",
+        "playerId": "ryan-b",
+        "displayName": "Ryan",
+        "status": "Unmarked",
+        "source": "App"
+      }
+    },
+    {
+      "reason": "display_status_conflict",
+      "date": "2026-10-28",
+      "type": "Training",
+      "playerId": "ryeley-d",
+      "existing": {
+        "recordKey": "[\"f00b4612-235d-422d-bdc9-78e51117006b\",\"ryeley-d\"]",
+        "playerId": "ryeley-d",
+        "displayName": "Ryeley",
+        "status": "Unmarked",
+        "source": "App"
+      },
+      "incoming": {
+        "recordKey": "[\"f984540f-d19c-4821-9278-162937839f5d\",\"ryeley-d\"]",
+        "playerId": "ryeley-d",
+        "displayName": "Ryeley",
+        "status": "Present",
         "source": "App"
       }
     }

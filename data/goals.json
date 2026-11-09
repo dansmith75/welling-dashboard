@@ -134,7 +134,9 @@
     "matchId": "2026-11-08-ravensbury-rovers",
     "date": "2026-11-08",
     "opposition": "Ravensbury Rovers",
-    "goals": {}
+    "goals": {
+      "darren-r": 1
+    }
   },
   {
     "matchId": "2026-11-15-warlingham-warriors",

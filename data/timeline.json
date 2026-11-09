@@ -1576,5 +1576,79 @@
         "source": "Matchday App"
       }
     ]
+  },
+  {
+    "matchId": "2026-11-08-ravensbury-rovers",
+    "date": "2026-11-08",
+    "opposition": "Ravensbury Rovers",
+    "competition": "Vic Farrow Cup",
+    "events": [
+      {
+        "type": "Goal",
+        "minute": 7,
+        "playerId": "darren-r",
+        "player": "Darren",
+        "relatedPlayerId": "joe-g",
+        "relatedPlayer": "Joe",
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 31,
+        "playerId": "bailey-s",
+        "player": "Bailey",
+        "relatedPlayerId": "ryeley-d",
+        "relatedPlayer": "Ryeley",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 31,
+        "playerId": "liam-s",
+        "player": "Liam",
+        "relatedPlayerId": "kalan-w",
+        "relatedPlayer": "Kalan",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Substitution",
+        "minute": 31,
+        "playerId": "kieran-d",
+        "player": "Kieran",
+        "relatedPlayerId": "george-h",
+        "relatedPlayer": "George",
+        "detail": "OFF → ON",
+        "value": null,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 35,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      },
+      {
+        "type": "Opponent Goal",
+        "minute": 38,
+        "playerId": null,
+        "player": null,
+        "relatedPlayerId": null,
+        "relatedPlayer": null,
+        "detail": "Open Play",
+        "value": 1,
+        "source": "Matchday App"
+      }
+    ]
   }
 ]
